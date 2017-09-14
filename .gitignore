@@ -20,7 +20,7 @@ gradle-app.setting
 /pd-feature-tests/build/
 /.gradle/
 
-attx-sb-broker-tests/.idea
+attx-broker-tests/.idea/
 
 /uv-attx-dpus/dpus
 
