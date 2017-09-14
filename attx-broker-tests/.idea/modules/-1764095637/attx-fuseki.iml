@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":attx-fuseki" external.linked.project.path="/home/local/stefanne/dev/attx/platform-deployment/attx-fuseki" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="platform-deployment" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file:///home/local/stefanne/dev/attx/platform-deployment/attx-fuseki">
+      <excludeFolder url="file:///home/local/stefanne/dev/attx/platform-deployment/attx-fuseki/.gradle" />
+      <excludeFolder url="file:///home/local/stefanne/dev/attx/platform-deployment/attx-fuseki/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
