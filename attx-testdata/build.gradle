@@ -1,0 +1,10 @@
+apply plugin: "com.chrisgahlert.gradle-dcompose-plugin"
+
+dcompose {
+    testdata {
+		  baseDir = file('docker')
+	    dockerFilename = 'Dockerfile'
+      repository = "${imageRepo}:${imageRepoPort}/testdata:latest"
+
+    }
+}

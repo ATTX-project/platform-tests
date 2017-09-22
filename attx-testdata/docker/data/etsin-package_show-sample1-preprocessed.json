@@ -1,0 +1,157 @@
+{
+	"help": "http://etsin.avointiede.fi/api/3/action/help_show?name=package_show",
+	"success": true,
+	"result": [{
+			"owner_org": "01901",
+			"maintainer": null,
+			"relationships_as_object": [],
+			"citation": "this is citation",
+			"agent": [{
+				"organisation": "University of Helsinki",
+				"role": "author",
+				"id": "http://orcid.org/test",
+				"name": "Person Author",
+				"parentID": "urn-nbn-fi-csc-kata-test1"
+			}, {
+				"organisation": "University of Helsinki",
+				"role": "contributor",
+				"id": "http://orcid.org/test",
+				"name": "Person Author"
+			}, {
+				"URL": "http://test",
+				"organisation": "Suomen Akatemia - Academy of Finland",
+				"role": "funder",
+				"fundingid": "fundingID",
+				"name": "Project's name"
+			}, {
+				"role": "owner",
+				"name": "Person Author"
+			},
+    {
+"role": "distributor",
+"name": "Yhteiskuntatieteellinen tietoarkisto"
+}],
+			"maintainer_email": null,
+			"num_tags": 3,
+			"license_URL": "1) This dataset is intended only for academic use. 2) The user must not reproduce, distribute the image, video and audio contents of the database or portions thereof in any way more than via academic publications and conferences.",
+			"id": "urn:nbn:fi:csc-kata-test1",
+			"pids": [{
+				"type": "primary",
+				"id": "urn:nbn:fi:csc-kata-test1",
+				"provider": "Etsin"
+			}, {
+				"type": "relation",
+				"relation": "generalRelation",
+				"id": "http://urn.fi/urn:nbn:fi:csc-kata-test1"
+			}],
+			"event": [],
+			"metadata_created": "2017-08-29T13:16:49.939715",
+			"discipline": [
+				"http://www.yso.fi/onto/okm-tieteenala/ta6",
+				"http://www.yso.fi/onto/okm-tieteenala/ta6121",
+				"http://www.yso.fi/onto/okm-tieteenala/ta113"
+			],
+			"algorithm": "",
+			"metadata_modified": "2017-08-29T13:16:49.968537",
+			"langdis": "False",
+			"format": "mp4,wav, csv, TextGrid",
+			"availability": "access_application_rems",
+			"state": "active",
+			"version": "2016-09-05",
+			"license_id": "other",
+			"type": "dataset",
+			"resources": [{
+				"cache_last_updated": null,
+				"package_id": "urn:nbn:fi:csc-kata-test1",
+				"webstore_last_updated": null,
+				"id": "etsin-uuid-1",
+				"size": null,
+				"state": "active",
+				"hash": "",
+				"description": "",
+				"format": "mp4,wav, csv, TextGrid",
+				"mimetype_inner": null,
+				"url_type": null,
+				"mimetype": [
+					"audio/x-wav",
+					"text/plain",
+					"video/mp4"
+				],
+				"cache_url": null,
+				"name": null,
+				"algorithm": "",
+				"created": "2017-08-29T16:16:49.995486",
+				"url": "http://",
+				"webstore_url": null,
+				"last_modified": null,
+				"position": 0,
+				"revision_id": "etsin-uuid-4",
+				"resource_type": "dataset"
+			}],
+			"num_resources": 1,
+			"tags": [{
+				"vocabulary_id": null,
+				"state": "active",
+				"display_name": "conversational video",
+				"id": "etsin-uuid-5",
+				"name": "conversational video"
+			}, {
+				"vocabulary_id": null,
+				"state": "active",
+				"display_name": "interactive engagement",
+				"id": "etsin-uuid-6",
+				"name": "interactive engagement"
+			}, {
+				"vocabulary_id": null,
+				"state": "active",
+				"display_name": "multimodal copora",
+				"id": "etsin-uuid-7",
+				"name": "multimodal copora"
+			}],
+			"title": {
+				"eng": "DigiSami Conversational Speech"
+			},
+			"relationships_as_subject": [],
+			"private": false,
+			"groups": [],
+			"creator_user_id": "etsin-uuid-2",
+			"access_application_URL": "https://accessurl",
+			"name": "urn-nbn-fi-csc-kata-test1",
+			"mimetype": "audio/x-wav,text/plain,video/mp4",
+			"isopen": false,
+			"language": ["eng", "sme", "fin"],
+			"url": null,
+			"checksum": "",
+			"notes": {
+				"eng": "English description"
+			},
+			"license_title": "Other",
+			"contact": [{
+				"URL": "http://contacturl/",
+				"name": "Person Author",
+				"email": "hidden"
+			}],
+			"organization": {
+				"description": "",
+				"title": "Helsingin yliopisto",
+				"created": "2017-02-23T10:19:26.722114",
+				"approval_status": "approved",
+				"is_organization": true,
+				"state": "active",
+				"image_url": "",
+				"revision_id": "etsin-uuid-3",
+				"type": "organization",
+				"id": "01901",
+				"name": "01901-helsingin-yliopisto"
+			},
+			"revision_id": "etsin-uuid-4",
+			"direct_download_URL": "http://",
+			"external_id": "urn:nbn:fi:csc-ida-1",
+			"extras": [{
+				"value": "https://avaa.tdata.fi/remsida/dl.jsp?pid=urn:nbn:fi:csc-ida-1",
+				"key": "access_application_download_URL"
+			}]
+		}
+
+	]
+}

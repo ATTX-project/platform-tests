@@ -1,0 +1,1981 @@
+[
+  {
+    "acronym_EN": "ESS (Finland)",
+    "acronym_FI": "ESS (Suomi)",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      1
+    ],
+    "description_EN": "The European Social Survey (ESS) is an academically driven cross-national survey that charts and explains the relationships between the attitudes, beliefs and behaviour patterns of Europe's institutions and peoples as the latter change. The ESS applies extremely high standards of methodological rigour across the board from questionnaire design and sampling, to fieldwork methodologies and the archiving of material. The data are freely available for all researchers. The ESS has been conducted in more than 30 countries since 2002.",
+    "description_FI": "European Social Survey (ESS) on tieteellisistä lähtökohdista toteutettava vertaileva kyselytutkimus, jossa kartoitetaan ja selitetään eurooppalaisten muuttuvien instituutioiden ja kansalaisten asenteiden, uskomusten ja käyttäytymisen välisiä suhteita. ESS noudattaa erittäin korkeita menetelmällisiä vaatimuksia aina kyselylomakkeen suunnittelusta ja otannasta kenttätyömenetelmiin ja aineiston arkistointiin. Tutkimusaineisto on tutkijoiden vapaasti käytettävissä. ESS on toteutettu yli 30:ssa maassa vuodesta 2002.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 1,
+    "keywords_EN": [
+      "research data"
+    ],
+    "keywords_FI": [
+      "tutkimusaineistot"
+    ],
+    "name_EN": "European Social Survey",
+    "name_FI": "Eurooppalainen sosiaalitutkimus",
+    "operationsFinished": 0,
+    "operationsStarted": 0,
+    "organisationsIds": [
+      2,
+      3
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607251",
+      "Description.isni.name": "0000000121816680"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607251"
+  },
+  {
+    "acronym_EN": "FIN-CLARIN",
+    "acronym_FI": "FIN-CLARIN",
+    "active": true,
+    "buildingStarted": 2012,
+    "contactsIds": [
+      2,
+      65,
+      66
+    ],
+    "description_EN": "CLARIN is a European research infrastructure consortium, dedicated to creating a generally available and interoperable research infrastructure for language resources and language technology. The intention is to alleviate the fragmented nature of current research activities by providing a stable, permanent, intuitive and scalable research infrastructure, in which researchers can work at their own workstations. FIN-CLARIN, Finland’s national research infrastructure, was founded in 2007 and was included on the national research infrastructure roadmap for 2009. Preparations for Finland's accession to CLARIN-ERIC have included the development of FIN-CLARIN's Language Bank as a common centralised service making use of internationally compatible systems.",
+    "description_FI": "CLARIN-ERIC on eurooppalainen tutkimusinfrastruktuurikonsortio, joka on sitoutunut luomaan yhteiskäyttöisen ja yhteensopivan tutkimusinfrastruktuurin kielivaroille ja kieliteknologialle. Tarkoitus on lieventää nykyistä toiminnan pirstoutuneisuutta tarjoamalla vakaa, pysyvä, helppokäyttöinen ja laajennettava tutkimusinfrastruktuuri, jossa tutkijat voivat työskennellä omilla työasemillaan. Suomen kansallinen tutkimusinfrastruktuuri FIN-CLARIN perustettiin vuonna 2007 ja se oli jo vuoden 2009 kansallisella tutkimusinfrastruktuurien tiekartalla. FIN-CLARIN on valmistautunut Suomen liittymiseen CLARIN-ERIC:iin kehittämällä Kielipankkia yhteisenä keskitettynä palveluna, jossa on otettu käyttöön kansainvälisesti yhteensopivia järjestelmiä.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 2,
+    "keywords_EN": [
+      "open data"
+    ],
+    "keywords_FI": [
+      "avoin data"
+    ],
+    "name_EN": "Common Language Resource and Technology Infrastructure",
+    "name_FI": "Yhteinen kieliaineistojen ja -teknologian infrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2009,
+    "organisationsIds": [
+      5,
+      6,
+      61
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607252",
+      "Description.hyytuhatuuid.name": "2fb64bc9-4b9f-4945-8e38-86f2dad19010"
+    },
+    "preparationsStarted": 2007,
+    "servicesIds": [
+      6,
+      7
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607252"
+  },
+  {
+    "acronym_EN": "FinElib",
+    "acronym_FI": "FinElib",
+    "active": true,
+    "buildingStarted": 1997,
+    "contactsIds": [
+      3,
+      67
+    ],
+    "description_EN": "The Finnish National Electronic Library, FinELib, is a consortium of Finnish universities, polytechnics, research institutes and specialist and public libraries. FinELib acquires both Finnish and international e-resources competitively, ensures the availability of diverse, high-quality electronic material and promotes the use of such material in research, teaching, learning and in the general acquisition of information-",
+    "description_FI": "Kansallinen elektroninen kirjasto, FinELib, on suomalaisten yliopistojen, ammattikorkeakoulujen, tutkimuslaitosten, erikoiskirjastojen ja yleisten kirjastojen muodostama konsortio. FinELib hankkii kansainvälisiä ja kotimaisia elektronisia aineistoja kilpailukykyisesti, varmistaa laadukkaiden ja monipuolisten elektronisten aineistojen saannin sekä edistää niiden käyttöä tutkimuksessa, opetuksessa, oppimisessa ja yleisessä tiedon saannissa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 3,
+    "keywords_EN": [
+      "cultural heritage data"
+    ],
+    "keywords_FI": [
+      "kulttuuriperintöaineistot"
+    ],
+    "name_EN": "National Electronic Library",
+    "name_FI": "Kansallinen elektroninen kirjasto",
+    "operationsFinished": 0,
+    "operationsStarted": 2000,
+    "organisationsIds": [
+      4,
+      7
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607253",
+      "Description.hyytuhatuuid.name": "9060de8c-8113-4758-8acf-3c773aeb6144"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      8
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607253"
+  },
+  {
+    "acronym_EN": "Finna",
+    "acronym_FI": "Finna",
+    "active": true,
+    "buildingStarted": 2012,
+    "contactsIds": [
+      4,
+      67
+    ],
+    "description_EN": "Finna, the user interface of the Finnish National Digital Library, is a national web service and research infrastructure under constant development. It provides access to cultural and scholarly resources and services via a single service, and provides new possibilities for research and other creative activities.",
+    "description_FI": "Kansallisen digitaalisen kirjaston asiakasliittymä Finna on kansallinen verkkopalvelu ja tutkimusinfrastruktuuri, joka avaa pääsyn kulttuurin ja tieteen aineistoihin ja palveluihin, tuo uusia mahdollisuuksia tutkimukselle sekä muulle luovalle toiminnalle.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 4,
+    "keywords_EN": null,
+    "keywords_FI": null,
+    "name_EN": "National Digital Library public interface",
+    "name_FI": "Kansallisen Digitaalisen Kirjaston asiakasliittymä",
+    "operationsFinished": 0,
+    "operationsStarted": 2013,
+    "organisationsIds": [
+      4,
+      7
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607254",
+      "Description.hyytuhatuuid.name": "2999103f-810e-44a0-b3be-e14d062e9815"
+    },
+    "preparationsStarted": 2008,
+    "servicesIds": [
+      9,
+      243
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607254"
+  },
+  {
+    "acronym_EN": "FMAS",
+    "acronym_FI": "FMAS",
+    "active": false,
+    "buildingStarted": 2015,
+    "contactsIds": [
+      6
+    ],
+    "description_EN": "The Finnish Microdata Access Services, FMAS, has been designed to facilitate the use of register and statistical data at all phases of the research process. The FMAS will consist of four services: the data catalogue, the digital permit service, the remote access system, and the information and support service.",
+    "description_FI": "Kansallinen rekisteri- ja mikroaineistojen tutkijapalvelu  on suunniteltu helpottamaan rekisteritietojen ja tilastoaineistojen tutkimuskäyttöä tutkimusprosessin kaikissa vaiheissa.  Tutkijapalvelu koostuu neljästä keskenään yhteen toimivasta palvelusta, jotka yhdessä tarjoavat yksikanavaisen väylän tutkimuksen suunnittelusta aineiston analysointiin: (1) aineistokatalogi, (2) käyttölupien sähköinen hakupalvelu, (3) etätyöpöytä ja (4) informaatio- ja tukipalvelu.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 5,
+    "keywords_EN": null,
+    "keywords_FI": null,
+    "name_EN": "Finnish Microdata Access Services",
+    "name_FI": "Kansallinen rekisteri- ja mikroaineistojen tutkijapalvelu",
+    "operationsFinished": 0,
+    "operationsStarted": 0,
+    "organisationsIds": [
+      8,
+      40
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607255"
+    },
+    "preparationsStarted": 2013,
+    "servicesIds": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607255"
+  },
+  {
+    "acronym_EN": "FSD, CESSDA",
+    "acronym_FI": "",
+    "active": true,
+    "buildingStarted": 1999,
+    "contactsIds": [
+      7
+    ],
+    "description_EN": "CESSDA is a pan-European distributed research infrastructure whose operations are largely based on national service providers that is, social science data archives. The new CESSDA is building a comprehensive online European data repository and information services, which researchers can use to locate and easily access research data significant to their work. CESSDA provides relevant data for academic research and societal decision-making, enabling monitoring and problemsolving related to the challenges facing European countries and the global community. The Finnish Social Science Data Archive (FSD) is a national resource centre for research and teaching. It archives and disseminates Finnish and international electronic research data for research, teaching and study purposes, and provides information services on data-related issues. The FSD is also responsible for Finnish national membership in several internationally comparative data services or survey programmes. These services and data are free of charge either to all users or to customers coming from member organisations, depending on the conditions. These services or surveys are: LIS Cross-national Data Center in Luxembourg, ICPSR in the USA, International Social Survey Programme, European Value Study, and Comparative Study of Electoral Systems.",
+    "description_FI": "CESSDA on eurooppalaisten yhteiskuntatieteellisten tietoaineistoarkistojen hajautettu tutkimusinfrastruktuuri, jonka toiminta perustuu aktiivisiin kansallisiin palveluntuottajiin. Uusi CESSDA rakentaa kattavan eurooppalaisen verkkotietovarannon ja tietopalveluita, joiden avulla tutkijat voivat paikallistaa ja saada helposti käyttöönsä tutkimukselleen merkityksellisiä tutkimusaineistoja. CESSDA tarjoaa tieteelliselle tutkimukselle ja yhteiskunnalliselle päätöksenteolle keskeisen tietopohjan eurooppalaisten yhteiskuntien ja globaalien haasteiden seurantaan ja ongelmanratkaisuun. Yhteiskuntatieteellinen tietoarkisto on tutkimuksen ja opetuksen valtakunnallinen palveluyksikkö. Sen tehtävänä on arkistoida ja välittää koti- ja ulkomaisia sähköisiä tutkimusaineistoja tutkimukseen, opetukseen ja opiskeluun ja tarjota alan tietopalvelua. Yhteiskuntatieteellinen tietoarkisto on toiminut uuden CESSDAn Suomen palveluntuottajana vuodesta 2013 alkaen. Lisäksi Tietoarkisto vastaa Suomen kansallisesta jäsenyydestä useissa alansa kansainvälisissä datapalveluissa tai kansainvälisesti vertailevissa kyselytutkimuksissa. Nämä palvelut tai kyselytutkimukset ovat: LIS Cross-national Data Center Luxemburgissa, ICPSR Yhdysvalloissa, International Social Survey Programme-, European Value Study- ja Comparative Study of Electoral Systems -tutkimukset.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 6,
+    "keywords_EN": [
+      "digital humanities"
+    ],
+    "keywords_FI": [
+      "digitaaliset ihmistieteet"
+    ],
+    "name_EN": "Finnish Social Science Data Archive and Consortium of European Social Science Data Archives",
+    "name_FI": "Yhteiskuntatieteellinen tietoarkisto ja Euroopan tietoarkistojen konsortio",
+    "operationsFinished": 0,
+    "operationsStarted": 1999,
+    "organisationsIds": [
+      10,
+      11
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607256"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      14,
+      15,
+      16,
+      17,
+      18
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607256"
+  },
+  {
+    "acronym_EN": "",
+    "acronym_FI": "ATT, KDK-PAS",
+    "active": true,
+    "buildingStarted": 2009,
+    "contactsIds": [
+      8,
+      9,
+      10
+    ],
+    "description_EN": "The national infrastructure – the Open science and research iniatiative (ATT) and KDK-PAS (The National Digital Library’s digital preservation system) – form a national research infrastructure. Most of the services provided by ATT are in operation, and the preservation services are in a piloting phase. KDK-PAS is currently in operation. The infrastructure is based on the ATT and National Digital Library (KDK) initiatives by the Ministry of Education, Science and Culture. These collaborative initiativess are creating a permanent, coordinated data infrastructure for supporting and managing research data within the Finnish research community across all disciplines. This  infrastructure covers services for the dissemination, storage and long-term preservation of digital data (known by the Finnish acronym PAS), including metadata management and catalogue and open data access platforms and tools.",
+    "description_FI": "Kansalliset tutkimusinfrastruktuurit  ATT ja KDK-PAS ovat kansallinen tutkimusinfrastruktuuri, jonka taustalla ovat opetus- ja kulttuuriministeriön käynnistämät hankkeet Avoin tiede ja tutkimus (ATT) ja Kansallinen digitaalinen kirjasto (KDK). Hankkeet kehittävät yhteistyössä pysyvää, koordinoitua tutkimusinfrastruktuuria Suomen tutkimusjärjestelmän kaikkien tieteenalojen aineistojen hallinnan tueksi. Infrastruktuuri palvelee hajautetusti  digitaalisen aineiston jakamisessa, tallennuksessa ja pitkäaikaissäilytyksessä (PAS) mukaan lukien metatietopalvelut ja aineistojen avaamisen ja hyödyntämisen palvelut.\n\nAvoimuuden linjaukset:\n\nPerustavoite\n\nTutkimusdata ja -julkaisut ovat avoimesti saatavilla ja hyödynnettävissä tietoverkoissa avoimen rajapinnan\nkautta seuraavin tarkennuksin:\n\nTarkennukset\n\nA. Suomalaisen tutkimusjärjestelmän kaikki toimijat jakavat tuottamansa tieteelliset julkaisut ja tutkimusdatan avoimesti tietoverkossa. Avoimuusperiaate koskee myös tutkimusmenetelmiä ja tutkimustulosten tuottamiseen tarvittavia työkaluja, kuten tietokonemalleja.\n\nB. Avoimuus toteutetaan tutkimuseettisiä periaatteita noudattaen ja oikeudellista toimintaympäristöä kunnioittaen. Tutkimusdata avoimuuteen pyritään aina, kun se on lainsäädännön ja sopimusten puolesta mahdollista. Tekijänoikeuslainsäädäntöä uudistetaan tutkimuspoikkeuksen suuntaan tämän varmistamiseksi.\n\nC. Tutkimusdatan ja -julkaisujen jatkokäyttöä ei rajoiteta tarpeettomasti ja niiden käyttöehdot tuodaan selkeästi esille. Noudatetaan yleisiä, standardimuotoisia lisenssejä (suositus CC BY 4.0. ), jotka ovat koneluettavia. Metatiedot julkaistaan CC0 –lisenssillä.\n\nD. Tutkimusta koskevat sopimukset ja rahoituspäätökset tukevat julkaisujen ja tutkimusdatan avointa saatavuutta.\n\nE. Tutkijalla on mahdollisuus avoimeen julkaisemiseen tieteenalasta tai rahoitustilanteesta riippumatta.\n\nF. Tutkimusorganisaation ja tutkijoiden on huolehdittava siitä, että tutkimusjulkaisu tulee avoimesti saataville. Valinta kultaisen ja vihreän OA:n välillä on tapauskohtaista ja riippuu siitä, missä tulokset julkaistaan. Primaarisen julkaisukanavan valinnan tärkein kriteeri on varmistaa tutkimuksen mahdollisimman suuri vaikuttavuus. Koska OA:n tiedetään omalta osaltaan lisäävän vaikuttavuutta, tulee ei-avointa julkaisukanavaa käytettäessä huolehtia rinnakkaisesta saatavuudesta avointen julkaisuarkistojen välityksellä. Tutkijoita tuetaan avoimuuden varmistamisessa siten, että saatavuuden edistämiseen liittyvät prosessit ovat yksinkertaisia ja saatavuutta tukevat palvelut helppokäyttöisiä.\n\nG. Tutkimusjulkaisujen sisällöt ja niiden metatiedot ovat tietoverkossa avoimesti saatavilla välittömästi tai mahdollisimman pian niiden ilmestyttyä. EU:n komissio suosittaa avoimuutta viimeistään kuusi kuukautta tai 12 kuukautta (humanistiset ja yhteiskuntatieteet) julkaisun ilmestymisen jälkeen. (Commission recommendation of 17.7.2012 on access to and preservation of scientific information (http://ec.europa.eu/research/sciencesociety/document_library/pdf_06/recommendation-access-andpreservation-scientific-information_en.pdf.)\n\nH. Tutkimusdatan ja -julkaisujen tallentamisessa ja levityksessä hyödynnetään sellaisia infrastruktuureja, jotka mahdollistavat aineistojen pitkäaikaissäilytyksen ja avoimen saatavuuden.\n\nI. Tutkimusdata, tutkimusmenetelmät, tutkimusinfrastruktuurit ja -julkaisut kuvaillaan ja dokumentoidaan riittävällä tarkkuudella ja nämä tiedot ovat avoimesti verkossa saatavissa koneluettavassa muodossa.\n\nPalveluperiaatteet:\n\nPalveluperiaatteet ovat suosituksia avointa tiedettä ja tutkimusta tukeville\npalveluille. Periaatteiden toteutuksessa huomioidaan palvelukohtaiset\nerityispiirteet. Periaatteita käytetään ATT-palveluiden kehittämiseen. Periaatteiden\nlisäksi huomioidaan OKM:n toimialan kokonaisarkkitehtuurinmukaisuus.\n\n1.  Palvelut tukevat tutkimusta sekä tutkimusprosessin avoimuutta. Palveluissa\nhuomioidaan tutkimuksen ja sen tuottaman tiedon koko elinkaari.\n\n2. Palveluilla tuetaan parhaita avoimen tieteen käytäntöjä. Palveluilla\nedistetään yhteentoimivuutta sekä tutkimustuotosten avoimuutta ja\njatkokäyttöä. Tämän tulee toteutua myös silloin, kun kaikkia\ntutkimustuotoksia ei voida avata vapaasti käytettäviksi.\n\n3. Palvelut ovat mahdollisimman avoimesti suomalaisen tutkimusyhteisön\nkäytettävissä. Palvelut voidaan rahoittaa käyttäjämaksuin. Tällöin\nhinnaston tulee olla avoimesti saatavilla.\n\n4. Palvelut ovat jatkuvia. Palveluntarjoajan on laadittava palvelulle\njatkuvuussuunnitelmat. Mikäli vastoin odotuksia palvelu aiotaan sulkea,\npalveluntarjoajan on avustettava korvaavan palvelun löytämisessä\nedistääkseen tietojen säilyvyyttä.\n\n5. Palveluiden teknologiavalinnat ja tietoturva ovat\ntarkoituksenmukaiset. Yleisperiaatteena palveluiden teknologiavalinnoissa\non yhteentoimivuuden edistäminen. Palveluille luodaan mahdollisuuksien\nmukaan avoimet rajapinnat ja näille julkinen rajapintadokumentaatio.\n\n6. Palveluita kehitetään jatkuvasti ja käyttäjälähtöisesti sekä hyödyntäen\nmahdollisuuksien mukaan avoimen lähdekoodin ratkaisuja.\n\n7. Palveluiden käyttöehdot edistävät avoimuutta. Palveluihin liittyvät ja niihin\nkertyvät kuvailutiedot luovutetaan mahdollisimman avoimesti.\nPalvelukehityksen tulokset on lähtökohtaisesti lisensoitu avoimesti.\n\n8. Palveluille määritellään laadulliset ja määrälliset mittarit, joiden avulla\npalveluiden käyttöä ja käytettävyyttä voidaan seurata ja kehittää.\n\n9. Palveluiden palvelulupaukset, vastuutahot ja palveludokumentaatio ovat\nsaatavilla. Palveluntarjoajan tulee huolehtia tarvittavan tukipalvelun\ntuottamisesta.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 7,
+    "keywords_EN": [
+      "infrastructure"
+    ],
+    "keywords_FI": [
+      "infrastruktuuri"
+    ],
+    "name_EN": "National information infrastructure by Open Science and Research Initiative and National Digital Library",
+    "name_FI": "Kansalliset tietoinfrastruktuuripalvelut ATT ja KDK-PAS",
+    "operationsFinished": 0,
+    "operationsStarted": 2013,
+    "organisationsIds": [
+      12
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607257"
+    },
+    "preparationsStarted": 2005,
+    "servicesIds": [
+      20,
+      21,
+      23,
+      24,
+      29
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607257"
+  },
+  {
+    "acronym_EN": "EISCAT_3D Finland",
+    "acronym_FI": "EISCAT_3D Suomi",
+    "active": false,
+    "buildingStarted": 2016,
+    "contactsIds": [
+      12,
+      13,
+      57
+    ],
+    "description_EN": "The EISCAT and EISCAT_3D incoherent scatter radars measure the coupling between the space environment and atmosphere in the auroral oval and at the southern edge of the polar vortex. Located in Svalbard, Norway, Sweden and Finland, this facility is used for research INTO infra.space and plasma physics, atmospheric change due to human activities and natural causes, and the effect of space weather on navigation, communications and technological systems in the Arctic region. The radar can also be used to investigate space debris and the orbital elements of satellites, to map the lunar surface and the shape of asteroids, and to develop new radar modulations and analysis.",
+    "description_FI": "EISCAT ja EISCAT_3D -sirontatutkat mittaavat geoavaruusympäristön kytkeytymistä Maan ilmakehään revontulivyöhykkeellä ja polaarivorteksin reunalla. Huippuvuorille, Norjaan, Ruotsiin ja Suomeen sijoitetulla laitteistolla tutkitaan avaruus- ja plasmafysiikkaa, luonnollista ja ihmisen aiheuttamaa ilmakehän muutosta sekä avaruussään vaikutusta navigaatioon, kommunikaatioon ja teknologisiin järjestelmiin arktisella alueella. Tutkia voidaan käyttää myös avaruusromun, satelliittien rataparametrien, kuun pinnan ja asteroidien muodon kartoitukseen sekä uusien tutkamodulaatioiden ja analyysin kehittämiseen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 8,
+    "keywords_EN": [
+      "language resources"
+    ],
+    "keywords_FI": [
+      "kielivarat"
+    ],
+    "name_EN": "",
+    "name_FI": "EISCAT_3D Suomi ja ISR-tutkajärjestelmä",
+    "operationsFinished": 0,
+    "operationsStarted": 2018,
+    "organisationsIds": [
+      14,
+      15
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607258"
+    },
+    "preparationsStarted": 2010,
+    "servicesIds": [
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607258"
+  },
+  {
+    "acronym_EN": "FIN-EPOS",
+    "acronym_FI": "FIN-EPOS",
+    "active": false,
+    "buildingStarted": 2015,
+    "contactsIds": [
+      14,
+      69
+    ],
+    "description_EN": "EPOS is a distributed geosciences research infrastructure, formed from national measuring stations, data networks, international data centres and European headquarters engaged in the coordination of various activities. The aim of these distributed observatories is to gather information on and develop our understanding of tectonic movement and geological-geophysical processes in Europe, as well as the related natural catastrophes and other socio-economic effects. Nine partners are involved in Finland's EPOS activities. The main objective of the FIN-EPOS research infrastructure is standardize and harmonize the Finnish national data set so that they will be interoperable with the EPOS Thematic Core Services/ Thematic data centers. The second objective is develop a Finnish-language login page on which users are identified and their user rights for EPOS resources are defined.",
+    "description_FI": "EPOS on hajautettu eurooppalainen geotieteellinen tutkimusinfrastruktuuri, joka muodostuu kansallisista mittausasemista, dataverkoista, kansainvälisistä tietokeskuksista ja tietovarastoja sekä toimintaa koordinoivasta italialaisesta päämajasta. Havaintoasemien hajautetun verkoston tavoitteena on kerätä tietoa ja ymmärrystä Euroopan mannerlaatan liikkeistä ja käynnissä olevista geologis-geofysikaalisista prosesseista sekä niihin liittyvistä luonnonkatastrofeista ja muista sosioekonomisista vaikutuksista.\n\nSuomen kansallinen FIN-EPOS-konsortio on suomalaisten yliopistojen (HY, OY) ja tutkimuslaitosten (GTK, MML, IL, VTT, CSC) yhteisö, joka ylläpitää kiinteän maan observatorioita ja laboratorioita. Havaintoaineisto toimitetaan kansainvälisiin tietokeskuksiin ja edelleen EPOS-tietokeskukseen. FIN-EPOS-portaalin ja verkkosivujen kautta suomalaiset tutkijat, opiskelijat, viranomaiset ja kansalaiset voivat hakeutua EPOS-sivustoille, josta he saavat käyttöönsä laajoja monitieteellisiä tutkimusaineistoja. EPOS-aineistot ovat pääsääntöisesti kaikille avoimia ja maksuttomia. FIN-EPOS ensimmäinen tavoite on muokata kansalliset aineistot EPOS-yhteensopiviksi  sekä kehittää yhdessä CSC:n ja EUDAT-hankkeen kanssa suomenkieliset kirjautumissivustot, jossa käyttäjät tunnistetaan ja heidän EPOS-aineistojen käyttöoikeutensa määritellään.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 9,
+    "keywords_EN": [
+      "data sets"
+    ],
+    "keywords_FI": [
+      "aineistot"
+    ],
+    "name_EN": "Finnish national initiative of the European Plate Observing System",
+    "name_FI": "Euroopan geotieteiden infrastruktuuri",
+    "operationsFinished": 2060,
+    "operationsStarted": 2019,
+    "organisationsIds": [
+      16,
+      17
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-201607259"
+    },
+    "preparationsStarted": 2008,
+    "servicesIds": [
+      37
+    ],
+    "urn": "urn:nbn:fi:research-infras-201607259"
+  },
+  {
+    "acronym_EN": "FINMARI",
+    "acronym_FI": "",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      15
+    ],
+    "description_EN": "The Finnish Marine Research Infrastructure FINMARI combines the national marine research infrastructure INTO infra.a unified whole. This includes Finnish research vessels and automated offshore observation platforms, as well as universities, and experimental laboratories and field stations run by research institutes. FINMARI meets the latest scientific and social challenges by creating a common research framework for marine research and the related infrastructure, as well as specifying the synergetic roles of key national actors in the development of the research infrastructure. The FINMARI research infrastructure is a nationally and internationally open platform for Finnish marine research and researcher training. As such, it covers all of the key disciplines: biology, geology, fishery research, ecology, marine chemistry and physics, geography, remote sensing and their multidisciplinary application in developing the monitoring and protection of the marine environment.",
+    "description_FI": "Suomen merentutkimuksen infrastruktuuri FINMARI kokoaa kansallisen merentutkimuksen infrastruktuurin yhtenäiseksi kokonaisuudeksi. Tähän kuuluvat suomalaiset tutkimusalukset ja automaattiset havaintoalustat sekä yliopistojen ja tutkimuslaitosten kokeelliset laboratoriot ja kenttäasemat. FINMARI vastaa uusiin tieteellisiin ja yhteiskunnallisiin haasteisiin luomalla yhteisen tutkimuksellisen viitekehyksen merentutkimukselle ja siihen liittyvälle infrastruktuurille sekä täsmentämällä keskeisten kansallisten toimijoiden synergisiä rooleja tutkimusinfrastruktuurin kehittämisessä. FINMARI-tutkimusinfrastruktuuri on kansallisesti ja kansainvälisesti avoin suomalaisen merentutkimuksen ja tutkijakoulutuksen perusta, ja se kattaa kaikki keskeiset tieteenalat: biologian, geologian, kalantutkimuksen, ekologian, merikemian ja -fysiikan, maantieteen, kaukokartoituksen sekä niiden monitieteisen soveltamisen meriympäristön seurannan ja suojelun kehittämiseksi.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 10,
+    "keywords_EN": [
+      "tools"
+    ],
+    "keywords_FI": [
+      "tools"
+    ],
+    "name_EN": "Finnish Marine Research Infrastructure",
+    "name_FI": "Suomen merentutkimuksen infrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2015,
+    "organisationsIds": [
+      18,
+      37,
+      41,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072510"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072510"
+  },
+  {
+    "acronym_EN": "ICOS Finland",
+    "acronym_FI": "ICOS Suomi",
+    "active": true,
+    "buildingStarted": 2012,
+    "contactsIds": [
+      16,
+      17,
+      18
+    ],
+    "description_EN": "ICOS is a distributed European research infrastructure consisting of national measurement stations and a European top-level organisation coordinating its activities. This distributed network of measurement stations includes more than 100 atmospheric, ecosystem and marine observatories around Europe. The measurement stations measure levels of atmospheric greenhouse gases, carbon dioxide, methane and nitrous oxide, as well as the carbon and nitrogen cycle within ecosystems and ocean-atmosphere coupling. ICOS-Finland’s national operations include the maintenance of the Finnish station network and greenhouse gas measurements. Finland’s observatory network includes boreal and sub-arctic measurement stations. ICOS provides long-term, harmonized and precise greenhouse gas data for science and monitoring of GHG emissions. The stations are divided INTO infra.three classes, Class 1, Class 2, and Associate sites. The data from all these stations are quality-controlled with the same very strict criteria. Class I stations measure the most parameters. Data and map services are distributed freely from our web service Carbon Portal.",
+    "description_FI": "ICOS on hajautettu eurooppalainen tutkimusinfrastruktuuri, joka muodostuu kansallisista mittausasemista ja toimintaa koordinoivasta eurooppalaisesta päämajasta. Hajautettu mittausasemaverkosto käsittää yli 100 ilmakehä-, ekosysteemi- ja merihavaintoasemaa ympäri Eurooppaa. ICOS Suomen yli 10 mittausaseman ansiosta pohjoiset alueet ovat hyvin edustettuina ICOS-verkostossa. Mittausasemilla mitataan sekä ilmakehän kasvihuonekaasujen, hiilidioksidin, metaanin ja ilokaasun pitoisuuksia että ekosysteemien hiilen ja typen kiertoa ja vaihtoa ilmakehän kanssa. ICOS tuottaa pitkäaikaista, yhdenmukaista ja tarkkaa kasvihuonekaasujen havaintosarjaa tutkimuksen, päästöjen hillinnän ja seurannan tarpeisiin. Asemat jakautuvat kolmeen luokkaan: 1. ja 2. luokan sekä avustavat asemat. Kaikkien asemien data on laatuvalvottua hyvin tarkoin kriteerein. 1. luokan asemat mittaavat kaikkein eniten muuttujia. Data ja karttapalvelut ovat ilmaiseksi kaikkien käytettävissä nettipalvelussamme Carbon Portalissa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 11,
+    "keywords_EN": [
+      "electronic publications"
+    ],
+    "keywords_FI": [
+      "sähköiset julkaisut"
+    ],
+    "name_EN": "Integrated Carbon Observation System",
+    "name_FI": "Integroitu kasvihuonekaasujen havainnointijärjestelmä",
+    "operationsFinished": 0,
+    "operationsStarted": 2015,
+    "organisationsIds": [
+      4,
+      18,
+      19,
+      20
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072511",
+      "Description.hyytuhatuuid.name": "8d9979aa-0833-4ed4-98b6-eaf8164c4e5d"
+    },
+    "preparationsStarted": 2008,
+    "servicesIds": [
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072511"
+  },
+  {
+    "acronym_EN": "INAR RI",
+    "acronym_FI": "INAR RI",
+    "active": true,
+    "buildingStarted": 1995,
+    "contactsIds": [
+      19
+    ],
+    "description_EN": "The Integrated Atmospheric and Earth System Science Research Infrastructure (INAR RI) produces multidisciplinary, detailed data on material and energy flows within ecosystems and the atmosphere. Within INAR RI, special attention is paid to study ecosystem-atmosphere interactions, a key element being aerosols. The data generated are used to investigate ecosystem and atmospheric processes and their feedback mechanisms, the development of methodologies and measurement instrumentation, and climate modelling. INAR RI includes a number of well-equipped, continuously functioning field measurement stations around Finland, and experimental atmosphere and ecological laboratories. The distribution and access to the unique datasets is provided via a tailored database and data portal. INAR RI is linked to ICOS (Integrated Carbon Observation System) and ACTRIS (Aerosols, Clouds and Trace gases Research InfraStructure) research infrastructures.",
+    "description_FI": "Ilmakehä- ja ympäristötutkimuksen tutkimusinfrastruktuuri INAR RI (Integrated Atmospheric and Earth System Science Research Infrastructure) tuottaa monitieteistä ja yksityiskohtaista tietoa aineiden ja energian kierrosta ekosysteemeissä ja ilmakehässä. INAR-tutkimusinfrastruktuurissa tarkastellaan erityisesti ilmastonmuutoksen biologisia ja fysikaalisia perusteita ja ekosysteemien ja ilmakehän vuorovaikutuksia. Tuotettuja aineistoja käytetään boreaalisten ekosysteemien ja ilmakehän prosessien ja niiden takaisinkytkentöjen tarkasteluun, menetelmien ja mittalaitteiden kehittelyyn sekä ilmastomallinnukseen. INAR-tutkimusinfrastruktuuriin kuuluu joukko hyvin varusteltuja jatkuvatoimisia mittausasemia eri puolilla Suomea, kokeellisia ilmakehä- ja ekologisia laboratorioita sekä erilaisia mallinnusalustoja ja laajoja tutkimusaineistoja ja –portaaleja. INAR RI linkittyy myös ICOS (Integrated Carbon Observation System) ja ACTRIS (Aerosols, Clouds and Trace gases Research InfraStructure) tutkimusinfrastruktuureihin.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 12,
+    "keywords_EN": [
+      "licensing"
+    ],
+    "keywords_FI": [
+      "lisensiointi"
+    ],
+    "name_EN": "Integrated atmoshperic and earth system science research infrastructure",
+    "name_FI": "Ilmakehä- ja ympäristötutkimuksen tutkimusinfrastruktuuri",
+    "operationsFinished": 2050,
+    "operationsStarted": 1996,
+    "organisationsIds": [
+      21
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072512",
+      "Description.hyytuhatuuid.name": "b75fe885-6d95-4bab-8ffe-6e44d8afd5a6"
+    },
+    "preparationsStarted": 1995,
+    "servicesIds": [
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072512"
+  },
+  {
+    "acronym_EN": "oGIIR",
+    "acronym_FI": "oGIIR",
+    "active": false,
+    "buildingStarted": 2016,
+    "contactsIds": [
+      74,
+      75
+    ],
+    "description_EN": "The main objective of the oGIIR infrastructure is to establish user oriented and open-access structure to support the entire Finnish scientific research community with spatial data and analysis services and facilitating their research use in all disciplines. The development consists of the following sub-objectives:\n\n1. Development of open-access geospatial data services including the quality improvement of  core geospatial data sets and their use value in scientific research.\n\n2. Establishment of geocomputation and geospatial analysis services.\n\n3. Creating facilitation mechanisms, which lead INTO infra.effective use of the established geospatial services by Finnish researchers. The research infrastructure will be developed as a joint effort by the universities, research institutes and CSC. It will be a strong cooperation and knowledge based network which produces top-quality scientific research with geospatial information.",
+    "description_FI": "Avoimen paikkatiedon tutkimusinfrastruktuurin oGIIRin tavoitteena on luoda käyttäjän tarpeiden mukainen ja avoin rakenne tukemaan Suomen tiedeyhteisöä kaikilla tieteenaloilla paikkatiedon tieto- ja analysointipalveluilla sekä näihin liittyvillä tukipalveluilla. Kehitäminen sisältää seuraavat osatavoitteet:\n\n1. Avoimien paikkatiedon tietopalveluiden kehittäminen, sisältäen ydinpaikkatietojen laadun ja käyttöarvon parantaminen tieteellistä tutkimusta varten.\n\n2. Paikkatiedon laskenta ja analyysipalveluiden kehittäminen.\n\n3. Tukipalveluiden kehittäminen niin, että suomalaiset tutkijat ottavat kehitetyt paikkatietopalvelut tehokkaaseen käyttöön. Tutkimusinfrastruktuuri luodaan yliopistojen, tutkimuslaitosten ja CSC:n yhteisenä hankkeena. Tutkimusinfrastruktuuri tulee olemaan vahva yhteistyö- ja tietämysverkosto, joka tuottaa huippuluokkaista paikkatietoja hyödyntävää tutkimusta.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 13,
+    "keywords_EN": [
+      "electronic publishing"
+    ],
+    "keywords_FI": [
+      "sähköinen julkaiseminen"
+    ],
+    "name_EN": "Open Geospatial Information Infrastructure for Research",
+    "name_FI": "Avoin paikkatiedon tutkimusinfrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2016,
+    "organisationsIds": [
+      12,
+      41,
+      55,
+      66,
+      67,
+      68
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072513"
+    },
+    "preparationsStarted": 2013,
+    "servicesIds": [],
+    "urn": "urn:nbn:fi:research-infras-2016072513"
+  },
+  {
+    "acronym_EN": "BBMRI.fi",
+    "acronym_FI": "BBMRI.fi",
+    "active": true,
+    "buildingStarted": 2011,
+    "contactsIds": [
+      20,
+      76,
+      77,
+      78
+    ],
+    "description_EN": "Biobanks are considered to be essential facilitators of top-level research and health related innovations resulting new strategies for medical practice and public health, including new tools for diagnostics, treatment and intervention. BBMRI.fi is a National Node of BBMRI-ERIC operating with collaboration between the national biobanks, and was nominated to the Academy of Finland 2014 infrastructure roadmap.  BBMRI.fi organizes an interface with national Network of Biobanks and Biological resources and coordinates their activities with those of BBMRI-ERIC. Overall, BBMRI.fi aims to create an internationally leading biobank infrastructure providing strategic support to biomedical research, healthcare and biomedical industry.",
+    "description_FI": "Biopankkitoiminnalla tarkoitetaan ihmisistä peräisin olevien ammattimaista ja yhdenmukaista keräämistä, säilyttämistä ja luovuttamista lääketieteellisen tutkimuksen käyttöön. Biopankkitoiminnan päämääränä on kehittää lääketieteellistä tutkimusta, edistää terveyttä ja hoitokäytäntöjä sekä tuottaa uusia terveysalan innovaatioita. BBMRI.fi on eurooppalaisen BBMRI-ERICin suomalaisten biopankkien muodostama katto-organisaatio Suomessa. BBMRI.fi -biopankki-infrastruktuuri valittiin Suomen Akatemian tiekartalle vuonna 2014. BBMRI.fi:n tavoitteena on luoda kansainvälisesti johtava biopankki-infrastruktuuri, joka tarjoaa strategista tukea biolääketieteelliseen tutkimukseen, terveydenhuoltoon sekä sairaanhoidon lääke- ja tuotekehitykseen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 14,
+    "keywords_EN": [
+      "online resources"
+    ],
+    "keywords_FI": [
+      "verkkoaineistot"
+    ],
+    "name_EN": "Biobanking and biomolecular resources research infrastructure",
+    "name_FI": "Biopankki-infrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2014,
+    "organisationsIds": [
+      23,
+      24,
+      69
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072514"
+    },
+    "preparationsStarted": 2008,
+    "servicesIds": [
+      244,
+      245,
+      246,
+      247,
+      248,
+      249,
+      250,
+      251,
+      252,
+      253,
+      254,
+      255,
+      256,
+      257,
+      258,
+      259,
+      260,
+      261
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072514"
+  },
+  {
+    "acronym_EN": "BF",
+    "acronym_FI": "BF",
+    "active": true,
+    "buildingStarted": 2007,
+    "contactsIds": [
+      21,
+      22
+    ],
+    "description_EN": "Biocenter Finland (BF) is a distributed national research infrastructure. BF comprises seven biocenters based at six host universities. These biocenters have combined and coordinated their resources and efforts, in order to provide life sciences technology services at national level in the following areas: bioinformatics; biological imaging; genome-wide methods; model organisms; proteomics and metabolomics; stem cells and biomaterials; structural biology; translational research technologies; and viral gene transfer and cell therapy.",
+    "description_FI": "Biokeskus Suomi on verkostomallinen kansallinen tutkimuksen infrastruktuuri. Biokeskus Suomen muodostavat kuuden isäntäyliopiston seitsemän biokeskusta, jotka ovat yhdistäneet voimavaransa biotieteen teknologiapalveluiden tuottamiseksi koordinoidusti kansallisella tasolla seuraavilla alueilla: bioinformatiikka, biologinen kuvantaminen, genominlaajuiset menetelmät, malliorganismit, proteomiikka ja metabolomiikka, kantasolut ja biomateriaalit, rakennebiologia, translationaalisen tutkimuksen teknologiat sekä virusperäiset geeninsiirrot ja soluhoidot.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 15,
+    "keywords_EN": [
+      "information retrieval systems"
+    ],
+    "keywords_FI": [
+      "tiedonhakujärjestelmät"
+    ],
+    "name_EN": "Biocenter Finland",
+    "name_FI": "Biokeskus Suomi",
+    "operationsFinished": 0,
+    "operationsStarted": 2007,
+    "organisationsIds": [
+      4
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072515"
+    },
+    "preparationsStarted": 2006,
+    "servicesIds": [
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072515"
+  },
+  {
+    "acronym_EN": "EATRIS (Finland)",
+    "acronym_FI": "EATRIS (Suomi)",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      23,
+      24
+    ],
+    "description_EN": "This European research infrastructure assists researchers and organisations, by expediting expensive and difficult translational medicine processes. As an international organisation, the EATRIS research infrastructure combines European actors in translational medicine INTO infra.a network which makes its research outcomes, representing the latest technology, available to researchers, who then transform those outcomes INTO infra.healthcare applications. EATRIS also provides expert services and enhances communication between researchers and physicians. National coordination of EATRIS is the responsibility of the Institute for Molecular Medicine Finland within the University of Helsinki, which is also in charge of the Biomarker network.",
+    "description_FI": "Kansainvälinen EATRIS-tutkimusinfrastruktuuri yhdistää eurooppalaiset translationaalisen lääketieteen toimijat verkostoksi, joka tarjoaa tutkijoiden käyttöön viimeisintä teknologiaa edustavan infrastruktuurin tutkimustulosten viemiseksi kohti terveydenhuollon sovelluksia. Samalla EATRIS tarjoaa asiantuntijapalveluita sekä tehostaa tutkijoiden ja lääkäreiden välistä kommunikaatiota. EATRIS-toiminta jakautuu viiteen kokonaisuuteen, joista Suomi osallistuu kolmeen. Suomen erityisosaamista ovat biomarkkerit, solu- ja geeniterapiat sekä radioaktiiviset merkkiaineet ja kuvantaminen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 16,
+    "keywords_EN": [
+      "open source"
+    ],
+    "keywords_FI": [
+      "avoin lähdekoodi"
+    ],
+    "name_EN": "European infrastructure for translational medicine",
+    "name_FI": "Euroopan translationaalinen tutkimuksen infrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 0,
+    "organisationsIds": [
+      4,
+      6,
+      25
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072516",
+      "Description.hyytuhatuuid.name": "24868b24-d512-4a35-9389-ce8550d1ee80"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      98,
+      99,
+      100,
+      101,
+      102,
+      103
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072516"
+  },
+  {
+    "acronym_EN": "ELIXIR (Finland)",
+    "acronym_FI": "ELIXIR (Suomi)",
+    "active": true,
+    "buildingStarted": 2014,
+    "contactsIds": [
+      25,
+      72
+    ],
+    "description_EN": "The goal of ELIXIR is to orchestrate the collection, quality control and archiving of large amounts of biological data produced by life science experiments. Some of these datasets are highly specialised and would previously only have been available to researchers within the country in which they were generated.\n\nFor the first time, ELIXIR is creating an infrastructure – a kind of highway system – that integrates research data from all corners of Europe and ensures a seamless service provision that is easily accessible to all. In this way, open access to these rapidly expanding and critical datasets will facilitate discoveries that benefit humankind.\n\nScience and technology change very quickly, and exploiting these advances can be a challenge. ELIXIR partners are building an intelligent, responsive and sustainable system that will deliver the fruits of these advances to the scientists upon whom so many hopes are pinned, and whose curiosity is the very cornerstone of progress.\n\nFinland is an ELIXIR member (State agreement 2015/7, Finlex) and CSC hosts the ELIXIR Finland node. National collaboration between CSC and Finnish stakeholders is covered by the Biomedinfra consortium agreement between ELIXIR, BBMRI and EATRIS and the ELIXIR Finland’s membership in the Biocenter Finland bioinformatics network consisting of all major biocenters in Finland. ELIXIR Finland, hosted at CSC, specializes in the European collaboration, provides services in cloud infrastructure, authentication and authorization targeted for biomedical organizations, and resources for training. Node services are currently in production, and actively used in European infrastructure collaborations as well as by the Biomedinfra consortium organisations FIMM and THL (e.g. BBMRI.fi), and Biocenter Finland infrastructure.",
+    "description_FI": "ELIXIR on Euroopan hajautettu ja koordinoitu bioinformatiikan tutkimusinfrastruktuuri. Se kerää, ylläpitää, yhdistää ja jakaa biotieteen tutkimuksen tuottaman tiedon liittyen niin geenien ja proteiinien kuin populaatioiden rakenteisiin ja toimintaan. ELIXIR:in ydin ovat arvokkaat tietoaineistot, niiden yhdistely ja aineistojen käyttö tutkimuksen ja bioteknologian innovaatiotoiminnassa ja edistämisessä. Suomi on ELIXIR jäsen (Valtiosopimus 7/2015, Finlex). CSC:llä sijaitseva ELIXIR Suomen keskus on erikoistunut kehittämään, hallinnoimaan ja tarjoamaan pilvipalveluresursseja biotieteellisten organisaatioiden, terveys- ja hyvinvointidatan ja biopankkien datan käyttöönotolle ja sovelluksille ja tarjoamaan bioinformatiikan työkalujen koulutusta. Noodin palvelut ovat tuotannossa ja niitä käytetään aktiivisesti eurooppalaisessa ja kansallisessa yhteistyössä molekyylilääketieteen instituutin, THL:n ja Biokeskus Suomen kanssa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 17,
+    "keywords_EN": [
+      "register"
+    ],
+    "keywords_FI": [
+      "rekisteri"
+    ],
+    "name_EN": "European distributed infrastructure for life-science information",
+    "name_FI": "Euroopan luonnontieteiden infrastruktuuri biologiselle tieteelle",
+    "operationsFinished": 0,
+    "operationsStarted": 2016,
+    "organisationsIds": [
+      3,
+      12,
+      49
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072517"
+    },
+    "preparationsStarted": 2010,
+    "servicesIds": [
+      205,
+      206,
+      207,
+      208,
+      209,
+      210,
+      211,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072517"
+  },
+  {
+    "acronym_EN": "EuBI (Finland)",
+    "acronym_FI": "EuBI (Suomi)",
+    "active": false,
+    "buildingStarted": 2013,
+    "contactsIds": [
+      26,
+      27,
+      28
+    ],
+    "description_EN": "EuBI is a pan-European biological and medical imaging technology research infrastructure. It is tasked with coordinating the use of biomedical imaging in Europe, with the aim of maintaining Europe's leading position and competitiveness within the global research environment. EuBI's imaging facilities will provide a full selection of high-end imaging technology, training and continuous technology development based on open access. The strong imaging networks of Biocenter Finland and the Finnish Bioimaging Network (FiBI) form the basis of Finland EuBI. EuBI-Finland is divided INTO infra.three technology sectors: modern high-end microscope technologies, multimodal imaging technologies and medical imaging technologies. Advanced Light Microscopy Node (ALM Node) will be the first Finnish EuBI Node and it will start its Interim operation in 2016. Finnish node will offer all its services as full three-dimensional (3D) packages that cover also the production of quantitative analysis and processing results. These are aspects not widely covered by other EuBI nodes in other countries.",
+    "description_FI": "EuBI on eurooppalainen biologisen, molekylaarisen ja lääketieteen kuvantamisteknologioiden tutkimusinfrastruktuuri. Sen tehtävänä on koordinoida biolääketieteellistä kuvantamista Euroopassa, jotta Euroopan johtava asema ja kilpailukyky globaalissa tutkimusympäristössä säilyvät. EuBI:n tärkeä tehtävä on myös luoda koko Euroopan kattava kuvantamisyksiköiden verkosto, jossa erilaiset kuvantamisteknologiat ovat avoimesti kaikkien eurooppalaisten tutkijoiden käytettävissä. EuBI:n kuvantamislaitokset tarjoavat täydellisen valikoiman avoimeen saatavuuteen perustuvia huipputason kuvantamisen tekniikoita, koulutusta ja jatkuvaa teknologiakehitystä. Suomessa EuBI on jakautunut kolmeen teknologia-alaan, jotka ovat nykyaikainen valomikroskopian huipputeknologiat, melokylaarisen kuvantamisen teknologiat ja lääketieteellisen kuvantamisen teknologiat. EuBI:n teknologia-alat tukevat ja mahdollistavat sekä monipuolisen perustutkimuksen että prekliinisen ja kokeellisen kliinisen tutkimuksen sovelluksia molekyylien, solujen, solurakenteiden, koe-eläinten ja ihmisten kuvantamiseksi ja analysoimiseksi. Suomen ensimmäinen EuBI Node on valomikroskopia huipputeknologian Node, joka aloittaa toimintansa vuodesta 2016 alkaen. Suomen EuBI-noden erikoisvalttina on palveluiden tarjoaminen kokonaisina kolmiulotteisina paketteina, joihin sisältyy sekä kuvantaminen kolmiulotteisesti erilaisilla tekniikoilla, että tulosten kvantitatiivinen analysointi. Tällaiset palvelut ovat toistaiseksi harvinaisia Euroopassa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 18,
+    "keywords_EN": [
+      "microdata"
+    ],
+    "keywords_FI": [
+      "mikroaineisto"
+    ],
+    "name_EN": "European Research Infrastructure for Biomedical Imaging (Euro-BioImaging)",
+    "name_FI": "",
+    "operationsFinished": 0,
+    "operationsStarted": 2017,
+    "organisationsIds": [
+      1,
+      20,
+      26,
+      50,
+      51
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072518"
+    },
+    "preparationsStarted": 2010,
+    "servicesIds": [
+      119,
+      120,
+      121,
+      122,
+      123,
+      125
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072518"
+  },
+  {
+    "acronym_EN": "EU-OPENSCREEN (Finland)",
+    "acronym_FI": "EU-OPENSCREEN (Suomi)",
+    "active": false,
+    "buildingStarted": 2015,
+    "contactsIds": [
+      29,
+      30,
+      31,
+      32,
+      33
+    ],
+    "description_EN": "EU-OPENSCREEN is an ESFRI initiative bringing together the top European chemical compound screening sites to establish a distributed and complementary European infrastructure for chemical screening and chemical tool development. In addition, EU-OPENSCREEN will construct a unique, shared European compound collection and generate an open-access chemical bioactivity database allowing the scientific community to fully explore information generated for maximal impact of research investments. The essential added value of EU-OPENSCREEN is that novel tool compounds will be developed cost-effectively, and the tools will be made publicly available to the scientific community, benefiting both biological/chemical research and the strategic development of novel commercially valuable bioactive small molecules. Active Finnish participation in EU-OPENSCREEN will bring domestic scientists outstanding opportunities for high quality research breakthroughs, innovation, access to the unique European chemical library and technologies and services not currently available in Finland, as well as collaboration opportunities through influx of top-quality European scientific projects.",
+    "description_FI": "EU-OPENSCREEN, Euroopan strateginen tutkimusinfrastruktuurialoite, tarjoaa tutkijoille avoimen huipputason infrastruktuurin, teknologian ja erityisosaamisen, uusien bioaktiivisten pienimolekyylisten yhdisteiden kehitystä varten. Huipputason tutkimusinfrastruktuurin ja teknologioiden lisäksi EUOPENSCREEN tarjoaa käyttäjilleen ainutlaatuisen, jaetun 200 000 yhdisteen molekyylikirjaston ja siihen liittyvän tietokannan. EU-OPENSREENIN avulla saadut tulokset julkaistaan kaikkien tutkijoiden käytettäviksi ja löydetyt bioaktiiviset ”työkaluyhdisteet”, tool compoundit, toimivat lähtökohtina esimerkiksi lääkkeiden tai muiden yhteiskunnallisesti ja kaupallisesti merkittävien bioaktiivisten aineiden kehityksessä.  Suomen kansallisena koordinoivana organisaationa on Helsingin yliopiston alaisuudessa toimiva Suomen molekyylilääketieteen instituutti FIMM, joka tulee olemaan toimintavaiheen aikana yksi EU-OPENSCREEN:in kahdeksasta keskuksesta. EU-OPENSCREEN tuo Suomalaisten tutkijoiden ulottuville ainutlaatuisen kemikaalikirjaston ja pääsyn käyttämään tekniikoita joita ei tällä hetkellä ole Suomessa tarjolla. Tämä mahdollistaa myös uusien yhteistyöhankkeiden syntymistä, tuomalla Eurooppalaisia huippuluokan projekteja Suomeen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 19,
+    "keywords_EN": [
+      "register-based research"
+    ],
+    "keywords_FI": [
+      "rekisteritutkimus"
+    ],
+    "name_EN": "European Infrastructure of Open Screening Platforms for Chemical Biology",
+    "name_FI": "",
+    "operationsFinished": 0,
+    "operationsStarted": 2016,
+    "organisationsIds": [
+      4,
+      25,
+      27
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072519"
+    },
+    "preparationsStarted": 2010,
+    "servicesIds": [
+      126,
+      127,
+      128
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072519"
+  },
+  {
+    "acronym_EN": "INFRAFRONTIER (Finland)",
+    "acronym_FI": "INFRAFRONTIER (Suomi)",
+    "active": true,
+    "buildingStarted": 2010,
+    "contactsIds": [
+      35,
+      36
+    ],
+    "description_EN": "The INFRAFRONTIER Research Infrastructure provides access to first-class tools and data for biomedical research, and thereby contributes to improving the understanding of gene function in human health and disease using the mouse model.\n\nThe core services of INFRAFRONTIER comprise the systemic phenotyping of mouse mutants in the participating mouse clinics, and the archiving and distribution of mouse mutant lines by the European Mouse Mutant Archive (EMMA). In addition, INFRAFRONTIER provides specialized services such as the generation of germ-free mice (axenic service) and training in state of the art cryopreservation and phenotyping technologies.\n\nThe INFRAFRONTIER GmbH coordinates the transnational activities of the national partners that together form the European INFRAFRONTIER Research Infrastructure. In Finland, EMMA services are provided by the Biocenter Oulu Transgenic core facility at University of Oulu, whereas systemic phenotyping is available in facilities elsewhere in Europe. Biocenter Finland, particularly the partners of its FinnMouse technology platform – Biocentrum Helsinki, Biocenter Kuopio, and the Turku Center for Disease Modeling are involved in general INFRAFRONTIER activities.",
+    "description_FI": "INFRAFRONTIER tarjoaa ’hiiripankin’ (EMMA, European Mouse Mutant Archive), jossa hiirikannat säilytetään syväjäädytettyinä alkioina tai sukusoluina ja josta niitä toimitetaan tutkijoille, sekä ’hiiriklinikat’, joissa tehdään laajamittaisia ominaisuuksien perusanalyysejä. INFRAFRONTIER-hiiriklinikoita on Englannissa, Ranskassa ja Saksassa, ja uusia on rakenteilla Italiaan ja Tsekin tasavaltaan. EMMA-yksiköitä on eri puolilla Eurooppaa yhteensä 10. Kaikissa INFRAFRONTIER-yksiköissä noudatetaan samoja laatustandardeja ja koulutettu henkilökunta vastaa palveluista, mikä takaa eläinten hyvinvoinnin. Tiedot kootaan yhteiseen, avoimeen tietokantaan. INFRAFRONTIER tarjoaa myös alaan liittyvää koulutusta. Tarkoituksena on tehostaa hiirimallien käyttöä biolääketieteellisessä tutkimuksessa ja saattaa tieteellisesti arvokkaat mallit tutkijoiden käyttöön vaivattomasti ja kohtuullisin kustannuksin.\n\nINFRAFRONTIER GmbH koordinoi Euroopan laajuista toimintaa. Suomessa toiminta keskittyy EMMA-palveluihin, joista vastaa Biocenter Oulun transgeenipalvelulaboratorio. Kansallisena isäntäorganisaationa on Oulun yliopisto, ja yhteistyökumppanina Biokeskus Suomen FinnMouse-teknologiaplatformi (Biocentrum Helsinki, Biocenter Kuopio, Turun tautimallinnuskeskus).",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 20,
+    "keywords_EN": [
+      "interdisciplinary research"
+    ],
+    "keywords_FI": [
+      "poikkitieteellisyys"
+    ],
+    "name_EN": "INFRAFRONTIER Research Infrastructure",
+    "name_FI": "Euroopan hiirimallien analysoinnin, säilyttämisen ja jakelun tutkimusinfrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2013,
+    "organisationsIds": [
+      27,
+      62,
+      63
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072520"
+    },
+    "preparationsStarted": 2008,
+    "servicesIds": [
+      133,
+      134,
+      136
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072520"
+  },
+  {
+    "acronym_EN": "Instruct",
+    "acronym_FI": "Instruct",
+    "active": true,
+    "buildingStarted": 2008,
+    "contactsIds": [
+      37,
+      38,
+      39,
+      40
+    ],
+    "description_EN": "Instruct is a distributed research infrastructure built around pre-selected scientific centres of excellence in Europe (Instruct Centres), and led by scientists of exceptional skill, and coordinated by the Instruct Hub at University of Oxford. Instruct is included on the ESFRI (European Strategy Forum on Research Infrastructure) roadmap as a success story by European Commission. It makes major structural biology research facilities available to all researchers belonging to Instruct member countries and provides a variety of different sample preparation techiques. It also expedites the development of integrated structural cell biology and increases the amount of molecular and atomic-level information available on cellular-level events. Instruct develops technologies and methodologies and provides expertise for scientific discoveries in the field of structural cell biology. Instruct already functions as an international research infrastructure, within which the ICVIR (Instruct Centre for Virus and Macromolecular Complex Production) at the University of Helsinki is one of the operational Instruct Centres. The University of Helsinki is responsible for the coordination of the ICVIR Centre in Finland. Instruct is currently moving to the long-term stability of ERIC (European Research Infrastructure Consortium) legal framework.",
+    "description_FI": "Instruct on hajautettu tutkimusinfrastruktuuri, joka rakentuu jo olemassa olevista valituista eurooppalaisista tieteen huippuyksiköistä (Instruct-keskukset). Instruct-keskuksia johtavat tutkijat, jotka edustavat oman alansa parhaimmistoa. Instructia koordinoidaan Oxfordin yliopistosta käsin (Instruct Hub). Instruct on ESFRI (European Strategy Forum on Research Infrastructure)-tiekartalla oleva tutkimusinfrastruktuuri, jonka Euroopan komissio on luokitellut menestystarinaksi. Se mahdollistaa jäsenmaidensa tutkijoiden pääsyn käyttämään merkittäviä rakennebiologian tutkimuslaitteistoja ja tarjoaa laaja-alisesti erilaisia näytteiden valmistamistekniikoita. Se myös nopeuttaa integroidun rakennebiologian kehittymistä ja lisää molekulaarista ja atomitason tarkkuutta olevaa tietoa solutason tapahtumista. Instruct kehittää teknologioita ja menetelmiä sekä tarjoaa asiantuntijuutta ja osaamista monimutkaisten rakennebiologisten ongelmien selvittämiseen. Instruct on jo toiminnassa oleva kansainvälinen tutkimusinfrastruktuuri, jossa Helsingin yliopiston Virusten ja Makromolekyylikompleksien Tuotantokeskus ICVIR (Instruct Centre for Virus and Macromolecular Complex Production) on yksi toimivista Instruct-keskuksista. ICVIR-keskuksen koordinaatiosta vastaa Helsingin yliopisto. Instruct on parhaillaan siirtymässä pitkäaikaisen toiminnan mahdollistavaan ERIC (European Research Infrastructure Consortium) -lainsäädäntökehykseen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 21,
+    "keywords_EN": [
+      "research infrastructure"
+    ],
+    "keywords_FI": [
+      "tutkimusinfrastruktuuri"
+    ],
+    "name_EN": "Integrated Structural Biology Research Infrastructure",
+    "name_FI": "Integroidun rakennebiologian tutkimusinfrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2011,
+    "organisationsIds": [
+      3,
+      29,
+      46,
+      48
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072521",
+      "Description.hyytuhatuuid.name": "17c3240a-c566-491b-9b9e-d193f34c1072"
+    },
+    "preparationsStarted": 2007,
+    "servicesIds": [
+      137,
+      138,
+      139,
+      140
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072521"
+  },
+  {
+    "acronym_EN": "",
+    "acronym_FI": "NaPPI",
+    "active": false,
+    "buildingStarted": 2016,
+    "contactsIds": [
+      41
+    ],
+    "description_EN": "NaPPI, a national plant phenotyping infrastructure, comprises a high-throughput plant phenotyping unit, imaging equipment, data management, greenhouse facilities and growth chambers (University of Helsinki) and a spectral imaging laboratory (University of Eastern Finland). It focuses on basic and translational plant research, plant breeding and plant production. Among other activities, the infrastructure enables the analysis of live plant material using high-throughput methods, data collection on plant growth, development, biomass, bioenergy and environmental responses. NaPPI combines the latest advances in plant genomics and molecular biology in translational research on plants.",
+    "description_FI": "Kansallinen kasvien fenotyyppaus -infrastruktuuri NaPPI koostuu korkean läpivirtauksen kasvien fenotyyppausyksiköstä, kuvantamislaitteistoista, tiedonhallinnasta, kasvihuone- ja kasvatuskammiotiloista (Helsingin yliopisto) sekä spektrikuvantamislaboratoriosta (Itä-Suomen yliopisto). Toiminta keskittyy perus- ja translationaaliseen kasvitutkimukseen, kasvinjalostukseen ja -tuotantoon. Infrastruktuuri mahdollistaa muun muassa elävän kasvimateriaalin analysoimisen korkean läpivirtauksen menetelmällä, tiedonkeruun kasvien kasvusta, kehityksestä, biomassasta, bioenergiasta ja ympäristövasteista. NaPPI yhdistää genomiikan ja molekyylibiologian uusimmat saavutukset translationaaliseen kasvitutkimukseen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 22,
+    "keywords_EN": [
+      "grid and cloud computing"
+    ],
+    "keywords_FI": [
+      "hila- ja pilvilaskenta"
+    ],
+    "name_EN": "",
+    "name_FI": "Kansallinen kasvien fenotyyppaus -infrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2018,
+    "organisationsIds": [
+      28
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072522",
+      "Description.hyytuhatuuid.name": "5822c31f-152d-44f3-81cc-8ea6fb37f957"
+    },
+    "preparationsStarted": 2014,
+    "servicesIds": [
+      141
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072522"
+  },
+  {
+    "acronym_EN": "NVVL",
+    "acronym_FI": "NVVL",
+    "active": true,
+    "buildingStarted": 2001,
+    "contactsIds": [
+      42
+    ],
+    "description_EN": "The National Virus Vector Laboratory (NVVL) is an internationally recognised research centre, which forms a national centralised research infrastructure. NVVL produces high-quality gene transfer vectors for preclinical, toxicological and clinical research.",
+    "description_FI": "Kansallinen virusvektorilaboratorio NVVL on kansainvälisesti tunnustettu tutkimuskeskus, joka muodostaa keskitetyn kansallisen tutkimusinfrastruktuurin. Virusvektorilaboratorio tuottaa korkealaatuisia geeninsiirtovektoreita prekliinisiin, toksikologisiin ja kliinisiin tutkimuksiin.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 23,
+    "keywords_EN": [
+      "grid and cloud infrastructure"
+    ],
+    "keywords_FI": [
+      "hila- ja pilvilaskentainfrastruktuuri"
+    ],
+    "name_EN": "National Virus Vector Laboratory",
+    "name_FI": "Kansallinen virusvektorilaboratorio",
+    "operationsFinished": 0,
+    "operationsStarted": 2003,
+    "organisationsIds": [
+      30,
+      31
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072523"
+    },
+    "preparationsStarted": 2000,
+    "servicesIds": [
+      142
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072523"
+  },
+  {
+    "acronym_EN": "MAX IV",
+    "acronym_FI": "",
+    "active": false,
+    "buildingStarted": 2011,
+    "contactsIds": [
+      43
+    ],
+    "description_EN": "MAX IV is a new generation synchrotron radiation source under construction in Lund, Sweden. The international MAX IV laboratory will be the home of broadbased research in physics, chemistry, materials science, environmental sciences, bioscience and medicine. The laboratory will replace the current MAX-II and MAXIII laboratories in providing new and innovative solutions, extending the current use of the electromagnetic radiation spectrum from the ultraviolet spectrum to high-energy X-rays. When the operation phase begins in 2016, MAX IV will be the world’s brightest synchrotron radiation source, up to 30 keV energies. Alongside the joint European ESRF laboratory, the facility will provide new, unique possibilities for the multidisciplinary Finnish research community.",
+    "description_FI": "MAX IV on uuden sukupolven synkrotronisäteilylähde, joka rakennetaan Ruotsin Lundiin. Kansainvälisessä MAX IV -laboratoriossa tullaan tekemään laaja-alaista fysiikan, kemian, materiaali-, ympäristö-, bio- ja lääketieteen tutkimusta. Laboratorio korvaa nykyiset MAX-II ja MAX-III -laboratoriot uusilla ja innovatiivisilla ratkaisuilla laajentaen käytettävissä olevan säteilyspektrin ultraviolettialueelta aina suurtehoisiin röntgensäteisiin saakka. Toimintavaiheen alkaessa vuonna 2016 MAX IV tulee olemaan maailman kirkkain synkrotronisäteilylähde aina 30 keV säteilyenergiaan saakka. Yhteiseurooppalaisen ESRF-laboratorion rinnalla se tarjoaa uusia ainutlaatuisia mahdollisuuksia monitieteelliselle suomalaiselle tutkijakunnalle.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 24,
+    "keywords_EN": [
+      "EPOS"
+    ],
+    "keywords_FI": [
+      "EPOS"
+    ],
+    "name_EN": "MAX IV Laboratory",
+    "name_FI": "MAX IV Laboratorio - Synkrotonisäteilylaitos",
+    "operationsFinished": 2041,
+    "operationsStarted": 2016,
+    "organisationsIds": [
+      13,
+      15,
+      32
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072524"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      190,
+      191,
+      192,
+      193,
+      194,
+      195,
+      196,
+      197,
+      198,
+      199,
+      200,
+      201
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072524"
+  },
+  {
+    "acronym_EN": "OtaNano",
+    "acronym_FI": "OtaNano",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      44,
+      45,
+      46,
+      47,
+      71
+    ],
+    "description_EN": "The Otaniemi micro- and nanotechnology research infrastructure focuses on competitive research in the nanosciences and technology, and in quantum techniques. This research infrastructure offers a wide selection of production processes and equipment for micro and nanostructures. Encompassed is a comprehensive range of imaging and characterisation equipment, including electron microscopy, nanomicroscopy and x-ray scattering apparatus. Key activities within the research infrastructure include ultra-low-temperature conductivity and high-frequency measurements. OtaNano is a top-level learning environment for young researchers, which functions as an international center for scientific research. OtaNano is a joint-infrastructure between Aalto University and VTT.",
+    "description_FI": "Otaniemen mikro- ja nanoteknologian tutkimusinfrastruktuuri keskittyy kilpailukykyiseen nanotieteiden ja -teknologian ja kvanttitekniikoiden tutkimukseen. Tutkimusinfrastruktuuri tarjoaa laajan valikoiman mikro- ja nanorakenteiden valmistusprosesseja ja -laitteita. Siihen kuuluu kattava kuvantamis- ja karakterisointilaitteisto, mukaan lukien elektronimikroskopia-, nanomikroskopia- ja röntgensirontalaitteistot. Ultramatalan lämpötilan johtavuus- ja korkeataajuusmittaukset kuuluvat keskeisesti tutkimusinfrastruktuurin toimintaan. OtaNano on nuorten tutkijoiden korkeatasoinen oppimisympäristö ja toimii tieteellisen tutkimuksen kansainvälisenä keskuksena. Infrastruktuuri on Aalto yliopiston ja VTT:n yhteinen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 25,
+    "keywords_EN": [
+      "database"
+    ],
+    "keywords_FI": [
+      "tietokanta"
+    ],
+    "name_EN": "Otaniemi Research Infrastructure for Micro and Nanotechnologies",
+    "name_FI": "Otaniemen mikro- ja nanoteknologioiden tutkimusinfrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 0,
+    "organisationsIds": [
+      33,
+      44
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072525"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      150,
+      151,
+      152,
+      153,
+      154,
+      155
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072525"
+  },
+  {
+    "acronym_EN": "XBI (Finland)",
+    "acronym_FI": "XBI (Suomi)",
+    "active": false,
+    "buildingStarted": 2009,
+    "contactsIds": [
+      48,
+      73
+    ],
+    "description_EN": "The European X-ray Free Electron Laser, XFEL, is a joint venture by twelve European countries, involving the construction of the XFEL-based Integrated Biology Infrastructure, the XBI. The XFEL will generate ultrashort X-ray pulses based on a femtosecond construction and with a brilliance over one billion times that of modern x-ray sources. These unique features provide completely new opportunities for both research and industrial users in the fields of physics, the material sciences, the biosciences and medicine. The XFEL provides instrumentation for the imaging of nano-level materials, temporal differentiation studies of ultrafast processes and the study of small quantum systems.",
+    "description_FI": "Eurooppalainen X-ray Free Electron Laser, XFEL, on 12 Euroopan maan yhteisyritys, jonka yhteyteen rakennetaan biologinen tutkimusinfrastruktuuri XFEL-based Integrated Biology Infrastructure, XBI. XFEL tuottaa ultralyhyitä röntgenpulsseja femtosekuntiaikarakenteella ja kirkkaudella, joka ylittää miljardikertaisesti nykyiset röntgenlähteet. Nämä ainutlaatuiset ominaisuudet tarjoavat täysin uusia mahdollisuuksia fysiikan, materiaalitieteiden, biotieteiden ja lääketieteen alojen käyttäjille niin tutkimuksen kuin teollisuudenkin parissa. XFEL tarjoaa instrumentit nanotason materiaalien kuvantamiseen, ultranopeiden prosessien aikaerotteiseen tutkimiseen ja pienten kvanttisysteemien tutkimiseen. XFEL:in spektroskopian ja röntgensironnan avulla voidaan tutkia erilaisten molekyylien atomi- ja elektronirakennetta sekä dynamiikkaa, ja korkean energiatiheyden olosuhteissa voidaan kuvantaa biomolekyylejä ja klustereita yksittäisinä partikkeleina.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 26,
+    "keywords_EN": [
+      "measurements"
+    ],
+    "keywords_FI": [
+      "mittaukset"
+    ],
+    "name_EN": "X-ray free-electron laser (XFEL) Biological Infrastructure",
+    "name_FI": "Eurooppalainen röntgen-vapaaelektronilaser ja biologinen infrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2017,
+    "organisationsIds": [
+      13,
+      27,
+      52
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072526"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      160
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072526"
+  },
+  {
+    "acronym_EN": "BIOECONOMY Infra",
+    "acronym_FI": "BIOECONOMY Infra",
+    "active": true,
+    "buildingStarted": 2014,
+    "contactsIds": [
+      49,
+      50,
+      51
+    ],
+    "description_EN": "Transformation from fossil-based economy to sustainable bioeconomy is often hindered by a lack of enabling technologies. This technology development has been recognised to be of high importance in Europe and Finland. In combining the scientific infrastructures of Aalto University and VTT Technical Research Centre of Finland, the BIOECONOMY infrastructure will enable new breakthroughs in bioeconomy technologies.",
+    "description_FI": "BIOECONOMY -infrastruktuuri yhdistää Aalto-yliopiston ja VTT:n tieteelliset infrastruktuurit mahdollistaen uudet läpimurrot biotalouden teknologoihin. BIOECONOMY-infrastruktuuri on tehokas yhteistyöväline tutkimuskohteiden koordinoinnissa, uusissa investoinneissa, työskentelyn käytännöissä ja infrastruktuuriin liittyvässä opetuksessa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 27,
+    "keywords_EN": [
+      "observatory"
+    ],
+    "keywords_FI": [
+      "observatorio"
+    ],
+    "name_EN": "Bioeconomy Infrastructure",
+    "name_FI": "Huippuallianssi kestävään biomassan jalostukseen",
+    "operationsFinished": 0,
+    "operationsStarted": 2019,
+    "organisationsIds": [
+      34
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072527"
+    },
+    "preparationsStarted": 2013,
+    "servicesIds": [
+      161,
+      162,
+      163
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072527"
+  },
+  {
+    "acronym_EN": "CTA (Finland)",
+    "acronym_FI": "CTA (Suomi)",
+    "active": false,
+    "buildingStarted": 2015,
+    "contactsIds": [
+      52,
+      70
+    ],
+    "description_EN": "Cherenkov telescopes have revolutionised high-energy astronomy over the last ten years. During this period, the number of objects detected through gamma-ray astronomy, based on photons in the TeV range, has risen from six to more than 160 and new objects are continuously being discovered. The most important Cherenkov telescopes have been the European managed MAGIC and HESS telescopes and the USA's VERITAS. These three largest telescope arrays have now decided to join forces and build a new-generation Cherenkov telescope array (CTA). The aim is to build two systems covering the entire sky, one for the southern hemisphere and the other for the northern hemisphere. Both together will include around a hundred telescopes, whose observations can be combined. Various research communities in Finland have been strongly involved in the CTA.",
+    "description_FI": "Merkittävimmät Cherenkov-teleskoopit ovat olleet eurooppalaisten johtamat MAGIC ja HESS sekä yhdysvaltalainen VERITAS. Nyt nämä kolme suurinta teleskooppijärjestelmää ovat päättäneet yhdistää voimansa ja rakentaa uuden sukupolven Cherenkovteleskooppijärjestelmän (CTA). Tavoitteena on rakentaa kaksi järjestelmää, jotka kattavat koko taivaan, toinen eteläisen taivaanpuoliskon ja toinen pohjoisen. Molempiin kuuluu noin sata teleskooppia, joiden havainnot voidaan yhdistää. Näin saavutetaan vähintään kertalukua parempi herkkyys kuin nykyisillä laitteilla. CTA:n avulla tutkitaan maailmankaikkeuden korkean energian gammasäteilyä ja luodaan kuvaa kosmisista prosesseista. Tämän lisäksi CTA:lla on potentiaalia tehdä uusia löytöjä tähtitieteen, astrofysiikan ja fysiikan alojen tutkimuksessa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 28,
+    "keywords_EN": [
+      "laboratory"
+    ],
+    "keywords_FI": [
+      "laboratorio"
+    ],
+    "name_EN": "Cherenkov Telescope Array",
+    "name_FI": "Cherenkov teleskooppijärjestelmä",
+    "operationsFinished": 2049,
+    "operationsStarted": 2019,
+    "organisationsIds": [
+      27,
+      35
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072528"
+    },
+    "preparationsStarted": 2006,
+    "servicesIds": [
+      164
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072528"
+  },
+  {
+    "acronym_EN": "Euclid",
+    "acronym_FI": "Euclid",
+    "active": false,
+    "buildingStarted": 2014,
+    "contactsIds": [
+      53
+    ],
+    "description_EN": "Euclid is the ESA's (European Space Agency) next cosmology satellite and its most important cosmology project over the next decade. The Euclid satellite and the Euclid Science Ground Segment (SGS), comprising Euclid's national data centres, form a major European research infrastructure. Its purpose is to solve the socalled dark energy problem – why the expansion of the Universe is accelerating and whether this is caused by dark energy filling space or whether it is due to a deviation in the laws of gravity from the general theory of relativity. Euclid will also study the distribution of dark matter throughout the Universe and contribute to the investigation of the nature of dark matter and the origin of the structure of the Universe. Euclid will produce a 3-dimensional map of the universe, both galaxies and dark matter, and a galaxy catalogue conatining billions of galaxies.  As Finland's ESA partner, the University of Helsinki coordinates Finland's participation in the Euclid research infrastructure. In addition, research groups from the universities of Helsinki, Turku and Jyväskylä, and from Aalto University are involved in the project. CSC – IT Center for Science Ltd is also a participant in Finland's Euclid collaboration. As a member of the Euclid research infrastructure, Finland will participate in the Science Ground Segment (SGS) of the Euclid mission by developing data analysis methods, participating in the analysis of Euclid data and equipping one of Euclid's science data centres.",
+    "description_FI": "Euclid on Euroopan Avaruusjärjestön (ESA) seuraava kosmologiasatelliitti ja seuraavan vuosikymmenen tärkein kosmologiaprojekti. Euclid-satelliitti ja Euclidin kansalliset tietokeskukset sisältävä Science Ground Segment (SGS) muodostavat merkittävän eurooppalaisen tutkimusinfrastruktuurin. Sen tarkoituksena on ratkaista niin sanottu pimeän energian ongelma, miksi maailmankaikkeuden laajeneminen kiihtyy ja onko kiihtymisen syynä avaruuden täyttävä pimeä energia vai painovoimalain poikkeaminen yleisestä suhteellisuusteoriasta. Euclid tutkii myös pimeän aineen jakautumista maailmankaikkeudessa ja auttaa selvittämään pimeän aineen laatua ja maailmankaikkeuden rakenteen alkuperää. Euclid tuottaa kolmiulotteisen kartan maailmankaikkeudesta, sekä galakseista että pimeästä aineesta, ja miljardeja galakseja sisältävän galaksiluettelon. Helsingin yliopisto koordinoi Suomen ESA-yhteistyökumppanina Suomen osallistumista Euclid-tutkimusinfrastruktuuriin. Lisäksi projektiin osallistuvat Helsingin, Turun ja Jyväskylän yliopistojen sekä Aalto-yliopiston tutkimusryhmät. Tieteen tietotekniikan keskus CSC on mukana Suomen Euclid-yhteistyössä. Euclid -tutkimusinfrastruktuurin jäsenenä Suomi on osallistuu Euclid SGS:iin kehittämällä tietoaineiston analyysimetodeja, osallistumalla Euclid-tietoaineiston analyysiin ja varustamalla yksi Euclidin tieteellisistä tietokeskuksista.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 29,
+    "keywords_EN": [
+      "time series"
+    ],
+    "keywords_FI": [
+      "aikasarjat"
+    ],
+    "name_EN": "Euclid cosmology mission",
+    "name_FI": "Euclid-kosmologiamissio",
+    "operationsFinished": 2030,
+    "operationsStarted": 2020,
+    "organisationsIds": [
+      36,
+      37
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072529",
+      "Description.hyytuhatuuid.name": "67a78f26-e882-442b-8085-923b5fff8829"
+    },
+    "preparationsStarted": 2012,
+    "servicesIds": [
+      241,
+      242
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072529"
+  },
+  {
+    "acronym_EN": "JYFL-ACCLAB",
+    "acronym_FI": "JYFL-ACCLAB",
+    "active": true,
+    "buildingStarted": 1991,
+    "contactsIds": [
+      54
+    ],
+    "description_EN": "JYFL-ACCLAB, the Accelerator Laboratory of the Department of Physics, University of Jyväskylä, is one of the leading stable-ion beam facilities in Europe recognized by the Nuclear Physics European Collaboration Committee (NuPECC Long Range Plan 2010) and by ESFRI (Roadmap 2016 - Landscape Analysis).  It has operated as one of the EU Large Access Infrastructures since the EU-FP4 programme. It is one of the three accredited radiation test facilities of the European Space Agency (ESA). It is the main Finnish contributor to the international FAIR project (ESFRI Landmark) and has close connections to the ISOLDE ISOLDE project at CERN. JYFL-ACCLAB constitutes the Academy of Finland’s Centre of Excellence in Nuclear and Accelerator Based Physics and has a national role as a centre of expertise and training in the use of accelerator technology and radiation.",
+    "description_FI": "Jyväskylän yliopiston fysiikan laitoksen kiihdytinlaboratorio JYFL-ACCLAB kuuluu Euroopan johtaviin ydinfysiikan tutkimuslaitoksiin. Se on mainittu yhtenä tärkeimmistä stabiilien ionisuihkujen laboratoriona European Science Foundationin (ESF) ydinfysiikan asiantuntijakomitean NuPECC:n pitkäaikaissuunnitelmassa sekä ESFRI-2016 Tiekarttadokumentissa. JYFL-ACCLAB toimii tutkijoita vastaanottavana EU:n tukemana infrastruktuurina ja Euroopan Avaruusjärjestön ESA:n virallisena testilaboratoriona. JYFL-ACCLAB muodostaa Suomen Akatemian Ydin- ja Kiihdytinfysiikan Huippututkimusyksikön. Sillä on kansallinen tehtävä toimia kiihdytinteknologian ja säteilyn käytön asiantuntija- ja koulutuskeskuksena. JYFL-ACCLAB on Suomessa ainutlaatuinen kansainvälinen tutkimusinfrastruktuuri, kun huomioidaan ulkomaisten investointien, käyttäjien ja tieteellisten tulosten määrä. JYFL-ACCLAB toimii kiinteästi yliopiston yhteydessä, mikä on ainutlaatuista Euroopassa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 30,
+    "keywords_EN": [
+      "geophysics"
+    ],
+    "keywords_FI": [
+      "geofysiikka"
+    ],
+    "name_EN": "Accelerator laboratory of the university of Jyväskylä",
+    "name_FI": "Jyväskylän yliopiston fysiikan laitoksen Kiihdytinlaboratorio",
+    "operationsFinished": 0,
+    "operationsStarted": 1992,
+    "organisationsIds": [
+      38
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072530"
+    },
+    "preparationsStarted": 1990,
+    "servicesIds": [
+      166,
+      167,
+      168,
+      169,
+      170
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072530"
+  },
+  {
+    "acronym_EN": "CSC RI",
+    "acronym_FI": "CSC RI",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      55,
+      63
+    ],
+    "description_EN": "CSC – IT Center for Science Ltd has been providing ICT services for the Finnish scientific community since 1971. The CSC RI consists of four parts: a compute and storage platform, the Finnish University and Research Network (Funet), datacenter and a cloud computing platform. All Finnish research trust on CSC through one or several of its services: Funet the national network backbone and related services; a computing and storage platform; a datacentre facility; and a novel cloud service platform. The CSC RI falls INTO infra.the category of established or newly established infrastructure that will evolve and be upgraded according to user needs. The four components of CSC RI have individual plans but CSC as a whole has a long-term strategy and makes annual plans-of-action for approval by its board. CSC is one of Northern Europe's largest supercomputing centers and is involved as a member in major European research e-infrastructures.",
+    "description_FI": "CSC – Tieteen tietotekniikan keskus on tarjonnut suomalaiselle tutkimukselle kehittyneitä tietotekniikkapalveluita jo vuodesta 1971 asti. CSC:n kansallinen tutkimusinfrastruktuuri (CSC RI) koostuu neljästä eri osa-alueesta: laskentapalveluista, ohjelmistoista ja tietokannoista, Funet-tietoverkosta, datakeskuksesta ja pilvilaskentapalveluista. Suomalainen tutkimus nojaa vahvasti näihin CSC RI:n tarjoamiin palveluihin. CSC on yksi Pohjois-Euroopan suurimmista superlaskentakeskuksista ja jäsenenä merkittävissä eurooppalaisissa tutkimuksen e-infrastruktuurihankkeissa. Kehittämällä jatkuvasti tutkimusinfrastruktuuriaan CSC varmistaa tutkijoille kustannustehokkaasti oikea-aikaiset ja nykyaikaiset mallinnus- ja analysointipalvelut.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 31,
+    "keywords_EN": [
+      "geology"
+    ],
+    "keywords_FI": [
+      "geologia"
+    ],
+    "name_EN": "CSC - IT Center for Science -national research infrastructure",
+    "name_FI": "CSC - Tieteen tietotekniikan keskus -kansallinen tutkimusinfrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 0,
+    "organisationsIds": [
+      12
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072531",
+      "Description.isni.name": "0000000405129137"
+    },
+    "preparationsStarted": 1971,
+    "servicesIds": [
+      202,
+      203,
+      204
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072531"
+  },
+  {
+    "acronym_EN": "PRACE (Finland)",
+    "acronym_FI": "PRACE (Suomi)",
+    "active": true,
+    "buildingStarted": 2010,
+    "contactsIds": [
+      56,
+      64,
+      79
+    ],
+    "description_EN": "The Partnership for Advanced Computing in Europe, PRACE, is a European research infrastructure offering high-performance computing resources. PRACE enables world-class science and research for university researchers and in private-sector product development. The PRACE research infrastructure consists of national European computing centres functioning in collaboration with one another. Finland is a founding member of the PRACE research infrastructure. Under the authorisation of the Ministry of Education and Culture, CSC represents Finland within the PRACE aisbl. Cooperation in PRACE enables Finnish researchers to use PRACE's Tier-0 and Tier-1 resources in Finnish computational science research projects. CSC also hosts one of the PRACE Advanced Training Centers which carries out training and education activities that help researchers to utilise the computational infrastructure available through PRACE.",
+    "description_FI": "Partnership for Advanced Computing in Europe, PRACE, on eurooppalainen suurteholaskennan tutkimusinfrastruktuuri, joka mahdollistaa yliopistojen tutkijoille ja yritysten tuotekehittäjille huippuluokan suurteholaskennan palvelut. PRACE-tutkimusinfrastruktuurin muodostavat yhteistyössä toimivat kansalliset eurooppalaiset laskentakeskukset. Suomi on yksi PRACE-tutkimusinfrastruktuurin perustajajäsenistä. PRACE-yhteistyön ansiosta suomalaiset laskennallisten tieteiden tutkimusprojektit voivat hyödyntää Tier-0- ja Tier-1-tason resursseja. CSC on myös yksi kuudesta PRACEn koulutuskeskuksista (PRACE Advanced Training Center). Koulutusten avulla varmistetaan, että tutkijat käyttävät PRACEn tarjoamia suurteholaskentaresursseja mahdollisimman tehokkaasti.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 32,
+    "keywords_EN": [
+      "seismology"
+    ],
+    "keywords_FI": [
+      "seismologia"
+    ],
+    "name_EN": "Partnership for Advanced Computing in Europe",
+    "name_FI": "PRACE, Eurooppalainen suurteholaskentainfrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2010,
+    "organisationsIds": [
+      12,
+      39,
+      64
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072532",
+      "Description.isni.name": "0000000459008920"
+    },
+    "preparationsStarted": 2007,
+    "servicesIds": [
+      173,
+      174
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072532"
+  },
+  {
+    "acronym_EN": "FGCI",
+    "acronym_FI": "",
+    "active": false,
+    "buildingStarted": 2014,
+    "contactsIds": [
+      68
+    ],
+    "description_EN": "The Finnish Grid and Cloud Infrastructure FGCI is engaged in the development of a coherent grid and cloud infrastructure in Finland. Developments in computer science, physics and engineering science have enabled the development of fast computers and rapid data transfer around the world.",
+    "description_FI": "Suomen hila- ja pilvilaskennan infrastruktuuri FGCI kehittää Suomeen koherentin hila- ja pilvilaskentainfrastruktuurin. Tietojenkäsittelytieteen, fysiikan ja insinööritieteiden kehitys on mahdollistanut nopeiden tietokoneiden kehityksen ja informaation nopean siirron maailman laajuisesti, minkä ansiosta tieteellinen ja kaupallinen laskenta ovat nopeasti kehittymässä Internetin yli hajautetuksi.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 33,
+    "keywords_EN": [
+      "geodesy"
+    ],
+    "keywords_FI": [
+      "geodesia"
+    ],
+    "name_EN": "Finnish Grid and Cloud Infrastructure",
+    "name_FI": "Suomen hila- ja pilvilaskennan infrastruktuuri",
+    "operationsFinished": 0,
+    "operationsStarted": 2019,
+    "organisationsIds": [
+      33,
+      36
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016072533"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      175
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016072533"
+  },
+  {
+    "acronym_EN": "ESRF",
+    "acronym_FI": "ESRF",
+    "active": true,
+    "buildingStarted": 1988,
+    "contactsIds": [
+      80,
+      81
+    ],
+    "description_EN": "A synchrotron is a stadium-sized machine that produces many beams of bright X-ray light. Each beam is guided through a set of lenses and instruments called a beamline, where the X-rays illuminate and interact with samples of material being studied.",
+    "description_FI": "Synkrotroni on laitteisto, joka tuottaa vahvoja röntgensäteitä. Kukin säde ohjataan omaan säteilylinjaansa, jossa se erilaisten linssien ja instrumenttien kautta vaikuttaa tutkittavaan materiaalinäytteeseen.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 34,
+    "keywords_EN": [
+      "geomagnetism"
+    ],
+    "keywords_FI": [
+      "geomagnetismi"
+    ],
+    "name_EN": "European Synchrotron Radiation Facility",
+    "name_FI": "Euroopan synkrotronisäteilytutkimuslaitos",
+    "operationsFinished": 0,
+    "operationsStarted": 1994,
+    "organisationsIds": [
+      37
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111634",
+      "Description.isni.name": "0000000406416373"
+    },
+    "preparationsStarted": 1977,
+    "servicesIds": [
+      262
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111634"
+  },
+  {
+    "acronym_EN": "IODP",
+    "acronym_FI": "IODP",
+    "active": true,
+    "buildingStarted": 2013,
+    "contactsIds": [
+      82,
+      83
+    ],
+    "description_EN": "The International Ocean Discovery Program (IODP) is an international marine research collaboration that explores Earth's history and dynamics using ocean-going research platforms. The 10-year International Ocean Discovery Program's four research themes, addressing fundamental questions about Earth's climate, deep life, geodynamics, and geohazards, will facilitate a long-term, global perspective on some of today's most pressing environmental issues.",
+    "description_FI": "IODP on jatkoa vuosina 2003-2013 toimineelle IODP-ohjelmalle (Integrated Ocean Drilling Program), 1985-2003 toimineelle ODP-ohjelmalle (Ocean Driling Program) ja sitä 1968-1984 edeltäneelle DSDP-ohjelmalle (Deep Sea Drilling Project). The International Ocean Discovery Program (IODP) on kansainvälinen merientutkimusohjelma, jonka päämääränä on tutkia Maan historiaa ja dynamiikkaa tutkimusaluksia käyttäen. Kymmenvuotisen tutkimusohjelman tiedesuunnitelman neljän pääteeman tutkimuskysymykset liittyvät Maan ilmastoon, syvän meren elämään, geodynamiikkaan ja luonnonuhkiin. Tutkimustulokset edesauttavat pitkän aikavälin globaalin perspektiivin saamista eräisiin nykypäivän tärkeimpiin ympäristökysymyksiin.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 35,
+    "keywords_EN": [
+      "geoelectromagnetics"
+    ],
+    "keywords_FI": [
+      "geosähköinen"
+    ],
+    "name_EN": "International Ocean Discovery Program",
+    "name_FI": "Kansainvälinen merellisen kuoren ja merenpohjan tutkimusohjelma (IODP)",
+    "operationsFinished": 2023,
+    "operationsStarted": 0,
+    "organisationsIds": [
+      72,
+      73,
+      74
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111635"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      263,
+      264,
+      265
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111635"
+  },
+  {
+    "acronym_EN": "FinBIF",
+    "acronym_FI": "FinBIF",
+    "active": true,
+    "buildingStarted": 2015,
+    "contactsIds": [
+      84,
+      85
+    ],
+    "description_EN": "The Finnish Biodiversity Information Facility is an infrastructure, which promotes and facilitates digitisation, creation, sourcing, collation, standardisation, and open distribution and utilisation of data on species. It is an e-infrastructure, the services of which are available at the portal Species.fi / Laji.fi.",
+    "description_FI": "Suomen Lajitietokeskus on lajitiedon digitointia, tuottamista, kokoamista, yhteen liittämistä, standardointia sekä avointa jakelua ja hyödyntämistä edistävä ja mahdollistava infrastruktuuri. Se on e-infrastruktuuri, jonka palvelut ovat käytettävissä portaalissa Laji.fi.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 36,
+    "keywords_EN": [
+      "petrophysics"
+    ],
+    "keywords_FI": [
+      "petrofysiikka"
+    ],
+    "name_EN": "Finnish Biodiversity Information Facility",
+    "name_FI": "Suomen Lajitietokeskus",
+    "operationsFinished": 0,
+    "operationsStarted": 2017,
+    "organisationsIds": [
+      4,
+      75
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111636"
+    },
+    "preparationsStarted": 2013,
+    "servicesIds": [
+      266,
+      267,
+      268,
+      269,
+      270
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111636"
+  },
+  {
+    "acronym_EN": "GBIF",
+    "acronym_FI": "GBIF",
+    "active": true,
+    "buildingStarted": 2001,
+    "contactsIds": [
+      86
+    ],
+    "description_EN": "The Global Biodiversity Information Facility (GBIF) is an international open data infrastructure funded by governments. It allows anyone anywhere to access data about all types of life on Earth shared across national boundaries via the Internet.",
+    "description_FI": "Maailman Lajitietokeskus on globaali avoimen tiedon lajitietoa keräävä ja jakava e-infrastruktuuri, jota rahoittavat jäsenvaltiot. Se mahdollistaa internetin kautta pääsyn kaikille avoimeen eliölajitietoon maailmanlaajuisesti.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 37,
+    "keywords_EN": [
+      "distributed"
+    ],
+    "keywords_FI": [
+      "hajautettu"
+    ],
+    "name_EN": "Global Biodiversity Information Facility",
+    "name_FI": "Maailman Lajitietokeskus",
+    "operationsFinished": 0,
+    "operationsStarted": 2002,
+    "organisationsIds": [
+      4,
+      75,
+      100,
+      103
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111637"
+    },
+    "preparationsStarted": 1999,
+    "servicesIds": [
+      271
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111637"
+  },
+  {
+    "acronym_EN": "EMBL",
+    "acronym_FI": "EMBL",
+    "active": true,
+    "buildingStarted": 1975,
+    "contactsIds": [
+      87
+    ],
+    "description_EN": "The European Molecular Biology Laboratory (EMBL) is one of the world's leading research institutions, and Europe's flagship laboratory for the life sciences. EMBL is an intergovernmental organisation specialising in basic research in the life sciences, funded by public research monies from more than 20 member states. Research at EMBL emphasises experimental analysis at multiple levels of biological organisation, from the molecule to the organism, as well as computational biology, bioinformatics and systems biology. Research is conducted by more than 80 independent groups covering the spectrum of molecular biology. EMBLs 1600 employees from many nations represent scientific disciplines including biology, physics, chemistry and computer science. Training is available at multiple levels: PhD students, postdocs and visiting scientists. Services provided by EMBL include: core biomolecular databases and bioinformatics tools, particularly at EMBL-EBI, the provision of beamlines, instrumentation and high-throughput technology for structural biology at the Hamburg and Grenoble oustations, Core Facilities, which provide cost-effective and efficient access to methods and technologies that are expensive to set up or maintain, or that require considerable expense.",
+    "description_FI": "EMBL on maailman johtavia life sciences-alueen tutkimusinstituutteja ja Euroopan johtava alan tutkimusorganisaatio/-laboratorio. EMBL on jäsenvaltioiden (yli 20) julkisin varoin rahoittama yhteinen organisaatio, joka tekee biotieteellistä perustutkimusta. Tutkimus kohdistuu biologisiin toimintoihin, molekyylitasolta eläviin organismeihin, sekä laskennalliseen biologiaan bioinformatiikkaan ja systeemibiologiaan. Tutkimusta toteuttaa yli 80 tutkimusryhmää, joiden toiminta kattaa molekyylibiologian koko kirjon. EMBL:n 1600 työntekijää edustavat monia eri kansallisuuksia ja tieteenaloja, esim. biologia, fysiikka, kemia ja tietojenkäsittelytieteet. EMBL kouluttaa tutkijoita eri tasoilla: tohtoriopiskelijat, post-doc tutkijat ja vierailevat tutkijat. EMBL:n palvelut kattavat mm. seuraavat alueet: biomolekulääriset tietokannat ja bioinformatiikan työkalut rakennebiologian tukitoiminnot (säteilylähteet, instrumentaatio ja teknologia) sekä helposti hyödynnettävät core facility-palvelut metodeihin ja teknologioihin, joiden pystyttäminen ja ylläpitäminen kansallisesti on hyvin kallista ja teknisesti haastavaa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 38,
+    "keywords_EN": [
+      "data management system"
+    ],
+    "keywords_FI": [
+      "datanhallintajärjestelmä"
+    ],
+    "name_EN": "European Molecular Biology Laboratory",
+    "name_FI": "Euroopan molekyylibiologian laboratorio",
+    "operationsFinished": 0,
+    "operationsStarted": 1974,
+    "organisationsIds": [
+      27,
+      76,
+      77,
+      78,
+      79,
+      80,
+      94
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111638",
+      "Description.isni.name": "000000040638528X"
+    },
+    "preparationsStarted": 1973,
+    "servicesIds": [
+      272
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111638"
+  },
+  {
+    "acronym_EN": "SC-infra",
+    "acronym_FI": "SC-infra",
+    "active": true,
+    "buildingStarted": 2016,
+    "contactsIds": [
+      88,
+      89,
+      90,
+      91
+    ],
+    "description_EN": "SC-infra -network aims at bringing the latest single-cell genomics tools available for the research community in Finland thus promoting high level research international competence and attractiveness of Finland as a research environment. Availability of the modern single cell techniques is not only important for advancing excellence in basic research, but also for creating platform for development of novel innovations and commercial applications. The collaborators of the consortium aim to build a national infrastructure and expertise for single cell processing. Different in-depth expertise and capabilities will be developed in each center based on the research areas and technology expertise.",
+    "description_FI": "",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 39,
+    "keywords_EN": [
+      "atmospheric physics"
+    ],
+    "keywords_FI": [
+      "ilmakehän fysiikka"
+    ],
+    "name_EN": "Infrastructure for Single Cell Capture and Processing",
+    "name_FI": "Tutkimusinfrastruktuuri yksittäisten solujen analysointiin",
+    "operationsFinished": 0,
+    "operationsStarted": 2016,
+    "organisationsIds": [
+      81,
+      82,
+      83,
+      84
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111639"
+    },
+    "preparationsStarted": 2015,
+    "servicesIds": [
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111639"
+  },
+  {
+    "acronym_EN": "RAMI",
+    "acronym_FI": "RAMI",
+    "active": false,
+    "buildingStarted": 2016,
+    "contactsIds": [
+      92,
+      93,
+      94,
+      95,
+      96
+    ],
+    "description_EN": "RawMatTERS Finland Infrastructure (RAMI) supports expertise in the design synthesis and characterization of a variety of inorganic materials. RAMI contains the selected research infrastructures at Aalto University (School of Chemical Engineering). Geological Survey of Finland (GTK) and VTT Technical Research Centre of Finland for research related to natural and new inorganic materials and circular economy. RAMI is part of the EIT Raw Materials KIC's infrastructure network.",
+    "description_FI": "",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 41,
+    "keywords_EN": [
+      "clusters"
+    ],
+    "keywords_FI": [
+      "klusterit"
+    ],
+    "name_EN": "RawMatTERS Finland Infrastructure",
+    "name_FI": "",
+    "operationsFinished": 0,
+    "operationsStarted": 2017,
+    "organisationsIds": [
+      33,
+      44,
+      54
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111641"
+    },
+    "preparationsStarted": 2015,
+    "servicesIds": [],
+    "urn": "urn:nbn:fi:research-infras-2016111641"
+  },
+  {
+    "acronym_EN": "HIM",
+    "acronym_FI": "HIM",
+    "active": true,
+    "buildingStarted": 2015,
+    "contactsIds": [
+      97,
+      98
+    ],
+    "description_EN": "Zeiss Orion Nanofab helium ion microscope (HIM) is an imaging device similar to scanning electron microscope (SEM). In HIM the sample surface is scanned with positive He ions instead of electrons and objects from mm size to nm size can be studied. The greatest advantages of HIM over SEM are better resolution (even 0.5 nm) large depth of field and possibility to image insulating samples without conductive coating. By using Ne ions instead of He ions also sample modification and milling in nanometer scale is possible.",
+    "description_FI": "Zeiss Orion Nanofab heliumionimikroskooppi (HIM) on pyyhkäisyelektronimikroskoopin (SEM) kaltainen kuvantamislaite jossa elektronien sijasta tutkittavan näytteen pintaa pyyhkäistään positiivisilla He-ioneilla. Sillä voidaan kuvata kohteita millimetrimittakaavasta aina yksittäisiin nanometreihin asti. Merkittävimmät edut SEMiin verrattuna ovat parempi erotuskyky (jopa 0,5 nm) laaja syvyysterävyysalue sekä mahdollisuus kuvata eristäviä näytteitä ilman johtavaa pinnoitusta. Ne-ionien käyttö He-ionien sijaan mahdollistaa myös tutkittavan näytteen muokkauksen nanometrimittakaavassa.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 42,
+    "keywords_EN": [
+      "clouds"
+    ],
+    "keywords_FI": [
+      "pilvet"
+    ],
+    "name_EN": "Helium Ion Microscope for Interdisciplinary Materials Research",
+    "name_FI": "Heliumionimikroskooppi poikkitieteelliseen materiaalitutkimukseen",
+    "operationsFinished": 0,
+    "operationsStarted": 2015,
+    "organisationsIds": [
+      38,
+      85,
+      86
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111642"
+    },
+    "preparationsStarted": 2014,
+    "servicesIds": [
+      280
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111642"
+  },
+  {
+    "acronym_EN": "ESO",
+    "acronym_FI": "ESO",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      99
+    ],
+    "description_EN": "ESO is a European astronomical research and technology organization with 15 member states, covering ca. 30% of all astronomers in the world. ESO's headquarters are in Germany and its telescopes are situated in Chile.  ESO is the foremost intergovernmental astronomy organization in Europe and the leading ground-based observatory in the world. In Chile. ESO operates four optical/infrared 8m Very Large Telescopes (VLT) and it is the European partner of the Atacama Large Millimeter Array (ALMA) the largest astronomical research infrastructure in the world. ESO is also constructing the 39m European Extremely Large Telescope (E-ELT), which when completed in 2024 will be the largest telescope in the world revolutionizing optical and infrared astronomical research. E-ELT will allow a more detailed study of for example extrasolar planets and the earliest Universe. FINCA practises and co-ordinates Finnish ESO-related research in astronomy and promotes ESO-related technological development work. It participates in research training and promotes co-operation of Finnish universities in astronomy.",
+    "description_FI": "ESO on eurooppalainen tähtitieteen tutkimus- ja teknologiaorganisaatio jossa on 15 jäsenmaata ja joka kattaa n. 30% maailman tähtitieteilijöistä. ESO:n päämaja on Saksassa ja sen teleskoopit sijaitsevat Chilessä. ESO on Euroopan tärkein hallitustenvälinen tähtitieteen alan organisaatio ja maailman johtava maanpäällisen tähtitieteen observatorio. ESO operoi Chilessä neljää optisen/infrapuna-aallonpituuden 8-metristä Very Large Telescopea (VLT) ja se on Euroopan osapuoli Atacama Large Millimeter Array'ssä (ALMA) joka on maailman suurin tähtitieteen tutkimusinfrastruktuuri. ESO rakentaa myös 39-metristä European Extremely Large Telescope\u0092a (E-ELT) joka valmistuessaan vuonna 2024 on maailman suurin teleskooppi joka mullistaa optisen ja infrapunatähtitieteen tutkimuksen. E-ELT:n avulla voidaan tutkia entistä paremmin esimerkiksi aurinkokunnan ulkopuolisia planeettoja sekä varhaisinta maailmankaikkeutta. Suomen ESO-keskus (FINCA) harjoittaa ja koordinoi ESO:on liittyvää tähtitieteen tutkimusta Suomessa sekä edistää ESO:on liittyvää teknologista kehitystyötä. Se osallistuu tutkijakoulutukseen ja edistää suomalaisten yliopistojen tähtitieteeseen liittyvää yhteistyötä.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 43,
+    "keywords_EN": [
+      "ecosystem-atmosphere interactions"
+    ],
+    "keywords_FI": [
+      "ekosysteemi-ilmakehä vuorovaikutukset"
+    ],
+    "name_EN": "European Southern Observatory",
+    "name_FI": "Euroopan eteläinen observatorio",
+    "operationsFinished": 0,
+    "operationsStarted": 1962,
+    "organisationsIds": [
+      1,
+      27,
+      87
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111643",
+      "Description.isni.name": "0000000406456631",
+      "Description.hyytuhatuuid.name": "fd54f123-7e09-4296-8808-1ba2948dfe5d"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      282
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111643"
+  },
+  {
+    "acronym_EN": "NextGenTH",
+    "acronym_FI": "NextGenTH",
+    "active": true,
+    "buildingStarted": 2017,
+    "contactsIds": [
+      100,
+      109
+    ],
+    "description_EN": "The Next Generation Thermal Hydraulic Test Loop is a multifunctional facility designed to reproduce a wide range of heat transfer and fluid flow (thermal-hydraulic) phenomena relevant to light water moderated nuclear reactors. The main scientific output of the new facility will be (1) capability to locally discern interpret and model the 2D/3D dynamic structure of two-phase (water-steam) flow under a broad variety of conditions relevant to safety and availability of nuclear power plants and (2) large-scale modelling of system-wide behavior in multiple genometrics representative of various nuclear heat transport systems (modularity: interchangeable components typical to nuclear systems).",
+    "description_FI": "",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 44,
+    "keywords_EN": [
+      "biogeochemical cycles"
+    ],
+    "keywords_FI": [
+      "biogeokemialliset kierrot"
+    ],
+    "name_EN": "Next Generation Thermal Hydraulic Test Loop",
+    "name_FI": "Seuraavan sukupolven termohydraulinen koelaite",
+    "operationsFinished": 2038,
+    "operationsStarted": 2018,
+    "organisationsIds": [
+      20,
+      88,
+      89
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111644"
+    },
+    "preparationsStarted": 2016,
+    "servicesIds": [
+      283
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111644"
+  },
+  {
+    "acronym_EN": "CERN",
+    "acronym_FI": "CERN",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      101,
+      102
+    ],
+    "description_EN": "CERN is the world leading research centre for particle and nuclear physics. It is located near Geneva on the Franco-Swiss border. At CERN the 22 member states collaborate to study the basic constituents of matter and fundamental forces of nature in global projects which no European country could afford. CERN hosts the Large Hadron Collider (LHC) which is the world's largest and most powerful particle accelerator. The LHC started scientific operation in 2010 and it has shed light on the origin of mass of fundamental particles by observing the Higgs particle. CERN is also a major platform for technological development. The World Wide Web was invented at CERN. Helsinki Institute of Physics (HIP) is responsible for Finland's CERN activities.",
+    "description_FI": "CERN on maailman johtava monipuolinen hiukkas- ja ydinfysiikan tutkimuskeskus. Se sijaitsee Geneven lähistöllä Sveitsin ja Ranskan rajalla. CERN:n 22 jäsenmaata osallistuvat yhteisvoimin aineen perusrakenteen ja luonnon perusvuorovaikutuksien tutkimukseen globaaleissa hankkeissa joihin millään Euroopan maalla ei yksinään olisi mahdollisuutta. CERN:n suurhanke maailman suurin tieteellinen instrumentti LHC eli suuri hadronitörmäytin aloitti tutkimustoimintansa vuonna 2010 ja se on mm. tuonut selvyyden alkeishiukkasten massan alkuperään löytämällä Higgsin hiukkasen. CERN on myös merkittävä teknologinen kehitysalusta. World Wide Web WWW on keksitty CERN:ssä. Suomen CERN-toiminnasta vastaa Fysiikan tutkimuslaitos (HIP).",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 45,
+    "keywords_EN": [
+      "global climate change"
+    ],
+    "keywords_FI": [
+      "ilmastonmuutos"
+    ],
+    "name_EN": "European Organization for Nuclear Research",
+    "name_FI": "Euroopan hiukkasfysiikan tutkimuslaitos",
+    "operationsFinished": 0,
+    "operationsStarted": 1954,
+    "organisationsIds": [
+      45
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111645",
+      "Description.isni.name": "0000000121732639",
+      "Description.hyytuhatuuid.name": "d2b5bb12-c328-4f38-9e5d-95cfe92ab334"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [],
+    "urn": "urn:nbn:fi:research-infras-2016111645"
+  },
+  {
+    "acronym_EN": "FAIR",
+    "acronym_FI": "FAIR",
+    "active": false,
+    "buildingStarted": 2012,
+    "contactsIds": [
+      103,
+      104
+    ],
+    "description_EN": "FAIR is a new international accelerator facility for the research with antiprotons and ions. It is a joint international effort of so far ten member states. It will be built in Darmstadt, Germany. FAIR will produce high energy and high intensity particle beams of both primary and secondary ions and and antiprotons. The aim is to study heavy ion collisions, spectroscopy of very short lived exotic nuclei antimatter and properties of high density plasma. The accelerator facility contains a system of cooler-storage rings and enables usage of internal targets. Two superconducting synchrotrons produce high intensity ion beams and enables wide selection of radioactive ion beams, with primary ion beams up to Uranium. Generally the facility focuses on the understanding of subatomaric structure of matter by studying fundamental interactions and complex many particle systems. Helsinki Institute of Physics (HIP) coordinates the Finnish contribution to FAIR.",
+    "description_FI": "FAIR on Darmstadtiin Saksaan perustettu ydinfysiikan kansainvälinen kiihdytinlaboratorio jossa tullaan tuottamaan korkean energian ja suuren intensiteetin hiukkassuihkuja sekä primääri- ja sekundääri-ionisuihkuja että anti-protonisuihkuja. FAIR on tällä hetkellä kymmenen jäsenmaan yhteishanke. FAIR-hankkeessa on tarkoitus tutkia raskasionitörmäyksiä hyvin lyhytikäisten ja eksoottisten ytimien spektroskopiaa antimateriaa sekä suuren tiheyden plasmojen ominaisuuksia. Kiihdytinkompleksi sisältää hiukkassuihkujen varastointi- ja jäähdytysrenkaat ja mahdollistaa sisäisten kohtioiden käytön tutkimuksessa. Kaksi suprajohtavaa synkrotronia tuottaa korkean intensiteetin ionisuihkuja ja antaa mahdollisuuden primääri-ionisuihkuihin raskailla ytimillä aina uraaniin saakka sekä laajaan radioaktiivisten ionisuihkujen valikoimaan. Yleisesti ottaen hanke keskittyy aineen subatomaarisen rakenteen ymmärtämiseen toisaalta sen perusvuorovaikutusten ja toisaalta monihiukkassysteemien tutkimuksen kautta. Fysiikan tutkimuslaitos (HIP) koordinoi Suomen FAIR-kontribuutiota.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 46,
+    "keywords_EN": [
+      "GHCs"
+    ],
+    "keywords_FI": [
+      "kasvihuonekaasut"
+    ],
+    "name_EN": "Facility for Antiproton and Ion Research",
+    "name_FI": "Ydinfysiikan kansainvälinen kiihdytinlaboratorio",
+    "operationsFinished": 0,
+    "operationsStarted": 2022,
+    "organisationsIds": [
+      45
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111646",
+      "Description.hyytuhatuuid.name": "6019c705-34d3-4a62-8017-6b3d683e23cb"
+    },
+    "preparationsStarted": 2005,
+    "servicesIds": [],
+    "urn": "urn:nbn:fi:research-infras-2016111646"
+  },
+  {
+    "acronym_EN": "NOT",
+    "acronym_FI": "NOT",
+    "active": true,
+    "buildingStarted": 1984,
+    "contactsIds": [
+      105,
+      106
+    ],
+    "description_EN": "Nordic 2.56 meter mirror telescope located on the Canary Islands. The purpose is basic research in astronomy.",
+    "description_FI": "Yhteispohjoismainen 2,56 metrin peiliteleskooppi Kanarian saarilla. Käyttötarkoitus tähtitieteen perustutkimus.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 47,
+    "keywords_EN": [
+      "long-term measurements"
+    ],
+    "keywords_FI": [
+      "jatkuvat mittaukset"
+    ],
+    "name_EN": "Nordic Optical Telescope",
+    "name_FI": "Pohjoismainen optinen teleskooppi",
+    "operationsFinished": 0,
+    "operationsStarted": 1989,
+    "organisationsIds": [
+      71,
+      98,
+      101,
+      104
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111647"
+    },
+    "preparationsStarted": 1980,
+    "servicesIds": [
+      284
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111647"
+  },
+  {
+    "acronym_EN": "NeIC",
+    "acronym_FI": "NeIC",
+    "active": true,
+    "buildingStarted": 0,
+    "contactsIds": [
+      107,
+      108
+    ],
+    "description_EN": "The vision of NeIC is to facilitate the development and operation of high quality e-infrastructure solutions in areas of joint Nordic interest. The legal representative of and hosting organisation for NeIC is NordForsk, which is an organisation under the Nordic Council of Ministers. Two major aspects of NeIC are the distributed operation of the Nordic WLCG Tier-1 site and the collaborative development activities that support and enhance the national efforts in research infrastructure to benefit researchers as well as international projects.",
+    "description_FI": "NeIC on yhteispohjoismainen kansallisten laskenta- ja tallennusresurssientarjoajien yhteistyöorganisaatio. NeIC:n edesauttaa  pohjoismaisellla tasolla tärkeiden tutkimuksen e-infrastruktuuri palveluiden kehitystä ja operointia. NeIC:n isäntäorganisaationa toimii Nordforsk. NeIC:n kaksi tärkeintä palvelua ovat pohjoismaisen hajautetun WLCG Tier-1 keskuksen operointi ja yhteispohjoismaisten kehityshankkeiden tuki.",
+    "formerIds": "0",
+    "formerUrns": "",
+    "id": 48,
+    "keywords_EN": [
+      "satellite data"
+    ],
+    "keywords_FI": [
+      "satelliittiaineistot"
+    ],
+    "name_EN": "Nordic e-Infrastructure Collaboration",
+    "name_FI": "Pohjoismaiden e-infrastuktuuri yhteistyö",
+    "operationsFinished": 0,
+    "operationsStarted": 2012,
+    "organisationsIds": [
+      11,
+      12,
+      102
+    ],
+    "pids": {
+      "Description.urn.name": "urn:nbn:fi:research-infras-2016111648"
+    },
+    "preparationsStarted": 0,
+    "servicesIds": [
+      285,
+      286
+    ],
+    "urn": "urn:nbn:fi:research-infras-2016111648"
+  }
+]
