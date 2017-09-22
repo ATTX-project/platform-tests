@@ -31,8 +31,8 @@ task integTest(type: Test){
     doFirst {
         systemProperty 'frontend.port', 8080
         systemProperty 'frontend.host', 'frontend'
-        systemProperty 'wfapi.port', 4301
-        systemProperty 'wfapi.host', 'wfapi'
+        systemProperty 'uvprov.port', 4301
+        systemProperty 'uvprov.host', 'uvprov'
         systemProperty 'fuseki.port', 3030
         systemProperty 'fuseki.host', 'fuseki'
         systemProperty 'gmapi.port', 4302
@@ -51,8 +51,8 @@ task integTest(type: Test){
     doLast {
         systemProperties.remove 'frontend.port'
         systemProperties.remove 'frontend.host'
-        systemProperties.remove 'wfapi.port'
-        systemProperties.remove 'wfapi.host'
+        systemProperties.remove 'uvprov.port'
+        systemProperties.remove 'uvprov.host'
         systemProperties.remove 'fuseki.port'
         systemProperties.remove 'fuseki.host'
         systemProperties.remove 'gmapi.port'

@@ -13,7 +13,7 @@ repositories {
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-
+ext.attxTestHelperPlugin = '1.4'
 
 dependencies {
     testCompile \
@@ -55,6 +55,8 @@ if (!project.hasProperty("testEnv") || project.testEnv == "dev") {
 
 ext {
     testImageUVProv = "latest"
+    testImageRML = "latest"
+    testImageProv = "latest"
     testImageGM = "latest"
     testImageFuseki = "latest"
     testImageES5 = "latest"
@@ -71,6 +73,17 @@ dcompose {
     networks {
         pdTest
     }
+    rabbitmq {
+        forcePull = true
+        forceRemoveImage = true
+        image = 'rabbitmq:3.6.11-management'
+        networks = [pdTest]
+        if (testSet == "localhost") {
+            portBindings = ['4369:4369','5671:5671', '5672:5672', '15671:15671', '15672:15672', '25672:25672']
+        }
+        env = ['RABBITMQ_DEFAULT_USER=user', 'RABBITMQ_DEFAULT_PASS=password']
+    }
+
     shared {
         forcePull = true
         forceRemoveImage = true
@@ -112,6 +125,7 @@ dcompose {
     }
 
     attxdpus {
+        forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/uv-attx-dpus:${testImageATTXDPUs}"
         links = [frontend.link(), mysql.link(), backend.link()]
@@ -153,35 +167,63 @@ dcompose {
         }
     }
 
-    wfapi {
+    uvprov {
         forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/uv-prov:${testImageUVProv}"
-        dependsOn = [mysql]
+        dependsOn = [rabbitmq, mysql]
         networks = [pdTest]
-        hostName = 'wfapi'
+        hostName = 'uvprov'
         if (testSet == "localhost") {
             portBindings = ['4301:4301']
         }
+        env = ['MHOST=rabbitmq', 'DBHOST=mysql']
+    }
+
+    rmlservice {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"
+        dependsOn = [rabbitmq]
+        networks = [pdTest]
+        hostName = 'rmlservice'
+        if (testSet == "localhost") {
+            portBindings = ['7030:7030']
+        }
+        env = ['BROKER_URL=tcp://rabbitmq:61616']
+    }
+
+    provservice {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageRepo}:${imageRepoPort}/provenance-service:${testImageProv}"
+        dependsOn = [fuseki, rabbitmq]
+        networks = [pdTest]
+        hostName = 'provservice'
+        if (testSet == "localhost") {
+            portBindings = ['7030:7030']
+        }
+        env = ['MHOST=rabbitmq', 'GHOST=fuseki']
     }
 
     gmapi {
         forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/gm-api:${testImageGM}"
-        dependsOn = [frontend, backend, shared, attxdpus, mysql, wfapi, essiren, fuseki, es5]
+        dependsOn = [rabbitmq, provservice, uvprov, rmlservice, attxdpus]
         networks = [pdTest]
         hostName = 'gmapi'
         if (testSet == "localhost") {
             portBindings = ['4302:4302']
         }
+        env = ['MHOST=rabbitmq', 'GHOST=fuseki']
     }
 
     test {
         ignoreExitCode = true
         baseDir = file('.')
         dockerFilename = 'Dockerfile'
-        buildArgs = ['METADATA_DPU': "", 'attxTestHelperPlugin': "$attxTestHelperPlugin"]
+        buildArgs = ['attxTestHelperPlugin': "$attxTestHelperPlugin"]
         env = ["REPO=$artifactRepoURL"]
         if (testSet == "container") {
             binds = ["/var/run/docker.sock:/run/docker.sock"]
@@ -248,8 +290,8 @@ task runIntegTests(type: Test) {
     doFirst {
         systemProperty 'frontend.port', dcompose.frontend.findHostPort(8080)
         systemProperty 'frontend.host', dcompose.frontend.dockerHost
-        systemProperty 'wfapi.port', dcompose.uvprov.findHostPort(4301)
-        systemProperty 'wfapi.host', dcompose.uvprov.dockerHost
+        systemProperty 'uvprov.port', dcompose.uvprov.findHostPort(4301)
+        systemProperty 'uvprov.host', dcompose.uvprov.dockerHost
         systemProperty 'fuseki.port', dcompose.fuseki.findHostPort(3030)
         systemProperty 'fuseki.host', dcompose.fuseki.dockerHost
         systemProperty 'gmapi.port', dcompose.gmapi.findHostPort(4302)
@@ -263,8 +305,8 @@ task runIntegTests(type: Test) {
     doLast {
         systemProperties.remove 'frontend.port'
         systemProperties.remove 'frontend.host'
-        systemProperties.remove 'wfapi.port'
-        systemProperties.remove 'wfapi.host'
+        systemProperties.remove 'uvprov.port'
+        systemProperties.remove 'uvprov.host'
         systemProperties.remove 'fuseki.port'
         systemProperties.remove 'fuseki.host'
         systemProperties.remove 'gmapi.port'
