@@ -33,14 +33,14 @@ public class UVPluginsSteps implements En {
             TestCase.assertTrue(true);
         });
 
-        Then("^UV should contain uv-metadata plugin$", () -> {
+        Then("^UV should contain attx-l-replaceds plugin$", () -> {
             try {
                 // using the UV rest API and trying to add the plugin again. Should response with an error.
                 HttpResponse<JsonNode> response = Unirest.post(TestUtils.getUV() + "/master/api/1/import/dpu/jar")
                         .header("accept", "application/json")
-                        .queryString("name", "attx-t-metadata-plugin")
+                        .queryString("name", "attx-l-replaceds")
                         .queryString("force", "false")
-                        .field("file", new File("uv-dpu-t-attx-metadata-1.0-SNAPSHOT.jar"))
+                        .field("file", new File("attx-l-replaceds-1.0-SNAPSHOT.jar"))
                         .basicAuth(API_USERNAME, API_PASSWORD)
                         .asJson();
 
