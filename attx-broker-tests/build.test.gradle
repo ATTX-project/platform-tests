@@ -19,12 +19,13 @@ repositories {
 dependencies {
     testCompile \
         files("dev-test-helper.jar"),
-        'junit:junit:4.10',
+        "org.junit.jupiter:junit-jupiter-api:5.0.0",
         'info.cukes:cucumber-java8:1.2.5',
         'info.cukes:cucumber-junit:1.2.5',
         'com.mashape.unirest:unirest-java:1.4.9',
-        'org.skyscreamer:jsonassert:1.4.0',
-        'org.awaitility:awaitility-groovy:2.0.0'
+        'org.skyscreamer:jsonassert:1.5.0',
+        'org.awaitility:awaitility-groovy:3.0.0'
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.0.0"
 }
 
 task integTest(type: Test){
@@ -33,10 +34,12 @@ task integTest(type: Test){
         systemProperty 'frontend.host', 'frontend'
         systemProperty 'uvprov.port', 4301
         systemProperty 'uvprov.host', 'uvprov'
+        systemProperty 'provservice.port', 4301
+        systemProperty 'provservice.host', 'provservice'
         systemProperty 'fuseki.port', 3030
         systemProperty 'fuseki.host', 'fuseki'
-        systemProperty 'gmapi.port', 4302
-        systemProperty 'gmapi.host', 'gmapi'
+        systemProperty 'graphmanager.port', 4302
+        systemProperty 'graphmanager.host', 'graphmanager'
         systemProperty 'essiren.port', 9200
         systemProperty 'essiren.tcp', 9300
         systemProperty 'essiren.host', 'essiren'
@@ -53,10 +56,12 @@ task integTest(type: Test){
         systemProperties.remove 'frontend.host'
         systemProperties.remove 'uvprov.port'
         systemProperties.remove 'uvprov.host'
+        systemProperties.remove 'provservice.port'
+        systemProperties.remove 'provservice.host'
         systemProperties.remove 'fuseki.port'
         systemProperties.remove 'fuseki.host'
-        systemProperties.remove 'gmapi.port'
-        systemProperties.remove 'gmapi.host'
+        systemProperties.remove 'graphmanager.port'
+        systemProperties.remove 'graphmanager.host'
         systemProperties.remove 'essiren.port'
         systemProperties.remove 'essiren.tcp'
         systemProperties.remove 'essiren.host'

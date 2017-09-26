@@ -1,6 +1,6 @@
 apply plugin: 'java'
 apply plugin: 'com.chrisgahlert.gradle-dcompose-plugin'
-apply plugin: 'com.github.johnrengelman.shadow'
+// apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'com.bmuschko.docker-remote-api'
 
 import com.bmuschko.gradle.docker.tasks.container.DockerWaitContainer
@@ -13,17 +13,18 @@ repositories {
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-ext.attxTestHelperPlugin = '1.4'
+ext.attxTestHelperPlugin = '1.5'
 
 dependencies {
     testCompile \
-        'junit:junit:4.10',
+        "org.junit.jupiter:junit-jupiter-api:5.0.0",
         'info.cukes:cucumber-java8:1.2.5',
         'info.cukes:cucumber-junit:1.2.5',
         'com.mashape.unirest:unirest-java:1.4.9',
-        'org.skyscreamer:jsonassert:1.4.0',
-        'org.awaitility:awaitility-groovy:2.0.0',
-        'org.uh.hulib.attx.dev:dev-test-helper:1.4'
+        'org.skyscreamer:jsonassert:1.5.0',
+        'org.awaitility:awaitility-groovy:3.0.0',
+        'org.uh.hulib.attx.dev:dev-test-helper:1.5'
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.0.0"
 }
 
 
@@ -73,10 +74,10 @@ dcompose {
     networks {
         pdTest
     }
-    rabbitmq {
+    messagebroker {
         forcePull = true
         forceRemoveImage = true
-        image = 'rabbitmq:3.6.11-management'
+        image = 'rabbitmq:3.6.12-management'
         networks = [pdTest]
         if (testSet == "localhost") {
             portBindings = ['4369:4369','5671:5671', '5672:5672', '15671:15671', '15672:15672', '25672:25672']
@@ -171,52 +172,52 @@ dcompose {
         forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/uv-prov:${testImageUVProv}"
-        dependsOn = [rabbitmq, mysql]
+        dependsOn = [messagebroker, mysql]
         networks = [pdTest]
         hostName = 'uvprov'
         if (testSet == "localhost") {
             portBindings = ['4301:4301']
         }
-        env = ['MHOST=rabbitmq', 'DBHOST=mysql']
+        env = ['MHOST=messagebroker', 'DBHOST=mysql']
     }
 
     rmlservice {
         forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"
-        dependsOn = [rabbitmq]
+        dependsOn = [messagebroker]
         networks = [pdTest]
         hostName = 'rmlservice'
         if (testSet == "localhost") {
             portBindings = ['7030:7030']
         }
-        env = ['BROKER_URL=tcp://rabbitmq:61616']
+        env = ['BROKER_URL=tcp://messagebroker:61616']
     }
 
     provservice {
         forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/provenance-service:${testImageProv}"
-        dependsOn = [fuseki, rabbitmq]
+        dependsOn = [fuseki, messagebroker]
         networks = [pdTest]
         hostName = 'provservice'
         if (testSet == "localhost") {
             portBindings = ['7030:7030']
         }
-        env = ['MHOST=rabbitmq', 'GHOST=fuseki']
+        env = ['MHOST=messagebroker', 'GHOST=fuseki']
     }
 
-    gmapi {
+    graphmanager {
         forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/gm-api:${testImageGM}"
-        dependsOn = [rabbitmq, provservice, uvprov, rmlservice, attxdpus]
+        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, essiren, es5]
         networks = [pdTest]
-        hostName = 'gmapi'
+        hostName = 'graphmanager'
         if (testSet == "localhost") {
             portBindings = ['4302:4302']
         }
-        env = ['MHOST=rabbitmq', 'GHOST=fuseki']
+        env = ['MHOST=messagebroker', 'GHOST=fuseki']
     }
 
     test {
@@ -228,7 +229,7 @@ dcompose {
         if (testSet == "container") {
             binds = ["/var/run/docker.sock:/run/docker.sock"]
         }
-        dependsOn = [gmapi] // This dependency is not really needed however it reminds the scope of the tests.
+        dependsOn = [graphmanager] // This dependency is not really needed however it reminds the scope of the tests.
         command = ['sh', '-c', '/tmp/runTests.sh']
         waitForCommand = true
         forceRemoveImage = true
@@ -248,20 +249,14 @@ task copyReportFiles(type: DcomposeCopyFileFromContainerTask) {
 
 startTestContainer.finalizedBy copyReportFiles
 
-shadowJar {
-    classifier = 'tests'
-    from sourceSets.test.output
-    configurations = [project.configurations.testRuntime]
-}
 
 // making sure the that fresh build of test classes is done before building the image
 buildTestImage.dependsOn downloadTestFiles
-buildTestImage.dependsOn shadowJar
 buildTestImage.dependsOn testClasses
 buildTestImage.dependsOn processTestResources
 
 task checkDPUDone(type: DockerWaitContainer) {
-    dependsOn startGmapiContainer
+    dependsOn startGraphmanagerContainer
     targetContainerId {dcompose.attxdpus.containerId}
     doLast{
         if(getExitCode() != 0) {
@@ -292,10 +287,12 @@ task runIntegTests(type: Test) {
         systemProperty 'frontend.host', dcompose.frontend.dockerHost
         systemProperty 'uvprov.port', dcompose.uvprov.findHostPort(4301)
         systemProperty 'uvprov.host', dcompose.uvprov.dockerHost
+        systemProperty 'provservice.port', dcompose.provservice.findHostPort(7030)
+        systemProperty 'provservice.host', dcompose.provservice.dockerHost
         systemProperty 'fuseki.port', dcompose.fuseki.findHostPort(3030)
         systemProperty 'fuseki.host', dcompose.fuseki.dockerHost
-        systemProperty 'gmapi.port', dcompose.gmapi.findHostPort(4302)
-        systemProperty 'gmapi.host', dcompose.gmapi.dockerHost
+        systemProperty 'graphmanager.port', dcompose.graphmanager.findHostPort(4302)
+        systemProperty 'graphmanager.host', dcompose.graphmanager.dockerHost
         systemProperty 'essiren.port', dcompose.essiren.findHostPort(9200)
         systemProperty 'essiren.tcp', dcompose.essiren.findHostPort(9300)
         systemProperty 'essiren.host', dcompose.essiren.dockerHost
@@ -307,10 +304,12 @@ task runIntegTests(type: Test) {
         systemProperties.remove 'frontend.host'
         systemProperties.remove 'uvprov.port'
         systemProperties.remove 'uvprov.host'
+        systemProperties.remove 'provservice.port'
+        systemProperties.remove 'provservice.host'
         systemProperties.remove 'fuseki.port'
         systemProperties.remove 'fuseki.host'
-        systemProperties.remove 'gmapi.port'
-        systemProperties.remove 'gmapi.host'
+        systemProperties.remove 'graphmanager.port'
+        systemProperties.remove 'graphmanager.host'
         systemProperties.remove 'essiren.port'
         systemProperties.remove 'essiren.tcp'
         systemProperties.remove 'essiren.host'
