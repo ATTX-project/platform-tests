@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module external.linked.project.id=":pivy-repo" external.linked.project.path="/home/local/stefanne/dev/attx/development-environment/pivy-repo" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.group="development-environment" external.system.module.version="3" type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file:///home/local/stefanne/dev/attx/development-environment/pivy-repo">
+      <excludeFolder url="file:///home/local/stefanne/dev/attx/development-environment/pivy-repo/.gradle" />
+      <excludeFolder url="file:///home/local/stefanne/dev/attx/development-environment/pivy-repo/build" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

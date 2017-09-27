@@ -1,0 +1,74 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.0'
+    }
+}
+
+apply plugin: 'org.junit.platform.gradle.plugin'
+apply plugin: 'base'
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+String mavenGroupId = 'org.uh.hulib.attx.dev'
+String mavenVersion = '1.5'
+
+ext {
+    imageRepo = "attx-dev"
+    artifactRepoPort = "8081"
+    devGroupID = "org.uh.hulib.attx.dev"
+}
+
+if (!project.hasProperty("artifactRepoURL")) {
+    ext.artifactRepoURL = "http://${imageRepo}:${artifactRepoPort}/repository/attx-releases"
+}
+
+if (!project.hasProperty("artifactRepoUser")) {
+    ext.artifactRepoUser = ""
+}
+
+if (!project.hasProperty("artifactRepoPassword")) {
+    ext.artifactRepoPassword = ""
+}
+
+repositories {
+    mavenCentral()
+    maven { url "$artifactRepoURL"}
+}
+
+group = mavenGroupId
+version = mavenVersion
+
+targetCompatibility = '1.8'
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+dependencies {
+    compile "org.junit.jupiter:junit-jupiter-api:5.0.0"
+    compile 'com.mashape.unirest:unirest-java:1.4.9'
+    compile 'org.skyscreamer:jsonassert:1.5.0'
+    compile 'org.awaitility:awaitility-groovy:3.0.0'
+    runtime "org.junit.jupiter:junit-jupiter-engine:5.0.0"
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0"
+    testRuntime "org.junit.jupiter:junit-jupiter-engine:5.0.0"
+}
+
+publishing {
+    repositories {
+        maven {
+            // change to point to your repo, e.g. http://my.org/repo
+            url "${artifactRepoURL}"
+            credentials {
+                username "${artifactRepoUser}"
+                password "${artifactRepoPassword}"
+            }
+        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}

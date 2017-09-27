@@ -1,1 +1,1 @@
-include "attx-broker-tests", "attx-testdata"
+include "attx-broker-tests", "attx-testdata", "dev-test-helper"
