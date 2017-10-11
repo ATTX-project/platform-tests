@@ -25,11 +25,13 @@ import static org.awaitility.Awaitility.await;
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.*;
+import org.junit.jupiter.api.Disabled;
 
 
 /**
  * @author jkesanie
  */
+@Disabled
 public class UC1Steps implements En {
 
     static List<Integer> pipelineIDs = new ArrayList<Integer>();
