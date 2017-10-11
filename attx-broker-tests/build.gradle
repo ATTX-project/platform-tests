@@ -207,7 +207,7 @@ dcompose {
     }
 
     rmlservice {
-        //forcePull = true
+        forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"        
         dependsOn = [messagebroker]
