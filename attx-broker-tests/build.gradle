@@ -47,7 +47,8 @@ dependencies {
         'org.skyscreamer:jsonassert:1.5.0',
         'org.awaitility:awaitility-groovy:3.0.0',
         'org.uh.hulib.attx.dev:dev-test-helper:1.5',
-        'org.uh.hulib.attx.wc.uv:uv-common:1.0-SNAPSHOT'
+        'org.uh.hulib.attx.wc.uv:uv-common:1.0-SNAPSHOT',
+        'com.rabbitmq:amqp-client:4.2.0'
     testRuntime \
         "org.junit.jupiter:junit-jupiter-engine:5.0.0",
         'org.junit.vintage:junit-vintage-engine:4.12.0'
@@ -207,16 +208,17 @@ dcompose {
     }
 
     rmlservice {
-        forcePull = true
+        //forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"        
+        //image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"        
+        image = "test/rml2"
         dependsOn = [messagebroker]
         networks = [pdTest]
         hostName = 'rmlservice'
         if (testSet == "localhost") {
             portBindings = ['8090:8090']
         }
-        env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=""', 'MQUEUE=rmlservice']
+        env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=', 'MQUEUE=rmlservice']
         volumes = ['/attx-sb-shared']
         binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
