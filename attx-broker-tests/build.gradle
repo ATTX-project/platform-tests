@@ -9,7 +9,6 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'com.chrisgahlert.gradle-dcompose-plugin'
-// apply plugin: 'com.github.johnrengelman.shadow'
 apply plugin: 'com.bmuschko.docker-remote-api'
 //apply plugin: 'org.junit.platform.gradle.plugin'
 
@@ -25,18 +24,6 @@ repositories {
 sourceCompatibility = '1.8'
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
-ext.attxTestHelperPlugin = '1.5'
-ext.uvreplaceDS = '1.0-SNAPSHOT'
-ext {
-    testImageUVProv = "latest"
-    testImageRML = "latest"    
-    testImageProv = "latest"
-    testImageGM = "latest"
-    testImageFuseki = "latest"
-    testImageES5 = "latest"
-    testImageESSiren = "latest"
-    testImageATTXDPUs = "latest"
-}
 
 dependencies {
     testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0",
@@ -55,9 +42,29 @@ dependencies {
 
 }
 
+ext.attxTestHelperPlugin = '1.5'
+ext.uvreplaceDS = '1.0-SNAPSHOT'
+
+ext {
+    testTag           = "latest"
+    testImageUVProv   = "${testTag}"
+    testImageRML      = "${testTag}"
+    testImageProv     = "${testTag}"
+    testImageGM       = "${testTag}"
+    testImageFuseki   = "${testTag}"
+    testImageES5      = "${testTag}"
+    testImageESSiren  = "${testTag}"
+    testImageATTXDPUs = "${testTag}"
+}
+
+// setup default volume location to /tmp
+if (!project.hasProperty("volumeDir")) {
+    ext.volumeDir = "/attx-sb-shared/data"
+} else {
+    ext.volumeDir = project.volumeDir
+}
 
 ext.src = [
-    "${artifactRepoURL}/restServices/archivaServices/searchService/artifact?g=org.uh.hulib.attx.dev&a=dev-test-helper&v=${attxTestHelperPlugin}&p=jar":"dev-test-helper-${attxTestHelperPlugin}.jar",
     "${artifactRepoURL}/restServices/archivaServices/searchService/artifact?g=org.uh.hulib.attx.wc.uv&a=attx-l-replaceds&v=${uvreplaceDS}&p=jar":"attx-l-replaceds-${uvreplaceDS}.jar"
 ]
 
@@ -79,15 +86,6 @@ if (!project.hasProperty("testEnv") || project.testEnv == "dev") {
 } else {
     throw new GradleException("Build project environment option not recognised.")
 }
-
-// setup default volume location to /tmp
-if (!project.hasProperty("volumeDir")) {
-    ext.volumeDir = '/tmp'
-}
-else {
-    ext.volumeDir = project.volumeDir
-}
-
 
 // These parameters should be set before the tests are run,
 // if there different combinations need to be tested
@@ -172,16 +170,16 @@ dcompose {
         env = ['ADMIN_PASSWORD=pw123']
     }
 
-    essiren {
-        forcePull = true
-        forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/essiren:${testImageESSiren}"
-        networks = [pdTest]
-        hostName = 'essiren'
-        if (testSet == "localhost") {
-            portBindings = ['9200:9200', '9300:9300']
-        }
-    }
+    // essiren {
+    //     forcePull = true
+    //     forceRemoveImage = true
+    //     image = "${imageRepo}:${imageRepoPort}/essiren:${testImageESSiren}"
+    //     networks = [pdTest]
+    //     hostName = 'essiren'
+    //     if (testSet == "localhost") {
+    //         portBindings = ['9200:9200', '9300:9300']
+    //     }
+    // }
 
     es5 {
         forcePull = true
@@ -208,10 +206,9 @@ dcompose {
     }
 
     rmlservice {
-        //forcePull = true
+        forcePull = true
         forceRemoveImage = true
-        //image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"        
-        image = "test/rml2"
+        image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"
         dependsOn = [messagebroker]
         networks = [pdTest]
         hostName = 'rmlservice'
@@ -240,19 +237,21 @@ dcompose {
         forcePull = true
         forceRemoveImage = true
         image = "${imageRepo}:${imageRepoPort}/gm-api:${testImageGM}"
-        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, essiren, es5]
+        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5]
         networks = [pdTest]
         hostName = 'graphmanager'
         if (testSet == "localhost") {
             portBindings = ['4302:4302']
         }
         env = ['MHOST=messagebroker', 'GHOST=fuseki']
+        volumes = ['/attx-sb-shared']
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
     test {
         ignoreExitCode = true
         baseDir = file('.')
         dockerFilename = 'Dockerfile'
-        buildArgs = ['attxTestHelperPlugin': "$attxTestHelperPlugin", 'UVreplaceDS': "$uvreplaceDS"]
+        buildArgs = ['UVreplaceDS': "$uvreplaceDS"]
         env = ["REPO=$artifactRepoURL"]
         if (testSet == "container") {
             binds = ["/var/run/docker.sock:/run/docker.sock"]
@@ -310,91 +309,43 @@ task runContainerTests {
 
 // TO DO: find a fix so we can run the test locally preferably while waiting for other stuff to be there. MYSQL is the one that we need to wait for.
 
-task runIntegTests(type: Test) {    
+task runIntegTests(type: Test) {
     dependsOn checkDPUDone
-    doFirst {
-        systemProperty 'frontend.port', dcompose.frontend.findHostPort(8080)
-        systemProperty 'frontend.host', dcompose.frontend.dockerHost
-        systemProperty 'uvprov.port', dcompose.uvprov.findHostPort(4301)
-        systemProperty 'uvprov.host', dcompose.uvprov.dockerHost
-        systemProperty 'provservice.port', dcompose.provservice.findHostPort(7030)
-        systemProperty 'provservice.host', dcompose.provservice.dockerHost
-        systemProperty 'fuseki.port', dcompose.fuseki.findHostPort(3030)
-        systemProperty 'fuseki.host', dcompose.fuseki.dockerHost
-        systemProperty 'graphmanager.port', dcompose.graphmanager.findHostPort(4302)
-        systemProperty 'graphmanager.host', dcompose.graphmanager.dockerHost
-        systemProperty 'essiren.port', dcompose.essiren.findHostPort(9200)
-        systemProperty 'essiren.tcp', dcompose.essiren.findHostPort(9300)
-        systemProperty 'essiren.host', dcompose.essiren.dockerHost
-        systemProperty 'es5.port', dcompose.es5.findHostPort(9210)
-        systemProperty 'es5.host', dcompose.es5.dockerHost
-        systemProperty 'rmlservice.port', dcompose.rmlservice.findHostPort(8090)
-        systemProperty 'rmlservice.host', dcompose.rmlservice.dockerHost
+    Map<String, Integer> serviceMap = [ "frontend" : 8080,
+                  "uvprov" : 4301,
+                  "provservice" : 7030,
+                  "fuseki" : 3030,
+                  "graphmanager" : 4302,
+                  "es5": 9210,
+                  "rmlservice": 8090 ]
+    ext.getHostPort = {services ->
+        serviceMap.each{ host, port ->
+            if (project.testEnv == "dev" && project.runEnv == "console") {
+                systemProperty "${host}.port", "${port}"
+                systemProperty "${host}.host", "localhost"
+            } else {
+                systemProperty "${host}.port", dcompose."${host}".findHostPort("${port}".toInteger())
+                systemProperty "${host}.host", dcompose."${host}".dockerHost
+                // println dcompose."${host}".dockerHost
+            }
+         }
     }
-    doLast {
-        systemProperties.remove 'frontend.port'
-        systemProperties.remove 'frontend.host'
-        systemProperties.remove 'uvprov.port'
-        systemProperties.remove 'uvprov.host'
-        systemProperties.remove 'provservice.port'
-        systemProperties.remove 'provservice.host'
-        systemProperties.remove 'fuseki.port'
-        systemProperties.remove 'fuseki.host'
-        systemProperties.remove 'graphmanager.port'
-        systemProperties.remove 'graphmanager.host'
-        systemProperties.remove 'essiren.port'
-        systemProperties.remove 'essiren.tcp'
-        systemProperties.remove 'essiren.host'
-        systemProperties.remove 'es5.port'
-        systemProperties.remove 'es5.host'
-        systemProperties.remove 'rmlservice.port'
-        systemProperties.remove 'rmlservice.host'
-    }
-    finalizedBy removeImages
-}
 
-task devIntegTests(type: Test) {
-    doFirst {
-        systemProperty 'frontend.port', 8080
-        systemProperty 'frontend.host', 'localhost'
-        systemProperty 'uvprov.port', 4301
-        systemProperty 'uvprov.host', 'localhost'
-        systemProperty 'provservice.port', 4301
-        systemProperty 'provservice.host', 'localhost'
-        systemProperty 'fuseki.port', 3030
-        systemProperty 'fuseki.host', 'localhost'
-        systemProperty 'graphmanager.port', 4302
-        systemProperty 'graphmanager.host', 'localhost'
-        systemProperty 'essiren.port', 9200
-        systemProperty 'essiren.tcp', 9300
-        systemProperty 'essiren.host', 'localhost'
-        systemProperty 'es5.port', 9210
-        systemProperty 'es5.host', 'localhost'
-        systemProperty 'rmlservice.port', 8090
-        systemProperty 'rmlservice.host', 'localhost'
+    ext.removeHostPort = { services ->
+        serviceMap.each{ host, port ->
+            systemProperties.remove "${host}.port"
+            systemProperties.remove "${host}.host"
+         }
     }
-    forkEvery = 2
-    maxParallelForks = 2
-    testLogging {
-        showStackTraces = true
+
+    doFirst {
+        getHostPort(serviceMap)
     }
     doLast {
-        systemProperties.remove 'frontend.port'
-        systemProperties.remove 'frontend.host'
-        systemProperties.remove 'uvprov.port'
-        systemProperties.remove 'uvprov.host'
-        systemProperties.remove 'provservice.port'
-        systemProperties.remove 'provservice.host'
-        systemProperties.remove 'fuseki.port'
-        systemProperties.remove 'fuseki.host'
-        systemProperties.remove 'graphmanager.port'
-        systemProperties.remove 'graphmanager.host'
-        systemProperties.remove 'essiren.port'
-        systemProperties.remove 'essiren.tcp'
-        systemProperties.remove 'essiren.host'
-        systemProperties.remove 'es5.port'
-        systemProperties.remove 'es5.host'
-        systemProperties.remove 'rmlservice.port'
-        systemProperties.remove 'rmlservice.host'
+        removeHostPort(serviceMap)
     }
+
+    // if (project.runEnv != "console"){
+    //     finalizedBy removeImages
+    // }
 }

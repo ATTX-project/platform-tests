@@ -14,7 +14,6 @@ import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Consumer;
 import com.rabbitmq.client.DefaultConsumer;
 import com.rabbitmq.client.Envelope;
 import java.io.File;
@@ -23,15 +22,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
-import org.junit.Before;
 import org.junit.Ignore;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.uh.hulib.attx.dev.TestUtils;
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
-import org.uh.hulib.attx.wc.uv.common.RabbitMQClient;
 import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceInput;
 import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceRequest;
 import org.uh.hulib.attx.wc.uv.common.pojos.prov.Context;
@@ -41,7 +34,7 @@ import org.uh.hulib.attx.wc.uv.common.pojos.prov.Provenance;
  *
  * @author jkesanie
  */
-@RunWith(JUnitPlatform.class)
+//@RunWith(JUnitPlatform.class)
 public class RMLServiceIntegrationTest {
 
     public final String API_VERSION = "0.1";

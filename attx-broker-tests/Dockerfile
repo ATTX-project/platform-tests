@@ -14,7 +14,6 @@ RUN mkdir -p /tmp
 
 WORKDIR /tmp
 
-ARG attxTestHelperPlugin
 ARG UVreplaceDS
 
 COPY src /tmp/src
@@ -23,4 +22,3 @@ COPY runTests.sh /tmp
 RUN chmod 700 /tmp/runTests.sh
 
 COPY attx-l-replaceds-${UVreplaceDS}.jar /tmp/attx-l-replaceds-${UVreplaceDS}.jar
-COPY dev-test-helper-${attxTestHelperPlugin}.jar /tmp/dev-test-helper.jar
