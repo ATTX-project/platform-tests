@@ -214,7 +214,7 @@ dcompose {
         }
         env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=', 'MQUEUE=rmlservice']
         volumes = ['/attx-sb-shared']
-        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+        binds = ["${volumeDir}:/attx-sb-shared"]
     }
 
     provservice {
@@ -242,7 +242,7 @@ dcompose {
         }
         env = ['MHOST=messagebroker', 'GHOST=fuseki']
         volumes = ['/attx-sb-shared']
-        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+        binds = ["${volumeDir}:/attx-sb-shared"]
     }
     test {
         ignoreExitCode = true
@@ -263,7 +263,6 @@ dcompose {
         volumes = ['/attx-sb-shared']
         binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
-
 }
 
 task copyReportFiles(type: DcomposeCopyFileFromContainerTask) {
@@ -275,7 +274,6 @@ task copyReportFiles(type: DcomposeCopyFileFromContainerTask) {
 }
 
 startTestContainer.finalizedBy copyReportFiles
-
 
 // making sure the that fresh build of test classes is done before building the image
 buildTestImage.dependsOn downloadTestFiles
@@ -298,7 +296,8 @@ startTestContainer.dependsOn checkDPUDone
 
 task runContainerTests {
     dependsOn startTestContainer
-    finalizedBy removeImages
+    // finalizedBy stopContainers
+    // finalizedBy removeImages
     doLast {
         if(dcompose.test.exitCode != 0){ throw new GradleException("Tests within the container Failed!") }
     }
@@ -312,16 +311,15 @@ task runIntegTests(type: Test) {
                   "fuseki" : 3030,
                   "graphmanager" : 4302,
                   "es5": 9210,
-                  "rmlservice": 8090 ]
+                  "rmlservice": 8090,
+                  "messagebroker": 5672,
+                  "messagebroker": 5671,
+                  "messagebroker": 4369 ]
     ext.getHostPort = {services ->
         serviceMap.each{ host, port ->
-            if (project.testEnv == "dev" && project.runEnv == "console") {
-                systemProperty "${host}.port", "${port}".toInteger()
-                systemProperty "${host}.host", "localhost"
-            } else {
+            if (project.testEnv == "dev") {
                 systemProperty "${host}.port", dcompose."${host}".findHostPort("${port}".toInteger())
                 systemProperty "${host}.host", dcompose."${host}".dockerHost
-                // println dcompose."${host}".dockerHost
             }
          }
     }
@@ -340,7 +338,10 @@ task runIntegTests(type: Test) {
         removeHostPort(serviceMap)
     }
 
-    if (project.runEnv != "console"){
-        finalizedBy removeImages
+    if (project.hasProperty("runEnv") && project.runEnv == "console"){
+        println "Running things from console."
+    } else {
+//        finalizedBy removeImages
+        finalizedBy stopContainers
     }
 }

@@ -36,7 +36,7 @@ public class GraphManagerIntegrationTest {
         try {
             String reqStr = FileUtils.readFileToString(new File(getClass().getResource(
                     "/graphmanagerfixtures/graph_replace_data.json").toURI()), "UTF-8");
-            RabbitMQClient c = new RabbitMQClient("localhost", "user", "password", "provenance.inbox");
+            RabbitMQClient c = new RabbitMQClient(TestUtils.getMessageBrokerHost(), "user", "password", "provenance.inbox");
 
             System.out.println(reqStr);
             String respStr = c.sendSyncServiceMessage(reqStr, "attx.graphManager.inbox", 10000);
@@ -68,9 +68,9 @@ public class GraphManagerIntegrationTest {
             String reqStr = FileUtils.readFileToString(new File(getClass().getResource(
                     "/graphmanagerfixtures/graph_replace_uri.json").toURI()), "UTF-8");
 
-//            FileUtils.copyFile(input, new File());
+            FileUtils.copyFile(input, new File("/attx-sb-shared/data/triple.ttl"));
             reqStr = reqStr.replaceFirst("file", "file:///attx-sb-shared/" + input.getName());
-            RabbitMQClient c = new RabbitMQClient("localhost", "user", "password", "provenance.inbox");
+            RabbitMQClient c = new RabbitMQClient(TestUtils.getMessageBrokerHost(), "user", "password", "provenance.inbox");
 
             System.out.println(reqStr);
             String respStr = c.sendSyncServiceMessage(reqStr, "attx.graphManager.inbox", 10000);

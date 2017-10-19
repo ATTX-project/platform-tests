@@ -32,8 +32,8 @@ public class TestUtils {
         return "http://" + System.getProperty("es5.host") + ":" + Integer.parseInt(System.getProperty("es5.port"));
     }
 
-    public static String getMessageBroker() {
-        return "http://" + System.getProperty("messagebroker.host") + ":" + Integer.parseInt(System.getProperty("messagebroker.port"));
+    public static String getMessageBrokerHost() {
+        return System.getProperty("messagebroker.host");
     }
 
     public static String getFuseki() {
