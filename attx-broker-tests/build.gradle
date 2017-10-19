@@ -12,8 +12,6 @@ apply plugin: 'com.chrisgahlert.gradle-dcompose-plugin'
 apply plugin: 'com.bmuschko.docker-remote-api'
 //apply plugin: 'org.junit.platform.gradle.plugin'
 
-
-
 import com.bmuschko.gradle.docker.tasks.container.DockerWaitContainer
 
 repositories {
@@ -42,7 +40,6 @@ dependencies {
 
 }
 
-ext.attxTestHelperPlugin = '1.5'
 ext.uvreplaceDS = '1.0-SNAPSHOT'
 
 ext {
@@ -307,8 +304,6 @@ task runContainerTests {
     }
 }
 
-// TO DO: find a fix so we can run the test locally preferably while waiting for other stuff to be there. MYSQL is the one that we need to wait for.
-
 task runIntegTests(type: Test) {
     dependsOn checkDPUDone
     Map<String, Integer> serviceMap = [ "frontend" : 8080,
@@ -321,7 +316,7 @@ task runIntegTests(type: Test) {
     ext.getHostPort = {services ->
         serviceMap.each{ host, port ->
             if (project.testEnv == "dev" && project.runEnv == "console") {
-                systemProperty "${host}.port", "${port}"
+                systemProperty "${host}.port", "${port}".toInteger()
                 systemProperty "${host}.host", "localhost"
             } else {
                 systemProperty "${host}.port", dcompose."${host}".findHostPort("${port}".toInteger())
@@ -345,7 +340,7 @@ task runIntegTests(type: Test) {
         removeHostPort(serviceMap)
     }
 
-    // if (project.runEnv != "console"){
-    //     finalizedBy removeImages
-    // }
+    if (project.runEnv != "console"){
+        finalizedBy removeImages
+    }
 }

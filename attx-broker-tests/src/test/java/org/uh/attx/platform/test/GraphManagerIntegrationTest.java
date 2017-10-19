@@ -31,7 +31,7 @@ public class GraphManagerIntegrationTest {
         return item.getJSONObject(key).getString("value");
     }
 
-//    @Test
+    @Test
     public void testReplaceDatasetData(){
         try {
             String reqStr = FileUtils.readFileToString(new File(getClass().getResource(
@@ -51,21 +51,25 @@ public class GraphManagerIntegrationTest {
 
         }catch (Exception e){
             fail(e.getMessage());
+        } finally {
+            TestUtils.dropGraph("http://work/dataset1");
         }
     }
 
     @Test
     public void testReplaceDatasetURI(){
         File input = null;
+
         try {
-            input = File.createTempFile("file", ".ttl");
+            input = new File("/attx-sb-shared/triple.ttl");
+            input.getParentFile().mkdirs();
             FileUtils.writeStringToFile(input, "<http://example.org/#spiderman> <http://www.perceive.net/schemas/relationship/enemyOf> <http://example" +
                     ".org/#red-goblin> .", "UTF-8");
             String reqStr = FileUtils.readFileToString(new File(getClass().getResource(
                     "/graphmanagerfixtures/graph_replace_uri.json").toURI()), "UTF-8");
 
 //            FileUtils.copyFile(input, new File());
-            reqStr = reqStr.replaceFirst("file", "file:///attx-sb-shared/triple.ttl");
+            reqStr = reqStr.replaceFirst("file", "file:///attx-sb-shared/" + input.getName());
             RabbitMQClient c = new RabbitMQClient("localhost", "user", "password", "provenance.inbox");
 
             System.out.println(reqStr);
@@ -82,8 +86,9 @@ public class GraphManagerIntegrationTest {
         }catch (Exception e){
             fail(e.getMessage());
         } finally {
-//            if(input != null)
-//                input.delete();
+            if(input != null)
+                input.delete();
+            TestUtils.dropGraph("http://work/dataset1");
         }
     }
 
