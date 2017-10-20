@@ -15,14 +15,7 @@
         {
           "contentType": "application/n-triples",
           "inputType": "URI",
-          "input": "file:///attx-sb-shared/data/triple.ttl"
-
-        },
-        {
-          "contentType": "application/n-triples",
-          "inputType": "Data",
-          "input": "<http://example.org/#spiderman> <http://www.perceive.net/schemas/relationship/enemyOf> <http://example.org/#blue-goblin> ."
-
+          "input": "file:///attx-sb-shared/data/triple_missing.ttl"
         }
       ]
     }

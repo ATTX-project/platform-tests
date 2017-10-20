@@ -13,6 +13,7 @@ apply plugin: 'com.bmuschko.docker-remote-api'
 //apply plugin: 'org.junit.platform.gradle.plugin'
 
 import com.bmuschko.gradle.docker.tasks.container.DockerWaitContainer
+import com.bmuschko.gradle.docker.tasks.container.DockerCopyFileToContainer
 
 repositories {
     mavenCentral()
@@ -209,12 +210,12 @@ dcompose {
         dependsOn = [messagebroker]
         networks = [pdTest]
         hostName = 'rmlservice'
+        env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=', 'MQUEUE=rmlservice']
+        volumes = ['/attx-sb-shared']
         if (testSet == "localhost") {
             portBindings = ['8090:8090']
         }
-        env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=', 'MQUEUE=rmlservice']
-        volumes = ['/attx-sb-shared']
-        binds = ["${volumeDir}:/attx-sb-shared"]
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
 
     provservice {
@@ -237,12 +238,12 @@ dcompose {
         dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5]
         networks = [pdTest]
         hostName = 'graphmanager'
+        env = ['MHOST=messagebroker', 'GHOST=fuseki']
+        volumes = ['/attx-sb-shared']
         if (testSet == "localhost") {
             portBindings = ['4302:4302']
         }
-        env = ['MHOST=messagebroker', 'GHOST=fuseki']
-        volumes = ['/attx-sb-shared']
-        binds = ["${volumeDir}:/attx-sb-shared"]
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
     test {
         ignoreExitCode = true
@@ -280,6 +281,13 @@ buildTestImage.dependsOn downloadTestFiles
 buildTestImage.dependsOn testClasses
 buildTestImage.dependsOn processTestResources
 
+
+task copyFilesIntoContainer(type: DockerCopyFileToContainer) {
+    targetContainerId { dcompose.graphmanager.containerId }
+    hostPath = "$projectDir/src/test/resources/data/"
+    remotePath = "/attx-sb-shared/"
+}
+
 task checkDPUDone(type: DockerWaitContainer) {
     dependsOn startGraphmanagerContainer
     targetContainerId {dcompose.attxdpus.containerId}
@@ -293,6 +301,7 @@ task checkDPUDone(type: DockerWaitContainer) {
 }
 
 startTestContainer.dependsOn checkDPUDone
+buildTestImage.dependsOn copyFilesIntoContainer
 
 task runContainerTests {
     dependsOn startTestContainer
@@ -304,7 +313,7 @@ task runContainerTests {
 }
 
 task runIntegTests(type: Test) {
-    dependsOn checkDPUDone
+    dependsOn checkDPUDone, copyFilesIntoContainer
     Map<String, Integer> serviceMap = [ "frontend" : 8080,
                   "uvprov" : 4301,
                   "provservice" : 7030,

@@ -147,19 +147,6 @@ public class TestUtils {
         };
     }
 
-//    NOT USED
-//    public static void updateProv() throws Exception{
-//        String provRequest = String.format(getGmapi() + VERSION + "/prov?start=true&wfapi=http://wfapi:4301" + VERSION +
-//                "&graphStore=http://fuseki:3030/test");
-//
-//        HttpResponse<JsonNode> wfProv = Unirest.get(provRequest)
-//                .header("content-type", "application/json")
-//                .asJson();
-//        JSONObject provObj = wfProv.getBody().getObject();
-//
-//        assertEquals(200, wfProv.getStatus());
-//        assertEquals("Done", provObj.getString("status"));
-//    }
 
     public static Callable<Boolean> askQueryAnswer(String query) {
         return new Callable<Boolean>() {

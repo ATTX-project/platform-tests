@@ -15,7 +15,7 @@
         {
           "contentType": "application/n-triples",
           "inputType": "URI",
-          "input": "file"
+          "input": "file:///attx-sb-shared/data/triple.ttl"
         }
       ]
     }

@@ -45,8 +45,8 @@ task containerIntegTest(type: Test) {
                   "messagebroker": 4369 ]
     ext.getHostPort = {services ->
         serviceMap.each{ host, port ->
-                systemProperty "${host}.port", "${port}".toInteger()
-                systemProperty "${host}.host", "${host}"
+            systemProperty "${host}.port", "${port}".toInteger()
+            systemProperty "${host}.host", "${host}"
         }
     }
 

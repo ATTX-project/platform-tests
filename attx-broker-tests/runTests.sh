@@ -11,4 +11,5 @@ dockerize -wait http://es5:9210 -timeout 60s
 
 echo  "Archiva repository URL: $REPO"
 
-gradle -PartifactRepoURL=$REPO containerIntegTest
+
+gradle -b /tmp/build.gradle -PartifactRepoURL=$REPO containerIntegTest
