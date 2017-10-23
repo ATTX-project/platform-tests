@@ -10,6 +10,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'com.chrisgahlert.gradle-dcompose-plugin'
 apply plugin: 'com.bmuschko.docker-remote-api'
+import groovy.json.*
 //apply plugin: 'org.junit.platform.gradle.plugin'
 
 import com.bmuschko.gradle.docker.tasks.container.DockerWaitContainer
@@ -47,7 +48,7 @@ ext.uvreplaceDS = '1.0-SNAPSHOT'
 ext.uvCommon = '1.0-SNAPSHOT'
 
 ext {
-    testTag           = "latest"
+    testTag           = "dev"
     testImageUVProv   = "${testTag}"
     testImageRML      = "${testTag}"
     testImageProv     = "${testTag}"
@@ -91,6 +92,19 @@ if (!project.hasProperty("testEnv") || project.testEnv == "dev") {
     throw new GradleException("Build project environment option not recognised.")
 }
 
+def data = ""
+ext.testNetwork = ""
+
+if (!project.hasProperty("network") || project.network == "pdTest") {
+    ext.testNetwork = project.network
+    println "Test network is set to $testNetwork"
+    def jsonSlurper = new JsonSlurper()
+    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("$project.projectDir/testEnv.json"),"UTF-8"))
+    data = jsonSlurper.parse(reader)
+}
+
+//loadConfiguration()
+
 // These parameters should be set before the tests are run,
 // if there different combinations need to be tested
 
@@ -100,13 +114,13 @@ dcompose {
         // no user/pass
     }
     networks {
-        pdTest
+        $testNetwork
     }
     messagebroker {
         forcePull = true
         forceRemoveImage = true
         image = 'rabbitmq:3.6.12-management'
-        networks = [pdTest]
+        networks = [$testNetwork]
         if (testSet == "localhost") {
             portBindings = ['4369:4369','5671:5671', '5672:5672', '15671:15671', '15672:15672', '25672:25672']
         }
@@ -117,7 +131,7 @@ dcompose {
         forcePull = true
         forceRemoveImage = true
         image = 'attxproject/unified-views-shared:stable-1.2'
-        networks = [pdTest]
+        networks = [$testNetwork]
     }
 
     mysql {
@@ -125,7 +139,7 @@ dcompose {
         forceRemoveImage = true
         image = 'attxproject/unified-views-mariadb:stable-1.2'
         env = ['MYSQL_ROOT_PASSWORD=iamroot!']
-        networks = [pdTest]
+        networks = [$testNetwork]
         hostName = 'mysql'
         if (testSet == "localhost") {
             portBindings = ['3306:3306']
@@ -137,7 +151,7 @@ dcompose {
         image = 'attxproject/unified-views-backend:stable-1.2'
         volumesFrom =  [shared]
         dependsOn = [mysql, shared]
-        networks = [pdTest]
+        networks = [$testNetwork]
     }
 
     frontend {
@@ -146,7 +160,7 @@ dcompose {
         image = 'attxproject/unified-views-frontend:stable-1.2'
         volumesFrom = [shared]
         dependsOn = [backend, shared]
-        networks = [pdTest]
+        networks = [$testNetwork]
         hostName = 'frontend'
         if (testSet == "localhost") {
             portBindings = ['8080:8080']
@@ -159,14 +173,14 @@ dcompose {
         image = "${imageBase}/uv-attx-dpus:${testImageATTXDPUs}"
         links = [frontend.link(), mysql.link(), backend.link()]
         dependsOn = [mysql, backend, frontend]
-        networks = [pdTest]
+        networks = [$testNetwork]
     }
 
     fuseki {
         forcePull = true
         forceRemoveImage = true
         image = "${imageBase}/attx-fuseki:${testImageFuseki}"
-        networks = [pdTest]
+        networks = [$testNetwork]
         hostName = 'fuseki'
         if (testSet == "localhost") {
             portBindings = ['3030:3030']
@@ -189,7 +203,7 @@ dcompose {
         forcePull = true
         forceRemoveImage = true
         image = "${imageBase}/attx-es5:${testImageES5}"
-        networks = [pdTest]
+        networks = [$testNetwork]
         hostName = 'es5'
         if (testSet == "localhost") {
             portBindings = ['9210:9210', '9310:9310']
@@ -201,7 +215,7 @@ dcompose {
         forceRemoveImage = true
         image = "${imageBase}/uv-prov:${testImageUVProv}"
         dependsOn = [messagebroker, mysql]
-        networks = [pdTest]
+        networks = [$testNetwork]
         hostName = 'uvprov'
         if (testSet == "localhost") {
             portBindings = ['4301:4301']
@@ -214,7 +228,7 @@ dcompose {
         forceRemoveImage = true
         image = "${imageBase}/rml-service:${testImageRML}"
         dependsOn = [messagebroker]
-        networks = [pdTest]
+        networks = [$testNetwork]
         hostName = 'rmlservice'
         env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=', 'MQUEUE=rmlservice']
         volumes = ['/attx-sb-shared']
@@ -229,7 +243,7 @@ dcompose {
         forceRemoveImage = true
         image = "${imageBase}/provenance-service:${testImageProv}"
         dependsOn = [fuseki, messagebroker]
-        networks = [pdTest]
+        networks = [$testNetwork]
         hostName = 'provservice'
         if (testSet == "localhost") {
             portBindings = ['7030:7030']
@@ -241,8 +255,14 @@ dcompose {
         forcePull = true
         forceRemoveImage = true
         image = "${imageBase}/gm-api:${testImageGM}"
-        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5]
-        networks = [pdTest]
+        def mylist = []
+        println data.networks."${testNetwork}".dependencies
+        data.networks."${testNetwork}".dependencies.each {println mylist.add("service("+it+")")}
+//        dependsOn = "${dependencies}".replaceAll(~/^\[|\]$/,'').split(',')
+//        dependsOn = data.networks."${testNetwork}".dependencies
+//        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5]
+        dependsOn = mylist
+        networks = [$testNetwork]
         hostName = 'graphmanager'
         env = ['MHOST=messagebroker', 'GHOST=fuseki']
         volumes = ['/attx-sb-shared']
@@ -261,13 +281,13 @@ dcompose {
         if (testSet == "container") {
             binds = ["/var/run/docker.sock:/run/docker.sock"]
         }
-        dependsOn = [graphmanager] // This dependency is not really needed however it reminds the scope of the tests.
+        dependsOn = [data.networks."${testNetwork}".baseImage] // This dependency is not really needed however it reminds the scope of the tests.
         command = ['sh', '-c', '/tmp/runTests.sh']
         waitForCommand = true
         forceRemoveImage = true
         attachStdout = true
         attachStderr = true
-        networks = [pdTest]
+        networks = [$testNetwork]
         volumes = ['/attx-sb-shared']
         binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
@@ -281,22 +301,14 @@ task copyReportFiles(type: DcomposeCopyFileFromContainerTask) {
     dependsOn startTestContainer
 }
 
-startTestContainer.finalizedBy copyReportFiles
-
-// making sure the that fresh build of test classes is done before building the image
-buildTestImage.dependsOn downloadTestFiles
-buildTestImage.dependsOn testClasses
-buildTestImage.dependsOn processTestResources
-
-
 task copyFilesIntoContainer(type: DockerCopyFileToContainer) {
-    targetContainerId { dcompose.graphmanager.containerId }
+    targetContainerId { data.networks."${testNetwork}".targetFilesContainer }
     hostPath = "$projectDir/src/test/resources/data/"
     remotePath = "/attx-sb-shared/"
 }
 
 task checkDPUDone(type: DockerWaitContainer) {
-    dependsOn startGraphmanagerContainer
+    dependsOn data.networks."${testNetwork}".baseTask
     targetContainerId {dcompose.attxdpus.containerId}
     doLast{
         if(getExitCode() != 0) {
@@ -307,8 +319,13 @@ task checkDPUDone(type: DockerWaitContainer) {
     }
 }
 
-startTestContainer.dependsOn checkDPUDone
 buildTestImage.dependsOn copyFilesIntoContainer
+buildTestImage.dependsOn downloadTestFiles
+buildTestImage.dependsOn testClasses
+buildTestImage.dependsOn processTestResources
+
+startTestContainer.dependsOn checkDPUDone
+startTestContainer.finalizedBy copyReportFiles
 
 task runContainerTests {
     dependsOn startTestContainer
@@ -319,7 +336,7 @@ task runContainerTests {
 }
 
 task runIntegTests(type: Test) {
-    dependsOn checkDPUDone, copyFilesIntoContainer
+    dependsOn checkDPUDone
     Map<String, Integer> serviceMap = [ "frontend" : 8080,
                   "uvprov" : 4301,
                   "provservice" : 7030,
