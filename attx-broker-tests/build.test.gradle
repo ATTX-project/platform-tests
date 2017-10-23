@@ -24,7 +24,6 @@ dependencies {
             'com.mashape.unirest:unirest-java:1.4.9',
             'org.skyscreamer:jsonassert:1.5.0',
             'org.awaitility:awaitility-groovy:3.0.0',
-            'org.uh.hulib.attx.dev:dev-test-helper:1.5',
             'org.uh.hulib.attx.wc.uv:uv-common:1.0-SNAPSHOT',
             'com.rabbitmq:amqp-client:4.2.0',
             'org.jdom:jdom2:2.0.5',

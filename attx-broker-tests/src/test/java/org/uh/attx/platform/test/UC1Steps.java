@@ -12,8 +12,6 @@ import cucumber.api.java8.En;
 import org.awaitility.core.ConditionTimeoutException;
 import org.json.JSONObject;
 
-import org.uh.hulib.attx.dev.TestUtils;
-
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
