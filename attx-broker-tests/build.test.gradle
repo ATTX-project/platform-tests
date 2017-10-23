@@ -26,7 +26,9 @@ dependencies {
             'org.awaitility:awaitility-groovy:3.0.0',
             'org.uh.hulib.attx.dev:dev-test-helper:1.5',
             'org.uh.hulib.attx.wc.uv:uv-common:1.0-SNAPSHOT',
-            'com.rabbitmq:amqp-client:4.2.0'
+            'com.rabbitmq:amqp-client:4.2.0',
+            'org.jdom:jdom2:2.0.5',
+            'org.apache.jena:jena-core:3.4.0'
     testRuntime \
         "org.junit.jupiter:junit-jupiter-engine:5.0.0",
             'org.junit.vintage:junit-vintage-engine:4.12.0'

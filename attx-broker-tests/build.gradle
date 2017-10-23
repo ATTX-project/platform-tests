@@ -34,11 +34,12 @@ dependencies {
         'org.awaitility:awaitility-groovy:3.0.0',
         'org.uh.hulib.attx.dev:dev-test-helper:1.5',
         'org.uh.hulib.attx.wc.uv:uv-common:1.0-SNAPSHOT',
-        'com.rabbitmq:amqp-client:4.2.0'
+        'com.rabbitmq:amqp-client:4.2.0',
+        'org.jdom:jdom2:2.0.5',
+        'org.apache.jena:jena-core:3.4.0'
     testRuntime \
         "org.junit.jupiter:junit-jupiter-engine:5.0.0",
         'org.junit.vintage:junit-vintage-engine:4.12.0'
-
 }
 
 ext.uvreplaceDS = '1.0-SNAPSHOT'
@@ -53,6 +54,8 @@ ext {
     testImageES5      = "${testTag}"
     testImageESSiren  = "${testTag}"
     testImageATTXDPUs = "${testTag}"
+//    We are testing images tagged with dev on the public Docker Hub
+    imageBase         = ("${testTag}" == "dev") ?  "attxproject" : "${imageRepo}:${imageRepoPort}"
 }
 
 // setup default volume location to /tmp
@@ -150,7 +153,7 @@ dcompose {
     attxdpus {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/uv-attx-dpus:${testImageATTXDPUs}"
+        image = "${imageBase}/uv-attx-dpus:${testImageATTXDPUs}"
         links = [frontend.link(), mysql.link(), backend.link()]
         dependsOn = [mysql, backend, frontend]
         networks = [pdTest]
@@ -159,7 +162,7 @@ dcompose {
     fuseki {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/attx-fuseki:${testImageFuseki}"
+        image = "${imageBase}/attx-fuseki:${testImageFuseki}"
         networks = [pdTest]
         hostName = 'fuseki'
         if (testSet == "localhost") {
@@ -171,7 +174,7 @@ dcompose {
     // essiren {
     //     forcePull = true
     //     forceRemoveImage = true
-    //     image = "${imageRepo}:${imageRepoPort}/essiren:${testImageESSiren}"
+    //     image = "${imageBase}/essiren:${testImageESSiren}"
     //     networks = [pdTest]
     //     hostName = 'essiren'
     //     if (testSet == "localhost") {
@@ -182,7 +185,7 @@ dcompose {
     es5 {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/attx-es5:${testImageES5}"
+        image = "${imageBase}/attx-es5:${testImageES5}"
         networks = [pdTest]
         hostName = 'es5'
         if (testSet == "localhost") {
@@ -193,7 +196,7 @@ dcompose {
     uvprov {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/uv-prov:${testImageUVProv}"
+        image = "${imageBase}/uv-prov:${testImageUVProv}"
         dependsOn = [messagebroker, mysql]
         networks = [pdTest]
         hostName = 'uvprov'
@@ -206,7 +209,7 @@ dcompose {
     rmlservice {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/rml-service:${testImageRML}"
+        image = "${imageBase}/rml-service:${testImageRML}"
         dependsOn = [messagebroker]
         networks = [pdTest]
         hostName = 'rmlservice'
@@ -221,7 +224,7 @@ dcompose {
     provservice {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/provenance-service:${testImageProv}"
+        image = "${imageBase}/provenance-service:${testImageProv}"
         dependsOn = [fuseki, messagebroker]
         networks = [pdTest]
         hostName = 'provservice'
@@ -234,7 +237,7 @@ dcompose {
     graphmanager {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageRepo}:${imageRepoPort}/gm-api:${testImageGM}"
+        image = "${imageBase}/gm-api:${testImageGM}"
         dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5]
         networks = [pdTest]
         hostName = 'graphmanager'
@@ -245,6 +248,7 @@ dcompose {
         }
         binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
+
     test {
         ignoreExitCode = true
         baseDir = file('.')
@@ -305,8 +309,7 @@ buildTestImage.dependsOn copyFilesIntoContainer
 
 task runContainerTests {
     dependsOn startTestContainer
-    // finalizedBy stopContainers
-    // finalizedBy removeImages
+     finalizedBy removeImages
     doLast {
         if(dcompose.test.exitCode != 0){ throw new GradleException("Tests within the container Failed!") }
     }
@@ -350,7 +353,6 @@ task runIntegTests(type: Test) {
     if (project.hasProperty("runEnv") && project.runEnv == "console"){
         println "Running things from console."
     } else {
-//        finalizedBy removeImages
-        finalizedBy stopContainers
+        finalizedBy removeImages
     }
 }

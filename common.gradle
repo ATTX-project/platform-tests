@@ -8,7 +8,6 @@ ext {
     imageRepo = "attx-dev"
     imageRepoPort = "5000"
     artifactRepoPort = "8081"
-    jenkinsPort = "49001"
     unifiedViewsRepoURL = "http://repository.unifiedviews.eu/nexus/content/repositories/public"
 }
 
