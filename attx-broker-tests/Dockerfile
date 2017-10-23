@@ -15,6 +15,7 @@ RUN mkdir -p /tmp
 WORKDIR /tmp
 
 ARG UVreplaceDS
+ARG UVCommon
 
 COPY src /tmp/src
 COPY build.test.gradle /tmp/build.gradle
@@ -22,3 +23,4 @@ COPY runTests.sh /tmp
 RUN chmod 700 /tmp/runTests.sh
 
 COPY attx-l-replaceds-${UVreplaceDS}.jar /tmp/attx-l-replaceds-${UVreplaceDS}.jar
+COPY uv-common-${UVCommon}.jar /tmp/uv-common-${UVCommon}.jar

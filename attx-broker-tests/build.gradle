@@ -25,7 +25,9 @@ sourceCompatibility = '1.8'
 
 
 dependencies {
-    testCompile "org.junit.jupiter:junit-jupiter-api:5.0.0",
+    testCompile \
+        'org.junit.jupiter:junit-jupiter-api:5.0.0',
+        'org.apache.commons:commons-io:1.3.2',
         'org.junit.platform:junit-platform-runner:1.0.1',
         'info.cukes:cucumber-java8:1.2.5',
         'info.cukes:cucumber-junit:1.2.5',
@@ -37,11 +39,12 @@ dependencies {
         'org.jdom:jdom2:2.0.5',
         'org.apache.jena:jena-core:3.4.0'
     testRuntime \
-        "org.junit.jupiter:junit-jupiter-engine:5.0.0",
+        'org.junit.jupiter:junit-jupiter-engine:5.0.0',
         'org.junit.vintage:junit-vintage-engine:4.12.0'
 }
 
 ext.uvreplaceDS = '1.0-SNAPSHOT'
+ext.uvCommon = '1.0-SNAPSHOT'
 
 ext {
     testTag           = "latest"
@@ -65,7 +68,8 @@ if (!project.hasProperty("volumeDir")) {
 }
 
 ext.src = [
-    "${artifactRepoURL}/restServices/archivaServices/searchService/artifact?g=org.uh.hulib.attx.wc.uv&a=attx-l-replaceds&v=${uvreplaceDS}&p=jar":"attx-l-replaceds-${uvreplaceDS}.jar"
+        "${artifactRepoURL}/restServices/archivaServices/searchService/artifact?g=org.uh.hulib.attx.wc.uv&a=attx-l-replaceds&v=${uvreplaceDS}&p=jar":"attx-l-replaceds-${uvreplaceDS}.jar",
+    "${artifactRepoURL}/restServices/archivaServices/searchService/artifact?g=org.uh.hulib.attx.wc.uv&a=uv-common&v=${uvCommon}&p=jar":"uv-common-${uvCommon}.jar"
 ]
 
 import de.undercouch.gradle.tasks.download.Download
@@ -252,7 +256,7 @@ dcompose {
         ignoreExitCode = true
         baseDir = file('.')
         dockerFilename = 'Dockerfile'
-        buildArgs = ['UVreplaceDS': "$uvreplaceDS"]
+        buildArgs = ['UVreplaceDS': "$uvreplaceDS", "UVCommon":"$uvCommon"]
         env = ["REPO=$artifactRepoURL"]
         if (testSet == "container") {
             binds = ["/var/run/docker.sock:/run/docker.sock"]
