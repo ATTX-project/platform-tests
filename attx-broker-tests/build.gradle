@@ -256,11 +256,7 @@ dcompose {
         forceRemoveImage = true
         image = "${imageBase}/gm-api:${testImageGM}"
         def mylist = []
-        println data.networks."${testNetwork}".dependencies
-        data.networks."${testNetwork}".dependencies.each {println mylist.add("service("+it+")")}
-//        dependsOn = "${dependencies}".replaceAll(~/^\[|\]$/,'').split(',')
-//        dependsOn = data.networks."${testNetwork}".dependencies
-//        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5]
+        data.networks."${testNetwork}".dependencies.each{mylist.add(service("${it}"))}
         dependsOn = mylist
         networks = [$testNetwork]
         hostName = 'graphmanager'
