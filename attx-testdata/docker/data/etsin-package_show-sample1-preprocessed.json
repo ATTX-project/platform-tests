@@ -5,7 +5,7 @@
 			"owner_org": "01901",
 			"maintainer": null,
 			"relationships_as_object": [],
-			"citation": "this is citation",
+			"citation": "citation",
 			"agent": [{
 				"organisation": "University of Helsinki",
 				"role": "author",
@@ -109,7 +109,7 @@
 				"name": "multimodal copora"
 			}],
 			"title": {
-				"eng": "DigiSami Conversational Speech"
+				"eng": "Test project 1"
 			},
 			"relationships_as_subject": [],
 			"private": false,
