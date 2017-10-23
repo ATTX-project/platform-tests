@@ -308,7 +308,7 @@ buildTestImage.dependsOn copyFilesIntoContainer
 
 task runContainerTests {
     dependsOn startTestContainer
-     finalizedBy removeImages
+    finalizedBy removeImages
     doLast {
         if(dcompose.test.exitCode != 0){ throw new GradleException("Tests within the container Failed!") }
     }

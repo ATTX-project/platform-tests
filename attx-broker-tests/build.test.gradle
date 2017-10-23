@@ -6,14 +6,14 @@ ext {
     imageRepo = "attx-dev"
     artifactRepoPort = "8081"
 }
-
-if (!project.hasProperty("artifactRepoURL")) {
-    ext.artifactRepoURL = "http://${imageRepo}:${artifactRepoPort}"
-}
+//
+//if (!project.hasProperty("artifactRepoURL")) {
+//    ext.artifactRepoURL = "http://${imageRepo}:${artifactRepoPort}"
+//}
 
 repositories {
     mavenCentral()
-    maven { url "${artifactRepoURL}/repository/attx-releases"}
+    maven { url "http://${imageRepo}:${artifactRepoPort}/repository/attx-releases"}
 }
 
 dependencies {
