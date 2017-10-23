@@ -1,0 +1,5 @@
+<etsin-org:02469-1054-karelia-1054-rehtorin-toimisto> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://data.hulib.helsinki.fi/attx/work#Organization> .
+<etsin-org:02469-1054-karelia-1054-rehtorin-toimisto> <http://purl.org/dc/terms/title> "1054 Rehtorin toimisto" .
+<etsin-org:02469-1054-karelia-1054-rehtorin-toimisto> <http://purl.org/dc/terms/identifier> "02469-1054" .
+<etsin-org:02469-1054-karelia-1054-rehtorin-toimisto> <http://data.hulib.helsinki.fi/attx/work#parentOrg> <etsin-org:02469-karelia> .
+<etsin-org:02469-1054-karelia-1054-rehtorin-toimisto> <http://data.hulib.helsinki.fi/attx/work#setName> "02469-1054-karelia-1054-rehtorin-toimisto" .

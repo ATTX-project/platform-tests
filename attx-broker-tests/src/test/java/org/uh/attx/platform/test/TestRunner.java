@@ -5,15 +5,14 @@
  */
 package org.uh.attx.platform.test;
 
-import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
 
 /**
  * @author jkesanie
  */
-@RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty"}, features = "classpath:features", tags = {"~@ignore"}, glue = {"classpath:org.uh.attx.platform.test"})
+//@RunWith(Cucumber.class)
+//@CucumberOptions(plugin = {"pretty"}, features = "classpath:features", tags = {"~@ignore"}, glue = {"classpath:org.uh.attx.platform.test"})
 public class TestRunner {
 
 }

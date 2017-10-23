@@ -1,0 +1,26 @@
+{
+	"help": "http://etsin.avointiede.fi/api/3/action/help_show?name=organization_list",
+	"success": true,
+	"result": [{
+		"display_name": "1054 Rehtorin toimisto",
+		"description": "",
+		"image_display_url": "",
+		"package_count": 0,
+		"created": "2017-02-23T10:20:55.272885",
+		"name": "02469-1054-karelia-1054-rehtorin-toimisto",
+		"is_organization": true,
+		"state": "active",
+		"image_url": "",
+		"groups": [{
+			"capacity": "public",
+			"name": "02469-karelia"
+		}],
+		"type": "organization",
+		"title": "1054 Rehtorin toimisto",
+		"revision_id": "2bb5291a-5aeb-427d-9933-a7c6da44de36",
+		"num_followers": 0,
+		"id": "02469-1054",
+		"approval_status": "approved"
+	}]
+}
+

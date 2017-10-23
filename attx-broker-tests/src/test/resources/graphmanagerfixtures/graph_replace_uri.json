@@ -1,0 +1,23 @@
+{
+  "provenance": {
+    "context": {
+      "workflowID": "ingestionwf",
+      "activityID": 1,
+      "stepID": "replaceds"
+    }
+  },
+  "payload": {
+    "graphManagerInput": {
+      "activity": "replace",
+      "targetGraph": "http://work/dataset1",
+      "sourceData":
+      [
+        {
+          "contentType": "application/n-triples",
+          "inputType": "URI",
+          "input": "file:///attx-sb-shared/data/triple.ttl"
+        }
+      ]
+    }
+  }
+}

@@ -13,6 +13,9 @@ import cucumber.api.java8.En;
 import java.io.File;
 
 import junit.framework.TestCase;
+import org.junit.Test;
+import org.junit.platform.runner.JUnitPlatform;
+import org.junit.runner.RunWith;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 import org.uh.hulib.attx.dev.TestUtils;
@@ -21,11 +24,11 @@ import org.uh.hulib.attx.dev.TestUtils;
 /**
  * @author jkesanie
  */
+//@RunWith(JUnitPlatform.class)
 public class UVPluginsSteps implements En {
 
     private final String API_USERNAME = "master";
     private final String API_PASSWORD = "commander";
-
 
     public UVPluginsSteps() throws Exception {
         Given("^that platform is up and running$", () -> {
