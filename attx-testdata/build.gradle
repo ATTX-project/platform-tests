@@ -1,10 +1,12 @@
 apply plugin: "com.chrisgahlert.gradle-dcompose-plugin"
 
 dcompose {
+    registry ("$registryURL") {
+         // Needs no user/pass
+    }
     testdata {
-		  baseDir = file('docker')
-	    dockerFilename = 'Dockerfile'
-      repository = "${imageRepo}:${imageRepoPort}/testdata:latest"
-
+    	baseDir = file('docker')
+	dockerFilename = 'Dockerfile'
+      	repository = "${imageRepo}:${imageRepoPort}/testdata:latest"
     }
 }
