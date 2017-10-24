@@ -107,22 +107,26 @@ if (project.hasProperty("network")) {
     data = loadConfiguration()
 } else {
     ext.testNetwork = "pdTest"
+    println "Test network is set to $testNetwork"
     data = loadConfiguration()
 }
 
 // These parameters should be set before the tests are run,
 // if there different combinations need to be tested
-def testNet = data.networks."${testNetwork}".name
-dcompose.getByNameOrCreate(testNet)
+
 dcompose {
     createComposeFile.useTags = true
     registry ("$registryURL") {
         // no user/pass
     }
     networks {
+        def testNet = data.networks."${testNetwork}".name
 //        println data.networks."${testNetwork}".name
 //        println "${testNetwork}"
-
+//        dcompose.network(testNet)
+        def whatever = dcompose.network(testNet)
+        whatever
+//        println whatever
     }
     messagebroker {
         forcePull = true
