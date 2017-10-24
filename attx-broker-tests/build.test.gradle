@@ -2,18 +2,8 @@ plugins {
     id "java"
 }
 
-ext {
-    imageRepo = "attx-dev"
-    artifactRepoPort = "8081"
-}
-
-if (!project.hasProperty("artifactRepoURL")) {
-    ext.artifactRepoURL = "http://${imageRepo}:${artifactRepoPort}"
-}
-
 repositories {
     mavenCentral()
-    maven { url "http://${imageRepo}:${artifactRepoPort}/repository/attx-releases"}
 }
 
 dependencies {
@@ -39,15 +29,15 @@ dependencies {
 
 task containerIntegTest(type: Test) {
     Map<String, Integer> serviceMap = [ "frontend" : 8080,
-                  "uvprov" : 4301,
-                  "provservice" : 7030,
-                  "fuseki" : 3030,
-                  "graphmanager" : 4302,
-                  "es5": 9210,
-                  "rmlservice": 8090,
-                  "messagebroker": 5672,
-                  "messagebroker": 5671,
-                  "messagebroker": 4369 ]
+                                        "uvprov" : 4301,
+                                        "provservice" : 7030,
+                                        "fuseki" : 3030,
+                                        "graphmanager" : 4302,
+                                        "es5": 9210,
+                                        "rmlservice": 8090,
+                                        "messagebroker": 5672,
+                                        "messagebroker": 5671,
+                                        "messagebroker": 4369 ]
     ext.getHostPort = {services ->
         serviceMap.each{ host, port ->
             systemProperty "${host}.port", "${port}".toInteger()

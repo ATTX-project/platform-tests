@@ -1,0 +1,26 @@
+{
+    "networks": {
+        "pdTest": {
+            "baseImage": "graphmanager",
+            "dependencies": [
+                "messagebroker",
+                "provservice",
+                "uvprov",
+                "rmlservice",
+                "attxdpus",
+                "es5"
+            ]
+        },
+        "gmTest": {
+            "baseImage": "graphmanager",
+            "dependencies": [
+                "messagebroker",
+                "provservice",
+                "uvprov",
+                "rmlservice",
+                "attxdpus",
+                "es5"
+            ]
+        }
+    }
+}
