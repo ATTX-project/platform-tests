@@ -156,7 +156,7 @@ dcompose {
     attxdpus {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageBase}/uv-attx-dpus:${testImageATTXDPUs}"
+        image = "attxproject/uv-attx-dpus:stable-1.2"
         links = [frontend.link(), mysql.link(), backend.link()]
         dependsOn = [mysql, backend, frontend]
         networks = [pdTest]
