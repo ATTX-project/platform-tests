@@ -48,7 +48,7 @@ ext.uvreplaceDS = '1.0-SNAPSHOT'
 ext.uvCommon = '1.0-SNAPSHOT'
 
 ext {
-    testTag           = "dev"
+    testTag           = "latest"
     testImageUVProv   = "${testTag}"
     testImageRML      = "${testTag}"
     testImageProv     = "${testTag}"
@@ -93,34 +93,42 @@ if (!project.hasProperty("testEnv") || project.testEnv == "dev") {
 }
 
 def data = ""
-ext.testNetwork = ""
 
-if (!project.hasProperty("network") || project.network == "pdTest") {
-    ext.testNetwork = project.network
-    println "Test network is set to $testNetwork"
+def loadConfiguration() {
     def jsonSlurper = new JsonSlurper()
-    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("$project.projectDir/testEnv.json"),"UTF-8"))
-    data = jsonSlurper.parse(reader)
+    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("$project.projectDir/testEnv.json"), "UTF-8"))
+    def data = jsonSlurper.parse(reader)
+    return data
 }
 
-//loadConfiguration()
+if (project.hasProperty("network")) {
+    ext.testNetwork = project.network
+    println "Test network is set to $testNetwork"
+    data = loadConfiguration()
+} else {
+    ext.testNetwork = "pdTest"
+    data = loadConfiguration()
+}
 
 // These parameters should be set before the tests are run,
 // if there different combinations need to be tested
-
+def testNet = data.networks."${testNetwork}".name
+dcompose.getByNameOrCreate(testNet)
 dcompose {
     createComposeFile.useTags = true
     registry ("$registryURL") {
         // no user/pass
     }
     networks {
-        $testNetwork
+//        println data.networks."${testNetwork}".name
+//        println "${testNetwork}"
+
     }
     messagebroker {
         forcePull = true
         forceRemoveImage = true
         image = 'rabbitmq:3.6.12-management'
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         if (testSet == "localhost") {
             portBindings = ['4369:4369','5671:5671', '5672:5672', '15671:15671', '15672:15672', '25672:25672']
         }
@@ -131,7 +139,7 @@ dcompose {
         forcePull = true
         forceRemoveImage = true
         image = 'attxproject/unified-views-shared:stable-1.2'
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
     }
 
     mysql {
@@ -139,7 +147,7 @@ dcompose {
         forceRemoveImage = true
         image = 'attxproject/unified-views-mariadb:stable-1.2'
         env = ['MYSQL_ROOT_PASSWORD=iamroot!']
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'mysql'
         if (testSet == "localhost") {
             portBindings = ['3306:3306']
@@ -151,7 +159,7 @@ dcompose {
         image = 'attxproject/unified-views-backend:stable-1.2'
         volumesFrom =  [shared]
         dependsOn = [mysql, shared]
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
     }
 
     frontend {
@@ -160,7 +168,7 @@ dcompose {
         image = 'attxproject/unified-views-frontend:stable-1.2'
         volumesFrom = [shared]
         dependsOn = [backend, shared]
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'frontend'
         if (testSet == "localhost") {
             portBindings = ['8080:8080']
@@ -173,14 +181,14 @@ dcompose {
         image = "${imageBase}/uv-attx-dpus:${testImageATTXDPUs}"
         links = [frontend.link(), mysql.link(), backend.link()]
         dependsOn = [mysql, backend, frontend]
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
     }
 
     fuseki {
         forcePull = true
         forceRemoveImage = true
         image = "${imageBase}/attx-fuseki:${testImageFuseki}"
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'fuseki'
         if (testSet == "localhost") {
             portBindings = ['3030:3030']
@@ -203,7 +211,7 @@ dcompose {
         forcePull = true
         forceRemoveImage = true
         image = "${imageBase}/attx-es5:${testImageES5}"
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'es5'
         if (testSet == "localhost") {
             portBindings = ['9210:9210', '9310:9310']
@@ -215,7 +223,7 @@ dcompose {
         forceRemoveImage = true
         image = "${imageBase}/uv-prov:${testImageUVProv}"
         dependsOn = [messagebroker, mysql]
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'uvprov'
         if (testSet == "localhost") {
             portBindings = ['4301:4301']
@@ -228,7 +236,7 @@ dcompose {
         forceRemoveImage = true
         image = "${imageBase}/rml-service:${testImageRML}"
         dependsOn = [messagebroker]
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'rmlservice'
         env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=', 'MQUEUE=rmlservice']
         volumes = ['/attx-sb-shared']
@@ -243,7 +251,7 @@ dcompose {
         forceRemoveImage = true
         image = "${imageBase}/provenance-service:${testImageProv}"
         dependsOn = [fuseki, messagebroker]
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'provservice'
         if (testSet == "localhost") {
             portBindings = ['7030:7030']
@@ -258,7 +266,7 @@ dcompose {
         def mylist = []
         data.networks."${testNetwork}".dependencies.each{mylist.add(service("${it}"))}
         dependsOn = mylist
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         hostName = 'graphmanager'
         env = ['MHOST=messagebroker', 'GHOST=fuseki']
         volumes = ['/attx-sb-shared']
@@ -283,7 +291,7 @@ dcompose {
         forceRemoveImage = true
         attachStdout = true
         attachStderr = true
-        networks = [$testNetwork]
+        networks = [network("${testNetwork}")]
         volumes = ['/attx-sb-shared']
         binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }

@@ -1,6 +1,7 @@
 {
     "networks": {
         "pdTest": {
+            "name": "pdTest",
             "targetFilesContainer": "dcompose.graphmanager.containerId",
             "baseTask": "startGraphmanagerContainer",
             "baseImage": "graphmanager",
