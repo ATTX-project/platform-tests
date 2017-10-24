@@ -1,9 +1,17 @@
 {
     "networks": {
         "pdTest": {
-            "name": "pdTest",
-            "targetFilesContainer": "dcompose.graphmanager.containerId",
-            "baseTask": "startGraphmanagerContainer",
+            "baseImage": "graphmanager",
+            "dependencies": [
+                "messagebroker",
+                "provservice",
+                "uvprov",
+                "rmlservice",
+                "attxdpus",
+                "es5"
+            ]
+        },
+        "gmTest": {
             "baseImage": "graphmanager",
             "dependencies": [
                 "messagebroker",
