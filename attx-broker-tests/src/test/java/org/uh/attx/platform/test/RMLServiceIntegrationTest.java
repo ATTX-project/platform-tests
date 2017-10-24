@@ -12,10 +12,9 @@ import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
-import org.junit.Ignore;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.platform.runner.JUnitPlatform;
@@ -23,6 +22,7 @@ import org.junit.runner.RunWith;
 import org.uh.hulib.attx.wc.uv.common.RabbitMQClient;
 import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceInput;
 import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceRequest;
+import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceResponse;
 import org.uh.hulib.attx.wc.uv.common.pojos.prov.Context;
 import org.uh.hulib.attx.wc.uv.common.pojos.prov.Provenance;
 
@@ -30,7 +30,7 @@ import org.uh.hulib.attx.wc.uv.common.pojos.prov.Provenance;
  *
  * @author jkesanie
  */
-//@RunWith(JUnitPlatform.class)
+@RunWith(JUnitPlatform.class)
 public class RMLServiceIntegrationTest {
 
     public final String API_VERSION = "0.1";
@@ -58,6 +58,7 @@ public class RMLServiceIntegrationTest {
         });
     }
 
+    @Before
     public void checkHealth() {
         try {
             HttpResponse<JsonNode> resp = Unirest.get(TestUtils.getRMLService() + "/health").asJson();
@@ -77,15 +78,16 @@ public class RMLServiceIntegrationTest {
          String reqStr = mapper.writeValueAsString(req);
 
         RabbitMQClient c = new RabbitMQClient(TestUtils.getMessageBrokerHost(),"user", "password", "provenance.inbox");
-
-        System.out.println(reqStr);
-        String respStr = c.sendSyncServiceMessage(reqStr, "rmlservice", 10000);
-        System.out.println("test: " + respStr + "*");
+        
+        String respStr = c.sendSyncServiceMessage(reqStr, "rmlservice", 10000);        
         assertNotEquals("", respStr);
-          
+        
+        RMLServiceResponse resp = mapper.readValue(respStr, RMLServiceResponse.class);
+        
+        assertEquals("SUCCESS", resp.getPayload().getStatus());
     }
 
-//    @Test
+    @Test
     public void testTranformationRest() throws Exception {
         checkHealth();
         RMLServiceRequest req = getWorkingRequest();
@@ -96,8 +98,7 @@ public class RMLServiceIntegrationTest {
                 .asJson();
         
         assertEquals(200, resp.getStatus());
-        
-        System.out.println(resp.getBody().getObject().toString(2));
+                
         assertEquals("SUCCESS", resp.getBody().getObject().getJSONObject("payload").get("status"));
         
         // TODO: check that content is ok
