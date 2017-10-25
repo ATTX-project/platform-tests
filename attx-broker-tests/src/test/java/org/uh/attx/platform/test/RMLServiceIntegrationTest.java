@@ -81,6 +81,7 @@ public class RMLServiceIntegrationTest {
         
         String respStr = c.sendSyncServiceMessage(reqStr, "rmlservice", 10000);        
         assertNotEquals("", respStr);
+        assertNotEquals(null, respStr);
         
         RMLServiceResponse resp = mapper.readValue(respStr, RMLServiceResponse.class);
         
