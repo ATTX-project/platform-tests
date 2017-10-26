@@ -83,13 +83,15 @@ public class IngestionPipelineTest {
             // wait for success
             await().atMost(240, TimeUnit.SECONDS).until(TestUtils.pollForWorkflowExecution(pipelineID), equalTo("FINISHED_SUCCESS"));
 
+            // some working data was generated
             TestUtils.askGraphStoreIfTrue("ASK\n" +
 "WHERE {\n" +
 "  graph <" + this.graphURI + "> {\n" +
 "    ?s ?p ?o\n" +
 "  }\n" +
 "} ");
-            
+                       
+            // There are 92 subjects in the working data
             HttpResponse<JsonNode> resp = TestUtils.graphQueryResult("SELECT (count(?s) as ?count) \n" +
                         "FROM <" + this.graphURI +">\n" +
                         "WHERE{      \n" +
@@ -97,12 +99,19 @@ public class IngestionPipelineTest {
                         "}\n");
                 assertEquals("92", getQueryResult(resp, 0, "count"));            
             
+                
+            // some provenance data was generated    
             TestUtils.askGraphStoreIfTrue("ASK\n" +
 "WHERE {\n" +
 "  graph <http://data.hulib.helsinki.fi/attx/prov> {\n" +
 "    ?s ?p ?o\n" +
 "  }\n" +
 "} ");
+            
+            // trigger uvprov 
+            
+            //resp = Unirest.get(TestUtils.getUVprov() + "/provjob").asJson();
+            
             
         } catch (Exception ex) {
             ex.printStackTrace();
