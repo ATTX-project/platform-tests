@@ -43,7 +43,7 @@ public class IngestionPipelineTest {
             // chekc if pipeline exists
             pipelineID = getExistingPipelineID("ingestionpipeline1");
             if (pipelineID < 0) {
-                URL pipelinePackage = IngestionPipelineTest.class.getResource("/uvfixtures/ingestionpipeline1.zip");
+                URL pipelinePackage = IngestionPipelineTest.class.getResource("/data/ingestionpipeline1.zip");
                 pipelineID = TestUtils.importPipeline(pipelinePackage);
             }
 
