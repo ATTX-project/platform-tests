@@ -56,6 +56,7 @@ ext {
     testImageES5      = "${testTag}"
     testImageESSiren  = "${testTag}"
     testImageATTXDPUs = "${testTag}"
+    testImageData     = "${testTag}"
 //    We are testing images tagged with dev on the public Docker Hub
     imageBase         = ("${testTag}" == "dev") ?  "attxproject" : "${imageRepo}:${imageRepoPort}"
 }
@@ -138,6 +139,7 @@ dcompose {
         volumesFrom =  [shared]
         dependsOn = [mysql, shared]
         networks = [pdTest]
+        env = ['MUSER=user', 'MPASS=password']
     }
 
     frontend {
@@ -156,7 +158,7 @@ dcompose {
     attxdpus {
         forcePull = true
         forceRemoveImage = true
-        image = "attxproject/uv-attx-dpus:stable-1.2"
+        image = "${imageBase}/uv-attx-dpus:${testImageATTXDPUs}"
         links = [frontend.link(), mysql.link(), backend.link()]
         dependsOn = [mysql, backend, frontend]
         networks = [pdTest]
@@ -237,11 +239,23 @@ dcompose {
         env = ['MHOST=messagebroker', 'GHOST=fuseki']
     }
 
+    testdata {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/testdata:${testImageData}"
+        dependsOn = [backend, frontend]
+        networks = [pdTest]
+        hostName = 'testdata'        
+        if (testSet == "localhost") {
+            portBindings = ['8081:80']
+        }
+    }
+
     graphmanager {
         forcePull = true
         forceRemoveImage = true
         image = "${imageBase}/gm-api:${testImageGM}"
-        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5]
+        dependsOn = [messagebroker, provservice, uvprov, rmlservice, attxdpus, es5, testdata]
         networks = [pdTest]
         hostName = 'graphmanager'
         env = ['MHOST=messagebroker', 'GHOST=fuseki']
@@ -329,7 +343,8 @@ task runIntegTests(type: Test) {
                   "rmlservice": 8090,
                   "messagebroker": 5672,
                   "messagebroker": 5671,
-                  "messagebroker": 4369 ]
+                  "messagebroker": 4369,
+                  "testdata": 80 ]
     ext.getHostPort = {services ->
         serviceMap.each{ host, port ->
             if (project.testEnv == "dev") {

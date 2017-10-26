@@ -41,7 +41,7 @@ attx-broker-tests/.idea/
 *.jar
 *.war
 *.ear
-*.zip
+#*.zip - uvfixtures includes zips
 *.tar.gz
 *.rar
 
