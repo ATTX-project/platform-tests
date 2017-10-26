@@ -169,6 +169,10 @@ public class TestUtils {
         await().atMost(120, TimeUnit.SECONDS).until(askQueryAnswer(query), equalTo(true));
     }
 
+    public static void askGraphStoreIfTrue(String query, int timeout) throws Exception {
+        await().atMost(timeout, TimeUnit.SECONDS).until(askQueryAnswer(query), equalTo(true));
+    }
+
     public static Callable<String> pollForIndexStatus(Integer createdID) {
         return new Callable<String>() {
             public String call() throws Exception {

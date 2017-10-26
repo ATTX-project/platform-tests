@@ -89,7 +89,7 @@ public class IngestionPipelineTest {
 "  graph <" + this.graphURI + "> {\n" +
 "    ?s ?p ?o\n" +
 "  }\n" +
-"} ");
+"} ", 240);
                        
             // There are 92 subjects in the working data
             HttpResponse<JsonNode> resp = TestUtils.graphQueryResult("SELECT (count(?s) as ?count) \n" +
