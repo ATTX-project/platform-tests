@@ -80,6 +80,7 @@ public class RMLServiceIntegrationTest {
         RabbitMQClient c = new RabbitMQClient(TestUtils.getMessageBrokerHost(),"user", "password", "provenance.inbox");
         
         String respStr = c.sendSyncServiceMessage(reqStr, "rmlservice", 10000);        
+        assertNotEquals(null, respStr);
         assertNotEquals("", respStr);
         assertNotEquals(null, respStr);
         

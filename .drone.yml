@@ -1,0 +1,4 @@
+pipeline:
+  test:
+    image: attxproject/integrationtests:dev
+    commands: /tmp/runTests.sh

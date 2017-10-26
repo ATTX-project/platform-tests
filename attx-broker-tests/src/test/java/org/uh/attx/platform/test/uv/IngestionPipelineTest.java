@@ -33,8 +33,7 @@ import org.uh.attx.platform.test.TestUtils;
 @RunWith(JUnitPlatform.class)
 public class IngestionPipelineTest {
 
-    private static int pipelineID = -1;
-    private String graphURI = null;
+    private static int pipelineID = -1;    
     
     
     @BeforeClass
@@ -67,10 +66,23 @@ public class IngestionPipelineTest {
 "}");
         JSONArray results = resp.getBody().getObject().getJSONObject("results").getJSONArray("bindings");        
         for(int i = 0; i < results.length(); i++) {
-            this.graphURI = results.getJSONObject(i).getJSONObject("g").getString("value");            
-            TestUtils.dropGraph(this.graphURI);
+            String graphURI = results.getJSONObject(i).getJSONObject("g").getString("value");            
+            TestUtils.dropGraph(graphURI);
         }
+    }
+    
+    private String getWorkingGraph() throws Exception {
+        HttpResponse<JsonNode> resp = TestUtils.graphQueryResult("SELECT ?g \n" +
+"WHERE {\n" +
+"    graph ?g {        \n" +
+"    }\n" +
+"    filter(strStarts(str(?g), \"http://data.hulib.helsinki.fi/attx/work/wf_\"))\n" +
+"}");
+        JSONArray results = resp.getBody().getObject().getJSONObject("results").getJSONArray("bindings");        
+        if(results.length() > 0)
+            return results.getJSONObject(0).getJSONObject("g").getString("value");
         
+        throw new Exception("Could not get URI for the working graph");
         
     }
 
@@ -83,17 +95,26 @@ public class IngestionPipelineTest {
             // wait for success
             await().atMost(240, TimeUnit.SECONDS).until(TestUtils.pollForWorkflowExecution(pipelineID), equalTo("FINISHED_SUCCESS"));
 
+            TestUtils.askGraphStoreIfTrue("ASK\n" +
+"WHERE {\n" +
+"  graph ?g {\n" +
+"  }\n" +
+"    filter(strStarts(str(?g), \"http://data.hulib.helsinki.fi/attx/work/wf_\"))\n" +
+"} ", 240);
+            
+            String graphURI = getWorkingGraph();
+            
             // some working data was generated
             TestUtils.askGraphStoreIfTrue("ASK\n" +
 "WHERE {\n" +
-"  graph <" + this.graphURI + "> {\n" +
+"  graph <" + graphURI + "> {\n" +
 "    ?s ?p ?o\n" +
 "  }\n" +
 "} ", 240);
                        
             // There are 92 subjects in the working data
             HttpResponse<JsonNode> resp = TestUtils.graphQueryResult("SELECT (count(?s) as ?count) \n" +
-                        "FROM <" + this.graphURI +">\n" +
+                        "FROM <" + graphURI +">\n" +
                         "WHERE{      \n" +
                         "   ?s ?p ?o .\n" +
                         "}\n");
@@ -109,8 +130,7 @@ public class IngestionPipelineTest {
 "} ");
             
             // trigger uvprov 
-            
-            //resp = Unirest.get(TestUtils.getUVprov() + "/provjob").asJson();
+            resp = Unirest.get(TestUtils.getUVprov() + "/provjob").asJson();
             
             
         } catch (Exception ex) {
