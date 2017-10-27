@@ -1,12 +1,14 @@
 pipeline: 
-  build: 
+  mysql:
+    group: test
     mysql: 
       environment: 
         - MYSQL_ROOT_PASSWORD=iamroot!
       image: "attxproject/unified-views-mariadb:stable-1.2"
       ports: 
         - "3306:3306"
-  test: 
+  dockerize:
+    group: test
     commands: 
       - "dockerize -wait tcp://mysql:3306 -timeout 240s"
     image: "attxproject/dockerize-drone-test:dev"
