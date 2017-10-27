@@ -1,9 +1,10 @@
 pipeline:
   mysql: 
     image: attxproject/unified-views-mariadb:stable-1.2
-    environment: - MYSQL_ROOT_PASSWORD=iamroot!
+    environment:
+      - MYSQL_ROOT_PASSWORD=iamroot!
     ports:
-    - 3306:3306
+      - 3306:3306
     
   test: image: attxproject/dockerize-drone-test:dev
   commands:
