@@ -8,5 +8,6 @@ services:
   mysql:
     image: "attxproject/unified-views-mariadb:stable-1.2"
     environment:
-     - MYSQL_DATABASE=test
-     - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ROOT_PASSWORD=iamroot!
+    ports:
+      - "3306:3306
