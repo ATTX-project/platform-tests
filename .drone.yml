@@ -3,9 +3,14 @@ pipeline:
     image: "attxproject/dockerize-drone-test:dev"
     commands:
       - "dockerize -wait tcp://mysql:3306 -timeout 240s"
+      - "dockerize -wait http://fuseki:3030 -timeout 60s"
 
 services:
   mysql:
     image: "attxproject/unified-views-mariadb:stable-1.2"
     environment:
-     - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+ fuseki:
+   image: "attxproject/attx-fuseki:dev"
+     environment:
+       - ADMIN_PASSWORD=pw123
