@@ -10,7 +10,7 @@ services:
     image: "attxproject/unified-views-mariadb:stable-1.2"
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
- fuseki:
+  fuseki:
    image: "attxproject/attx-fuseki:dev"
-     environment:
-       - ADMIN_PASSWORD=pw123
+   environment:
+     - ADMIN_PASSWORD=pw123
