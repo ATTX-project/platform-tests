@@ -1,14 +1,15 @@
 pipeline:
-  integration-test: 
+  integration-test:
+    image: "attxproject/dockerize-drone-test:dev"
     dockerize: 
       commands: 
         - "dockerize -wait tcp://mysql:3306 -timeout 240s"
-      image: "attxproject/dockerize-drone-test:dev"
+      
       
 services:
-  mysql: 
+  mysql:
+    image: "attxproject/unified-views-mariadb:stable-1.2"
     environment: 
       - MYSQL_ROOT_PASSWORD=iamroot!
-    image: "attxproject/unified-views-mariadb:stable-1.2"
     ports: 
       - "3306:3306"
