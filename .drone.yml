@@ -10,4 +10,4 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=iamroot!
     ports:
-      - "3306:3306
+      - "3306:3306"
