@@ -2,7 +2,7 @@ pipeline:
   integration-test:
     image: "attxproject/dockerize-drone-test:dev"
     commands:
-      - "dockerize -wait tcp://localhost:3306 -timeout 240s"
+      - "dockerize -wait tcp://mysql:3306 -timeout 240s"
 
 services:
   mysql:
