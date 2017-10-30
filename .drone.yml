@@ -8,6 +8,6 @@ pipeline:
         - "3306:3306"
   
   integration-test:
-      image: "attxproject/dockerize-drone-test:dev" 
-        commands: 
-          - "dockerize -wait tcp://mysql:3306 -timeout 240s"
+    image: "attxproject/dockerize-drone-test:dev" 
+    commands: 
+      - "dockerize -wait tcp://mysql:3306 -timeout 240s"
