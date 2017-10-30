@@ -1,13 +1,13 @@
-pipeline:
-  integration-test:
+--- 
+pipeline: 
+  integration-test: 
     dockerize: 
       commands: 
         - "dockerize -wait tcp://mysql:3306 -timeout 240s"
       image: "attxproject/dockerize-drone-test:dev"
-
-services:
-  mysql:
-    image:
+services: 
+  mysql: 
+    image: 
       mysql: 
         environment: 
           - MYSQL_ROOT_PASSWORD=iamroot!
