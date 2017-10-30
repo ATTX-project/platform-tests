@@ -12,7 +12,7 @@ services:
   mysql:
     image: "attxproject/unified-views-mariadb:stable-1.2"
     environment:
-      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+       - MYSQL_ROOT_PASSWORD=iamroot!
   fuseki:
     image: "attxproject/attx-fuseki:dev"
     environment:
