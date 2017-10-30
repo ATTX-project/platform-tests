@@ -4,6 +4,7 @@ pipeline:
     commands:
       - "dockerize -wait tcp://mysql:3306 -timeout 240s"
       - "dockerize -wait http://fuseki:3030 -timeout 60s"
+      - "dockerize -wait http://graphmanager:4302/health -timeout 60s"
 
 services:
   mysql:
@@ -11,6 +12,8 @@ services:
     environment:
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
   fuseki:
-   image: "attxproject/attx-fuseki:dev"
-   environment:
-     - ADMIN_PASSWORD=pw123
+    image: "attxproject/attx-fuseki:dev"
+    environment:
+      - ADMIN_PASSWORD=pw123
+  graphmanager:
+    image: "attxproject/gm-api:dev"
