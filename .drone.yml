@@ -5,6 +5,7 @@ pipeline:
       - "dockerize -wait tcp://mysql:3306 -timeout 240s"
       - "dockerize -wait http://fuseki:3030 -timeout 60s"
       - "dockerize -wait http://graphmanager:4302/health -timeout 60s"
+      - "dockerize -wait http://es5:9210 -timeout 60s"
 
 services:
   mysql:
@@ -17,3 +18,5 @@ services:
       - ADMIN_PASSWORD=pw123
   graphmanager:
     image: "attxproject/gm-api:dev"
+  es5:
+    image: "attxproject/attx-es5:1.0"
