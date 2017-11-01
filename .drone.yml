@@ -1,12 +1,6 @@
 pipeline:
   integration-test:
-    image: "attxproject/dockerize-drone-test:dev"
-    commands:
-      - "dockerize -wait tcp://mysql:3306 -timeout 240s"
-      - "dockerize -wait http://fuseki:3030 -timeout 60s"
-      - "dockerize -wait http://graphmanager:4302/health -timeout 60s"
-      - "dockerize -wait http://uvprov:4301/health -timeout 60s"
-      - "dockerize -wait http://provservice:7030/health -timeout 60s"
+    image: "attxproject/integrationtest:dev"
 
 services:
   mysql:
