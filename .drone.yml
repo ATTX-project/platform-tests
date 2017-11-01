@@ -1,6 +1,6 @@
 pipeline:
   integration-test:
-    image: "attxproject/integrationtest:dev"
+    image: "attxproject/integrationtests:dev"
 
 services:
   mysql:
