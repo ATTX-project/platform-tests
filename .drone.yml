@@ -9,6 +9,11 @@ services:
     image: "attxproject/unified-views-mariadb:stable-1.2"
     environment:
        - MYSQL_ROOT_PASSWORD=iamroot!
+  messagebroker:
+    image: "rabbitmq:3.6.11-management"
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
   fuseki:
     image: "attxproject/attx-fuseki:dev"
     environment:
