@@ -17,6 +17,11 @@ services:
     image: "attxproject/attx-fuseki:dev"
     environment:
       - ADMIN_PASSWORD=pw123
+  messagebroker:
+    image: "rabbitmq:3.6.11-management"
+    environment:
+      - RABBITMQ_DEFAULT_USER=user
+      - RABBITMQ_DEFAULT_PASS=password
   graphmanager:
     image: "attxproject/gm-api:dev"
   uvprov:
