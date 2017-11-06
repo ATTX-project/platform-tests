@@ -1,6 +1,8 @@
 pipeline:
   integration-test:
     image: "attxproject/integrationtests:dev"
+    environment:
+      - BASE=pdTest
     commands:
       - "/tmp/runTests.sh"
       
