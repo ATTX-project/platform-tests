@@ -12,25 +12,6 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=user
       - RABBITMQ_DEFAULT_PASS=password
-  shared:
-    image: "attxproject/unified-views-shared:stable-1.2"
-  mysql:
-    image: "attxproject/unified-views-mariadb:stable-1.2"
-    environment:
-       - MYSQL_ROOT_PASSWORD=iamroot! 
-  backend:
-    image: "attxproject/unified-views-backend:stable-1.2"
-    environment:
-      - MUSER=user
-      - MPASS=password
-    volumes-from:
-      - shared
-  frontend:
-    image: "attxproject/unified-views-frontend:stable-1.2"
-    volumes-from:
-      - shared
-  attxdpus:
-    image: "attxproject/uv-attx-dpus:dev"
   fuseki:
     image: "attxproject/attx-fuseki:dev"
     environment:
