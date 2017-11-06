@@ -14,7 +14,7 @@ services:
       - RABBITMQ_DEFAULT_PASS=password
          
   rmlservice:
-    image: "attxproject:rml-service:dev"
+    image: "attxproject/rml-service:dev"
     environment:
       - MHOST=amqp://messagebroker
       - MUSER=user
