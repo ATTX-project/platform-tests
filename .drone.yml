@@ -23,11 +23,11 @@ services:
     environment:
       - MUSER=user
       - MPASS=password
-    volumes_from:
+    mount:
       - shared
   frontend:
     image: "attxproject/unified-views-frontend:stable-1.2"
-    volumes_from:
+    mount:
       - shared
   attxdpus:
     image: "attxproject/uv-attx-dpus:dev"
