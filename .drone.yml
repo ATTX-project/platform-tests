@@ -55,7 +55,7 @@ services:
       - MHOST=messagebroker
       - GHOST=fuseki
   testdata:
-    image: "attxproject/testdata:dev
+    image: "attxproject/testdata:dev"
     ports: 
       - 8081:80
   graphmanager:
