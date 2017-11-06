@@ -5,6 +5,7 @@ pipeline:
       - BASE=pdTest
     commands:
       - "/tmp/runTests.sh"
+      
 services:
   messagebroker:
     image: "rabbitmq:3.6.11-management"
