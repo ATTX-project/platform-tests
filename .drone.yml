@@ -1,26 +1,65 @@
 pipeline:
   integration-test:
     image: "attxproject/integrationtests:dev"
+    environment:
+      - BASE=pdTest
     commands:
       - "/tmp/runTests.sh"
-
 services:
-  mysql:
-    image: "attxproject/unified-views-mariadb:stable-1.2"
-    environment:
-       - MYSQL_ROOT_PASSWORD=iamroot!
   messagebroker:
     image: "rabbitmq:3.6.11-management"
     environment:
       - RABBITMQ_DEFAULT_USER=user
       - RABBITMQ_DEFAULT_PASS=password
+  shared:
+    image: "attxproject/unified-views-shared:stable-1.2"
+  mysql:
+    image: "attxproject/unified-views-mariadb:stable-1.2"
+    environment:
+       - MYSQL_ROOT_PASSWORD=iamroot! 
+  backend:
+    image = "attxproject/unified-views-backend:stable-1.2"
+    environment:
+      - MUSER=user
+      - MPASS=password
+    volumes_from:
+      - shared
+  frontend:
+    image = "attxproject/unified-views-frontend:stable-1.2"
+    volumes_from:
+      - sahred
+  attxdpus:
+    image = "attxproject/uv-attx-dpus:dev"
   fuseki:
     image: "attxproject/attx-fuseki:dev"
     environment:
       - ADMIN_PASSWORD=pw123
-  graphmanager:
-    image: "attxproject/gm-api:dev"
+  es5:
+    image: "attxproject/attx-es5:dev"
   uvprov:
     image: "attxproject/uv-prov:dev"
+    environment:
+      - MHOST=messagebroker
+      - DBHOST=mysql
+  rmlservice:
+    image: "attxproject:rml-service:dev"
+    environment:
+      - MHOST=amqp://messagebroker
+      - MUSER=user
+      - MPASS=password
+      - MEXCHANGE=
+      - MQUEUE=rmlservice
   provservice:
     image: "attxproject/provenance-service:dev"
+    environment:
+      - MHOST=messagebroker
+      - GHOST=fuseki
+  testdata:
+    image: "attxproject/testdata:dev
+    ports: 
+      - 8081:80
+  graphmanager:
+    image: "attxproject/gm-api:dev"
+    environment:
+      - MHOST=messagebroker
+      - GHOST=fuseki
