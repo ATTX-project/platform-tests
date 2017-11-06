@@ -18,18 +18,18 @@ services:
     environment:
        - MYSQL_ROOT_PASSWORD=iamroot! 
   backend:
-    image = "attxproject/unified-views-backend:stable-1.2"
+    image: "attxproject/unified-views-backend:stable-1.2"
     environment:
       - MUSER=user
       - MPASS=password
     volumes_from:
       - shared
   frontend:
-    image = "attxproject/unified-views-frontend:stable-1.2"
+    image: "attxproject/unified-views-frontend:stable-1.2"
     volumes_from:
       - sahred
   attxdpus:
-    image = "attxproject/uv-attx-dpus:dev"
+    image: "attxproject/uv-attx-dpus:dev"
   fuseki:
     image: "attxproject/attx-fuseki:dev"
     environment:
