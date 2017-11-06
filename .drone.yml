@@ -36,10 +36,6 @@ services:
     environment:
       - MHOST=messagebroker
       - GHOST=fuseki
-  testdata:
-    image: "attxproject/testdata:dev"
-    ports: 
-      - 8081:80
   graphmanager:
     image: "attxproject/gm-api:dev"
     environment:
