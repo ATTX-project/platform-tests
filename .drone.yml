@@ -16,8 +16,6 @@ services:
     image: "attxproject/attx-fuseki:dev"
     environment:
       - ADMIN_PASSWORD=pw123
-  es5:
-    image: "attxproject/attx-es5:dev"
   uvprov:
     image: "attxproject/uv-prov:dev"
     environment:
