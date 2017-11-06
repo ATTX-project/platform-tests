@@ -12,15 +12,18 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=user
       - RABBITMQ_DEFAULT_PASS=password
+      
   fuseki:
     image: "attxproject/attx-fuseki:dev"
     environment:
       - ADMIN_PASSWORD=pw123
+      
   uvprov:
     image: "attxproject/uv-prov:dev"
     environment:
       - MHOST=messagebroker
       - DBHOST=mysql
+      
   rmlservice:
     image: "attxproject:rml-service:dev"
     environment:
@@ -29,11 +32,13 @@ services:
       - MPASS=password
       - MEXCHANGE=
       - MQUEUE=rmlservice
+      
   provservice:
     image: "attxproject/provenance-service:dev"
     environment:
       - MHOST=messagebroker
       - GHOST=fuseki
+      
   graphmanager:
     image: "attxproject/gm-api:dev"
     environment:
