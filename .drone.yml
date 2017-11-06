@@ -27,7 +27,7 @@ services:
   frontend:
     image: "attxproject/unified-views-frontend:stable-1.2"
     volumes_from:
-      - sahred
+      - shared
   attxdpus:
     image: "attxproject/uv-attx-dpus:dev"
   fuseki:
