@@ -18,7 +18,7 @@ services:
     environment:
       - ADMIN_PASSWORD=pw123
 
-  rmlservice:
+  rmlservice2:
     image: "attxproject/rml-service:dev"
     environment:
       - MHOST=amqp://messagebroker
@@ -27,7 +27,7 @@ services:
       - MEXCHANGE=
       - MQUEUE=rmlservice
      
-  graphmanager:
+  graphmanager2:
     image: "attxproject/gm-api:dev"
     environment:
       - MHOST=messagebroker
