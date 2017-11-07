@@ -8,7 +8,7 @@ repositories {
 
 dependencies {
     testCompile \
-            files("uv-common-1.0-SNAPSHOT.jar"),
+            files("/tmp/uv-common-1.0-SNAPSHOT.jar"),
             'org.apache.commons:commons-io:1.3.2',
             'com.fasterxml.jackson.core:jackson-databind:2.9.2',
             'com.fasterxml.jackson.core:jackson-core:2.9.2',

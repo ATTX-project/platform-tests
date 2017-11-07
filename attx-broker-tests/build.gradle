@@ -284,7 +284,7 @@ dcompose {
         image = "${imageBase}/testdata:${testImageData}"
         dependsOn = [backend, frontend]
         networks = [network("${testNetwork}")]
-        hostName = 'testdata'        
+        hostName = 'testdata'
         if (testSet == "localhost") {
             portBindings = ['8081:80']
         }

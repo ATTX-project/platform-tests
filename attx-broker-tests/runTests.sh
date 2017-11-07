@@ -13,7 +13,4 @@ else
     echo "Testing specific parts of the platform. Do not wait for anything. Health checks done in tests."
 fi
 
-echo  "Archiva repository URL: $REPO"
-
-
-gradle -b /tmp/build.gradle -PartifactRepoURL=$REPO containerIntegTest
+gradle -b /tmp/build.gradle containerIntegTest
