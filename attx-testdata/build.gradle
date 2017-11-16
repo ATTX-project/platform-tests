@@ -1,12 +1,39 @@
 apply plugin: "com.chrisgahlert.gradle-dcompose-plugin"
+apply from: '../publishDocker.gradle'
+
+ext {
+    imageRepo = "attx-dev"
+    imageRepoPort = "5000"
+    privateRepoTag = "latest"
+    testTag = "dev"
+    releaseTag = "2.0"
+}
+
+if (!project.hasProperty("env") || project.env == "dev") {
+    ext.imageBase           = "${imageRepo}:${imageRepoPort}"
+    ext.imageTestData       = "${testTag}"
+
+} else if (project.env == "release"){
+
+  ext.imageBase           = "attxproject"
+  ext.imageTestData       = "${testTag}"
+
+} else if (project.env == "test"){
+    ext.imageBase           = "attxproject"
+    ext.imageTestData       = "${testTag}"
+
+} else {
+    throw new GradleException("Build project environment option not recognised.")
+}
+
 
 dcompose {
     registry ("$registryURL") {
          // Needs no user/pass
     }
     testdata {
-    	baseDir = file('docker')
-	dockerFilename = 'Dockerfile'
-      	repository = "${imageRepo}:${imageRepoPort}/testdata:latest"
+    	 baseDir = file('docker')
+	     dockerFilename = 'Dockerfile'
+       repository = "${imageBase}/testdata:${imageTestData}"
     }
 }
