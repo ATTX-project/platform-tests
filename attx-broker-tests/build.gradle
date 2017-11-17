@@ -339,7 +339,7 @@ dcompose {
         if ( base == "ldframe") {
             data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
         } else {
-            dependlist = [graphmanager, messagebroker]
+            dependlist = [messagebroker]
         }
         dependsOn = dependlist
         networks = [network("${testNetwork}")]
