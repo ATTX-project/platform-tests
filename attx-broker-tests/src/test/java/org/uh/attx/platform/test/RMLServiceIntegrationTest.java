@@ -12,6 +12,7 @@ import com.mashape.unirest.http.ObjectMapper;
 import com.mashape.unirest.http.Unirest;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import org.apache.commons.io.FileUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,6 +24,7 @@ import org.uh.hulib.attx.wc.uv.common.RabbitMQClient;
 import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceInput;
 import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceRequest;
 import org.uh.hulib.attx.wc.uv.common.pojos.RMLServiceResponse;
+import org.uh.hulib.attx.wc.uv.common.pojos.Source;
 import org.uh.hulib.attx.wc.uv.common.pojos.prov.Context;
 import org.uh.hulib.attx.wc.uv.common.pojos.prov.Provenance;
 
@@ -117,10 +119,12 @@ public class RMLServiceIntegrationTest {
         req.setProvenance(getProvenance());
 
         RMLServiceInput payload = new RMLServiceInput();
-
-        payload.setType("Data");
-        payload.setMapping(mappingStr);
-        payload.setInput(inputStr);
+        
+        payload.setSourceData(new ArrayList<Source>());
+        Source inputSource = new Source();
+        inputSource.setInputType("Data");
+        inputSource.setInput(inputStr);
+        payload.setMapping(mappingStr);        
         req.setPayload(payload);
         
         return req;
