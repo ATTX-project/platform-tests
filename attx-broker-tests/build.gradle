@@ -69,7 +69,7 @@ for (s in src) {
 /* === Setting Configuration for the Test Environments === */
 
 ext {
-    testTag           = "latest"
+    testTag           = "dev"
     testImageUVProv   = "${testTag}"
     testImageRML      = "${testTag}"
     testImageProv     = "${testTag}"
@@ -79,6 +79,8 @@ ext {
     testImageESSiren  = "${testTag}"
     testImageATTXDPUs = "${testTag}"
     testImageData     = "${testTag}"
+    testImageIndex    = "${testTag}"
+    testImageFrame    = "${testTag}"
 //    We are testing images tagged with dev on the public Docker Hub
     imageBase         = ("${testTag}" == "dev") ?  "attxproject" : "${imageRepo}:${imageRepoPort}"
 }
@@ -260,6 +262,25 @@ dcompose {
         binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
 
+    indexservice {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/index-service:${testImageIndex}"
+        def dependlist = []
+        if ( base == "indexservice") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [es5, messagebroker]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['4304:4304']
+        }
+        env = ['MHOST=messagebroker', 'ESHOST=es5']
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+    }
+
     provservice {
         forcePull = true
         forceRemoveImage = true
@@ -307,6 +328,25 @@ dcompose {
         if (testSet == "localhost") {
             portBindings = ['4302:4302']
         }
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+    }
+
+    ldframe {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/ldframe-service:${testImageFrame}"
+        def dependlist = []
+        if ( base == "ldframe") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [graphmanager, messagebroker]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['4303:4303']
+        }
+        env = ['MHOST=messagebroker', 'GMHOST=graphmanager']
         binds = ["${volumeDir}:/attx-sb-shared:rw"]
     }
 
@@ -383,6 +423,8 @@ task runIntegTests(type: Test) {
     Map<String, Integer> serviceMap = [ "frontend" : 8080,
                   "uvprov" : 4301,
                   "provservice" : 7030,
+                  "ldframe" : 4303,
+                  "indexservice" : 4304,
                   "fuseki" : 3030,
                   "graphmanager" : 4302,
                   "es5": 9210,

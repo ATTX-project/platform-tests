@@ -31,13 +31,16 @@ task containerIntegTest(type: Test) {
     Map<String, Integer> serviceMap = [ "frontend" : 8080,
                                         "uvprov" : 4301,
                                         "provservice" : 7030,
+                                        "ldframe" : 4303,
+                                        "indexservice" : 4304,
                                         "fuseki" : 3030,
                                         "graphmanager" : 4302,
                                         "es5": 9210,
                                         "rmlservice": 8090,
                                         "messagebroker": 5672,
                                         "messagebroker": 5671,
-                                        "messagebroker": 4369 ]
+                                        "messagebroker": 4369,
+                                        "testdata": 80  ]
     ext.getHostPort = {services ->
         serviceMap.each{ host, port ->
             systemProperty "${host}.port", "${port}".toInteger()

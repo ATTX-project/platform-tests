@@ -5,6 +5,8 @@
             "dependencies": [
                 "messagebroker",
                 "provservice",
+                "indexservice",
+                "ldframe",
                 "uvprov",
                 "rmlservice",
                 "attxdpus",
@@ -17,6 +19,8 @@
             "dependencies": [
                 "messagebroker",
                 "provservice",
+                "indexservice",
+                "ldframe",
                 "uvprov",
                 "rmlservice",
                 "attxdpus",
