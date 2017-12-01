@@ -1,0 +1,5 @@
+{
+  "targetGraph": ["http://data.hulib.helsinki.fi/attx/onto"],
+  "query": "SELECT ?subject ?predicate ?object WHERE { ?subject ?predicate ?object} LIMIT 2",
+  "contentType": "application/sparql-results+xml"
+}

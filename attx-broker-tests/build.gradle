@@ -1,0 +1,464 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'com.chrisgahlert.gradle-dcompose-plugin'
+apply plugin: 'com.bmuschko.docker-remote-api'
+import groovy.json.*
+//apply plugin: 'org.junit.platform.gradle.plugin'
+
+import com.bmuschko.gradle.docker.tasks.container.DockerWaitContainer
+import com.bmuschko.gradle.docker.tasks.container.DockerCopyFileToContainer
+
+repositories {
+    mavenCentral()
+    maven { url "${artifactRepoURL}/repository/attx-releases"}
+}
+
+sourceCompatibility = '1.8'
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+
+dependencies {
+    testCompile \
+        'org.junit.jupiter:junit-jupiter-api:5.0.0',
+            'org.apache.commons:commons-io:1.3.2',
+            'org.junit.platform:junit-platform-runner:1.0.1',
+            'info.cukes:cucumber-java8:1.2.5',
+            'info.cukes:cucumber-junit:1.2.5',
+            'com.mashape.unirest:unirest-java:1.4.9',
+            'org.skyscreamer:jsonassert:1.5.0',
+            'org.awaitility:awaitility-groovy:3.0.0',
+            'org.uh.hulib.attx.wc.uv:uv-common:1.0-SNAPSHOT',
+            'com.rabbitmq:amqp-client:4.2.0',
+            'org.jdom:jdom2:2.0.5',
+            'org.apache.jena:jena-core:3.4.0'
+    testRuntime \
+        'org.junit.jupiter:junit-jupiter-engine:5.0.0',
+            'org.junit.vintage:junit-vintage-engine:4.12.0'
+}
+
+/* === Downloading Files === */
+
+
+ext.uvreplaceDS = '1.0-SNAPSHOT'
+ext.uvCommon = '1.0-SNAPSHOT'
+
+ext.src = [
+        "${artifactRepoURL}/restServices/archivaServices/searchService/artifact?g=org.uh.hulib.attx.wc.uv&a=attx-l-replaceds&v=${uvreplaceDS}&p=jar":"attx-l-replaceds-${uvreplaceDS}.jar",
+        "${artifactRepoURL}/restServices/archivaServices/searchService/artifact?g=org.uh.hulib.attx.wc.uv&a=uv-common&v=${uvCommon}&p=jar":"uv-common-${uvCommon}.jar"
+]
+
+import de.undercouch.gradle.tasks.download.Download
+task downloadTestFiles
+
+for (s in src) {
+    task "downloadTestFiles_${s.key.hashCode()}"(type: Download) {
+        src s.key
+        dest new File("$projectDir", s.value)
+    }
+    downloadTestFiles.dependsOn("downloadTestFiles_${s.key.hashCode()}")
+}
+
+/* === Setting Configuration for the Test Environments === */
+
+ext {
+    testTag           = "dev"
+    testImageUVProv   = "${testTag}"
+    testImageRML      = "${testTag}"
+    testImageProv     = "${testTag}"
+    testImageGM       = "${testTag}"
+    testImageFuseki   = "${testTag}"
+    testImageES5      = "${testTag}"
+    testImageESSiren  = "${testTag}"
+    testImageATTXDPUs = "${testTag}"
+    testImageData     = "${testTag}"
+    testImageIndex    = "${testTag}"
+    testImageFrame    = "${testTag}"
+//    We are testing images tagged with dev on the public Docker Hub
+    imageBase         = ("${testTag}" == "dev") ?  "attxproject" : "${imageRepo}:${imageRepoPort}"
+}
+
+// setup default volume location to /attx-sb-shared/data
+
+if (!project.hasProperty("volumeDir")) {
+    ext.volumeDir = "/attx-sb-shared/data"
+} else {
+    ext.volumeDir = project.volumeDir
+}
+
+if (!project.hasProperty("testEnv") || project.testEnv == "dev") {
+    ext.testSet = "localhost"
+} else if (project.testEnv == "CI"){
+    ext.testSet = "container"
+} else {
+    throw new GradleException("Build project environment option not recognised.")
+}
+
+def data = ""
+
+def loadConfiguration() {
+    def jsonSlurper = new JsonSlurper()
+    def reader = new BufferedReader(new InputStreamReader(new FileInputStream("$project.projectDir/testEnv.json"), "UTF-8"))
+    def data = jsonSlurper.parse(reader)
+    return data
+}
+
+if (project.hasProperty("network")) {
+    ext.testNetwork = project.network
+    data = loadConfiguration()
+} else {
+    ext.testNetwork = "pdTest"
+    data = loadConfiguration()
+}
+
+def base = data.networks."${testNetwork}".baseImage
+
+/* === Build the Images and Environments === */
+
+dcompose {
+    println "Test network is set to $testNetwork"
+    createComposeFile.useTags = true
+    registry ("$registryURL") {
+        // no user/pass
+    }
+    networks {
+        dcompose.network("${testNetwork}").getResolved()
+    }
+    messagebroker {
+        forcePull = true
+        forceRemoveImage = true
+        image = 'rabbitmq:3.6.12-management'
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['4369:4369','5671:5671', '5672:5672', '15671:15671', '15672:15672', '25672:25672']
+        }
+        env = ['RABBITMQ_DEFAULT_USER=user', 'RABBITMQ_DEFAULT_PASS=password']
+    }
+
+    shared {
+        forcePull = true
+        forceRemoveImage = true
+        image = 'attxproject/unified-views-shared:stable-1.2'
+        networks = [network("${testNetwork}")]
+    }
+
+    mysql {
+        forcePull = true
+        forceRemoveImage = true
+        image = 'attxproject/unified-views-mariadb:stable-1.2'
+        env = ['MYSQL_ROOT_PASSWORD=iamroot!']
+        networks = [network("${testNetwork}")]
+        hostName = 'mysql'
+        if (testSet == "localhost") {
+            portBindings = ['3306:3306']
+        }
+    }
+    backend {
+        forcePull = true
+        forceRemoveImage = true
+        image = 'attxproject/unified-views-backend:stable-1.2'
+        volumesFrom =  [shared]
+        dependsOn = [mysql, shared]
+        networks = [network("${testNetwork}")]
+        env = ['MUSER=user', 'MPASS=password']
+    }
+
+    frontend {
+        forcePull = true
+        forceRemoveImage = true
+        image = 'attxproject/unified-views-frontend:stable-1.2'
+        volumesFrom = [shared]
+        dependsOn = [backend, shared]
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['8080:8080']
+        }
+    }
+
+    attxdpus {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/uv-attx-dpus:${testImageATTXDPUs}"
+        links = [frontend.link(), mysql.link(), backend.link()]
+        dependsOn = [mysql, backend, frontend]
+        networks = [network("${testNetwork}")]
+    }
+
+    fuseki {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/attx-fuseki:${testImageFuseki}"
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['3030:3030']
+        }
+        env = ['ADMIN_PASSWORD=pw123']
+    }
+
+    // essiren {
+    //     forcePull = true
+    //     forceRemoveImage = true
+    //     image = "${imageBase}/essiren:${testImageESSiren}"
+    //     networks = [pdTest]
+    //     hostName = 'essiren'
+    //     if (testSet == "localhost") {
+    //         portBindings = ['9200:9200', '9300:9300']
+    //     }
+    // }
+
+    es5 {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/attx-es5:${testImageES5}"        
+        networks = [network("${testNetwork}")]
+        hostName = 'es5'
+        if (testSet == "localhost") {
+            portBindings = ['9210:9210', '9310:9310']
+        }
+    }
+
+    uvprov {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/uv-prov:${testImageUVProv}"
+        def dependlist = []
+        if ( base == "uvprov") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [messagebroker, mysql]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['4301:4301']
+        }
+        env = ['MHOST=messagebroker', 'DBHOST=mysql', 'QTIME=1']
+    }
+
+    rmlservice {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/rml-service:${testImageRML}"
+        def dependlist = []
+        if ( base == "rmlservice") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [messagebroker]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        env = ['MHOST=amqp://messagebroker', 'MUSER=user', 'MPASS=password', 'MEXCHANGE=', 'MQUEUE=rmlservice']
+        volumes = ['/attx-sb-shared']
+        if (testSet == "localhost") {
+            portBindings = ['8090:8090']
+        }
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+    }
+
+    indexservice {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/index-service:${testImageIndex}"
+        def dependlist = []
+        if ( base == "indexservice") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [es5, messagebroker]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['4304:4304']
+        }
+        env = ['MHOST=messagebroker', 'ESHOST=es5']
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+    }
+
+    provservice {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/provenance-service:${testImageProv}"
+        def dependlist = []
+        if ( base == "provservice") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [fuseki, messagebroker]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['7030:7030']
+        }
+        env = ['MHOST=messagebroker', 'GHOST=fuseki', 'FRAMEHOST=ldframe', 'INDEXHOST=indexservice', 'QTIME=2']
+    }
+
+    testdata {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/testdata:${testImageData}"
+        dependsOn = [backend, frontend]
+        networks = [network("${testNetwork}")]
+        hostName = 'testdata'
+        if (testSet == "localhost") {
+            portBindings = ['8081:80']
+        }
+    }
+
+    graphmanager {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/gm-api:${testImageGM}"
+        def dependlist = []
+        if ( base == "graphmanager") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [messagebroker, fuseki]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        env = ['MHOST=messagebroker', 'GHOST=fuseki']
+        volumes = ['/attx-sb-shared']
+        if (testSet == "localhost") {
+            portBindings = ['4302:4302']
+        }
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+    }
+
+    ldframe {
+        forcePull = true
+        forceRemoveImage = true
+        image = "${imageBase}/ldframe-service:${testImageFrame}"
+        def dependlist = []
+        if ( base == "ldframe") {
+            data.networks."${testNetwork}".dependencies.each{dependlist.add(service("${it}"))}
+        } else {
+            dependlist = [messagebroker]
+        }
+        dependsOn = dependlist
+        networks = [network("${testNetwork}")]
+        if (testSet == "localhost") {
+            portBindings = ['4303:4303']
+        }
+        env = ['MHOST=messagebroker', 'GMHOST=graphmanager']
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+    }
+
+    test {
+        ignoreExitCode = true
+        baseDir = file('.')
+        dockerFilename = 'Dockerfile'
+        buildArgs = ['UVreplaceDS': "$uvreplaceDS", "UVCommon":"$uvCommon"]
+        env = ["REPO=$artifactRepoURL", "BASE=${testNetwork}"]
+        if (testSet == "container") {
+            binds = ["/var/run/docker.sock:/run/docker.sock"]
+        }
+        dependsOn = [service(data.networks."${testNetwork}".baseImage)] // This dependency is not really needed however it reminds the scope of the tests.
+        command = ['sh', '-c', '/tmp/runTests.sh']
+        waitForCommand = true
+        forceRemoveImage = true
+        attachStdout = true
+        attachStderr = true
+        networks = [network("${testNetwork}")]
+        volumes = ['/attx-sb-shared']
+        binds = ["${volumeDir}:/attx-sb-shared:rw"]
+    }
+}
+
+task copyReportFiles(type: DcomposeCopyFileFromContainerTask) {
+    service = dcompose.test
+    containerPath = '/tmp/build/reports/tests'
+    destinationDir = file("build/reports/")
+    cleanDestinationDir = false
+    dependsOn startTestContainer
+}
+
+task copyFilesIntoContainer(type: DockerCopyFileToContainer) {
+    targetContainerId { dcompose.service(base).getContainerId() }
+    hostPath = "$projectDir/src/test/resources/data/"
+    remotePath = "/attx-sb-shared/"
+}
+
+task checkDPUDone(type: DockerWaitContainer) {
+    dependsOn dcompose.service(base).getStartContainerTaskName()
+    targetContainerId {dcompose.attxdpus.containerId}
+    doLast{
+        if(getExitCode() != 0) {
+            println "ATTX DPU Container failed with exit code \${getExitCode()}"
+        } else {
+            println "Everything is peachy."
+        }
+    }
+}
+
+/* === Container Tests and dependencies === */
+
+buildTestImage.dependsOn copyFilesIntoContainer
+buildTestImage.dependsOn downloadTestFiles
+buildTestImage.dependsOn testClasses
+buildTestImage.dependsOn processTestResources
+
+startTestContainer.dependsOn checkDPUDone
+startTestContainer.finalizedBy copyReportFiles
+
+
+task runContainerTests {
+    dependsOn startTestContainer
+    finalizedBy removeImages
+    doLast {
+        if(dcompose.test.exitCode != 0){ throw new GradleException("Tests within the container Failed!") }
+    }
+}
+
+/* === Local Tests and dependencies === */
+
+task runIntegTests(type: Test) {
+    dependsOn checkDPUDone, copyFilesIntoContainer
+    Map<String, Integer> serviceMap = [ "frontend" : 8080,
+                  "uvprov" : 4301,
+                  "provservice" : 7030,
+                  "ldframe" : 4303,
+                  "indexservice" : 4304,
+                  "fuseki" : 3030,
+                  "graphmanager" : 4302,
+                  "es5": 9210,
+                  "rmlservice": 8090,
+                  "messagebroker": 5672,
+                  "messagebroker": 5671,
+                  "messagebroker": 4369,
+                  "testdata": 80 ]
+    ext.getHostPort = {services ->
+        serviceMap.each{ host, port ->
+            if (project.testEnv == "dev") {
+                systemProperty "${host}.port", dcompose."${host}".findHostPort("${port}".toInteger())
+                systemProperty "${host}.host", dcompose."${host}".dockerHost
+            }
+        }
+    }
+
+    ext.removeHostPort = { services ->
+        serviceMap.each{ host, port ->
+            systemProperties.remove "${host}.port"
+            systemProperties.remove "${host}.host"
+        }
+    }
+
+    doFirst {
+        getHostPort(serviceMap)
+    }
+    doLast {
+        removeHostPort(serviceMap)
+    }
+
+    if (project.hasProperty("runEnv") && project.runEnv == "console"){
+        println "Running things from console."
+    } else {
+        finalizedBy removeImages
+    }
+}

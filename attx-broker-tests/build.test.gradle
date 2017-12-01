@@ -1,0 +1,70 @@
+plugins {
+    id "java"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile \
+            files("/tmp/uv-common-1.0-SNAPSHOT.jar"),
+            'org.apache.commons:commons-io:1.3.2',
+            'com.fasterxml.jackson.core:jackson-databind:2.9.2',
+            'com.fasterxml.jackson.core:jackson-core:2.9.2',
+            'org.junit.jupiter:junit-jupiter-api:5.0.0',
+            'org.junit.platform:junit-platform-runner:1.0.1',
+            'info.cukes:cucumber-java8:1.2.5',
+            'info.cukes:cucumber-junit:1.2.5',
+            'com.mashape.unirest:unirest-java:1.4.9',
+            'org.skyscreamer:jsonassert:1.5.0',
+            'org.awaitility:awaitility-groovy:3.0.0',
+            'com.rabbitmq:amqp-client:4.2.0',
+            'org.jdom:jdom2:2.0.5',
+            'org.apache.jena:jena-core:3.4.0'
+    testRuntime \
+        'org.junit.jupiter:junit-jupiter-engine:5.0.0',
+            'org.junit.vintage:junit-vintage-engine:4.12.0'
+}
+
+task containerIntegTest(type: Test) {
+    Map<String, Integer> serviceMap = [ "frontend" : 8080,
+                                        "uvprov" : 4301,
+                                        "provservice" : 7030,
+                                        "ldframe" : 4303,
+                                        "indexservice" : 4304,
+                                        "fuseki" : 3030,
+                                        "graphmanager" : 4302,
+                                        "es5": 9210,
+                                        "rmlservice": 8090,
+                                        "messagebroker": 5672,
+                                        "messagebroker": 5671,
+                                        "messagebroker": 4369,
+                                        "testdata": 80  ]
+    ext.getHostPort = {services ->
+        serviceMap.each{ host, port ->
+            systemProperty "${host}.port", "${port}".toInteger()
+            systemProperty "${host}.host", "${host}"
+        }
+    }
+
+    ext.removeHostPort = { services ->
+        serviceMap.each{ host, port ->
+            systemProperties.remove "${host}.port"
+            systemProperties.remove "${host}.host"
+         }
+    }
+
+    doFirst {
+        getHostPort(serviceMap)
+    }
+    forkEvery = 2
+    maxParallelForks = 2
+    testLogging {
+        showStackTraces = true
+    }
+    doLast {
+        removeHostPort(serviceMap)
+    }
+
+}

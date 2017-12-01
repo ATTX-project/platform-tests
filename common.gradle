@@ -1,0 +1,28 @@
+apply plugin: 'base'
+
+repositories {
+      mavenCentral()
+}
+
+ext {
+    imageRepo = "attx-dev"
+    imageRepoPort = "5000"
+    artifactRepoPort = "8081"
+    unifiedViewsRepoURL = "http://repository.unifiedviews.eu/nexus/content/repositories/public"
+}
+
+if (!project.hasProperty("registryURL")) {
+    ext.registryURL = "http://${imageRepo}:${imageRepoPort}"
+}
+
+if (!project.hasProperty("artifactRepoURL")) {
+    ext.artifactRepoURL = "http://${imageRepo}:${artifactRepoPort}"
+}
+
+if (!project.hasProperty("artifactRepoUser")) {
+    ext.artifactRepoUser = ""
+}
+
+if (!project.hasProperty("artifactRepoPassword")) {
+    ext.artifactRepoPassword = ""
+}

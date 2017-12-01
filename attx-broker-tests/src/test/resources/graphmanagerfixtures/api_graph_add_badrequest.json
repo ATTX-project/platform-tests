@@ -1,0 +1,4 @@
+{
+  "targetGraph": "http://work/dataset2",
+  "triples": "<http://example/egbook3> <http://purl.org/dc/elements/1.1/title>  \"This is an example title\"."
+}
