@@ -13,9 +13,6 @@ import cucumber.api.java8.En;
 import java.io.File;
 
 import junit.framework.TestCase;
-import org.junit.Test;
-import org.junit.platform.runner.JUnitPlatform;
-import org.junit.runner.RunWith;
 import org.skyscreamer.jsonassert.JSONAssert;
 import org.skyscreamer.jsonassert.JSONCompareMode;
 

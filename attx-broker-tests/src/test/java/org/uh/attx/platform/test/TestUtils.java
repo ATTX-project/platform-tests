@@ -24,6 +24,7 @@ import static org.junit.jupiter.api.Assertions.fail;
  */
 public class TestUtils {
 
+//    TO DO refactor so that ESSiren is not used anymore
     public static String getESSiren() {
         return "http://" + System.getProperty("essiren.host") + ":" + Integer.parseInt(System.getProperty("essiren.port"));
     }
@@ -54,6 +55,14 @@ public class TestUtils {
 
     public static String getProvService() {
         return "http://" + System.getProperty("provservice.host") + ":" + Integer.parseInt(System.getProperty("provservice.port"));
+    }
+
+    public static String getFramingService() {
+        return "http://" + System.getProperty("ldframe.host") + ":" + Integer.parseInt(System.getProperty("ldframe.port"));
+    }
+
+    public static String getIndexingService() {
+        return "http://" + System.getProperty("indexservice.host") + ":" + Integer.parseInt(System.getProperty("indexservice.port"));
     }
 
     public static String getRMLService() {
