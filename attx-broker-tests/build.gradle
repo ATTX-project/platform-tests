@@ -216,7 +216,7 @@ dcompose {
     es5 {
         forcePull = true
         forceRemoveImage = true
-        image = "${imageBase}/attx-es5:${testImageES5}"
+        image = "${imageBase}/attx-es5:${testImageES5}"        
         networks = [network("${testNetwork}")]
         hostName = 'es5'
         if (testSet == "localhost") {
@@ -239,7 +239,7 @@ dcompose {
         if (testSet == "localhost") {
             portBindings = ['4301:4301']
         }
-        env = ['MHOST=messagebroker', 'DBHOST=mysql']
+        env = ['MHOST=messagebroker', 'DBHOST=mysql', 'QTIME=1']
     }
 
     rmlservice {
@@ -296,7 +296,7 @@ dcompose {
         if (testSet == "localhost") {
             portBindings = ['7030:7030']
         }
-        env = ['MHOST=messagebroker', 'GHOST=fuseki']
+        env = ['MHOST=messagebroker', 'GHOST=fuseki', 'FRAMEHOST=ldframe', 'INDEXHOST=indexservice', 'QTIME=2']
     }
 
     testdata {
