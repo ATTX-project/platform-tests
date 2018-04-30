@@ -1,0 +1,26 @@
+@prefix onto: <http://test/onto#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://test/onto#> .
+
+<http://test/onto#> rdf:type owl:Ontology .
+
+
+onto:hasParent rdf:type owl:ObjectProperty ;
+          rdfs:domain onto:Child ;
+          rdfs:range onto:Parent .
+
+onto:hasChild rdf:type owl:ObjectProperty ;
+          a owl:TransitiveProperty ;
+          owl:inverseOf onto:hasParent.
+
+onto:Child rdf:type owl:Class .
+onto:Parent rdf:type owl:Class .
+
+
+# For testing only
+#onto:Child owl:equivalentClass onto:Parent .
+#onto:Child owl:disjointWith onto:Parent .
