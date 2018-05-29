@@ -1,0 +1,12 @@
+{
+	"data": [{
+			"identifier": "org2",
+			"parent": "org1"
+		},
+		{
+			"identifier": "org3",
+			"parent": "org2"
+
+		}
+	]
+}
